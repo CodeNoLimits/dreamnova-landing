@@ -6,11 +6,32 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { SacredButton } from './sacred-button';
 
+// Sacred Na Nach Navigation - Each letter is a portal
 const navLinks = [
-  { label: "L'Entropie", href: '#entropy' },
-  { label: 'Nova-Tam', href: '#solution' },
-  { label: 'Le Modèle 63', href: '#pricing' },
-  { label: 'Tikkun', href: '#manifesto' },
+  {
+    letter: 'נ',
+    label: 'Na — Awakening',
+    href: '/about',
+    meaning: 'The Mission'
+  },
+  {
+    letter: 'נח',
+    label: 'Nach — Journey',
+    href: '/nova-key',
+    meaning: 'The Sacred Key'
+  },
+  {
+    letter: 'נחמ',
+    label: 'Nachma — Wisdom',
+    href: '/source-code',
+    meaning: 'The Source Code'
+  },
+  {
+    letter: 'נחמן',
+    label: 'Nachman — Completion',
+    href: '/covenant-pack',
+    meaning: 'The Covenant'
+  },
 ];
 
 export function Navbar() {
@@ -49,16 +70,33 @@ export function Navbar() {
               </span>
             </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
+            {/* Desktop Navigation - Sacred Na Nach */}
+            <div className="hidden md:flex items-center gap-6">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
-                  className="text-light-gray hover:text-gold transition-colors duration-300 font-display text-sm uppercase tracking-wider"
+                  className="group relative"
                 >
-                  {link.label}
-                </a>
+                  {/* Hebrew Letter - Engraved Gold */}
+                  <div className="flex flex-col items-center gap-1">
+                    <span
+                      className="font-sacred text-3xl font-bold text-gold transition-all duration-300 group-hover:scale-110 group-hover:text-cyan"
+                      style={{
+                        textShadow: '0 2px 4px rgba(0,0,0,0.5), 0 0 20px rgba(212,175,55,0.3)',
+                        fontFamily: 'Cormorant Garamond, serif'
+                      }}
+                    >
+                      {link.letter}
+                    </span>
+                    {/* Meaning - Appears on Hover */}
+                    <span className="font-body text-xs text-transparent group-hover:text-light-gray transition-all duration-300 opacity-0 group-hover:opacity-100 whitespace-nowrap">
+                      {link.meaning}
+                    </span>
+                  </div>
+                  {/* Underline Effect */}
+                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </Link>
               ))}
             </div>
 
@@ -130,20 +168,41 @@ export function Navbar() {
               </button>
             </div>
 
-            {/* Mobile Navigation Links */}
-            <div className="flex flex-col gap-4 p-6">
+            {/* Mobile Navigation Links - Sacred Na Nach */}
+            <div className="flex flex-col gap-6 p-6">
               {navLinks.map((link, index) => (
-                <motion.a
+                <motion.div
                   key={link.href}
-                  href={link.href}
-                  onClick={closeMenu}
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="text-light-gray hover:text-gold transition-colors duration-300 font-display text-sm uppercase tracking-wider py-2"
                 >
-                  {link.label}
-                </motion.a>
+                  <Link
+                    href={link.href}
+                    onClick={closeMenu}
+                    className="flex items-center gap-4 group py-2"
+                  >
+                    {/* Hebrew Letter - Mobile */}
+                    <span
+                      className="font-sacred text-4xl font-bold text-gold group-hover:text-cyan transition-colors duration-300"
+                      style={{
+                        textShadow: '0 2px 4px rgba(0,0,0,0.5), 0 0 20px rgba(212,175,55,0.3)',
+                        fontFamily: 'Cormorant Garamond, serif'
+                      }}
+                    >
+                      {link.letter}
+                    </span>
+                    {/* Label and Meaning */}
+                    <div className="flex flex-col">
+                      <span className="font-display text-sm text-light-gray group-hover:text-gold transition-colors">
+                        {link.label}
+                      </span>
+                      <span className="font-body text-xs text-gray-500">
+                        {link.meaning}
+                      </span>
+                    </div>
+                  </Link>
+                </motion.div>
               ))}
             </div>
 
