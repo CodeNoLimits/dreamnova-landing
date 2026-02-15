@@ -7,30 +7,35 @@ import { Menu, X } from 'lucide-react';
 import { SacredButton } from './sacred-button';
 
 // Sacred Na Nach Navigation - Each letter is a portal
+// Order: Right-to-Left (Hebrew reading direction) - Nachman → Nachma → Nach → Na
 const navLinks = [
   {
-    letter: 'נ',
-    label: 'Na — Awakening',
-    href: '/about',
-    meaning: 'The Mission'
-  },
-  {
-    letter: 'נח',
-    label: 'Nach — Journey',
-    href: '/nova-key',
-    meaning: 'The Sacred Key'
+    letter: 'נחמן',
+    latin: 'Nachman',
+    label: 'Nachman — Completion',
+    href: '/covenant-pack',
+    meaning: 'The Covenant'
   },
   {
     letter: 'נחמ',
+    latin: 'Nachma',
     label: 'Nachma — Wisdom',
     href: '/source-code',
     meaning: 'The Source Code'
   },
   {
-    letter: 'נחמן',
-    label: 'Nachman — Completion',
-    href: '/covenant-pack',
-    meaning: 'The Covenant'
+    letter: 'נח',
+    latin: 'Nach',
+    label: 'Nach — Journey',
+    href: '/nova-key',
+    meaning: 'The Sacred Key'
+  },
+  {
+    letter: 'נ',
+    latin: 'Na',
+    label: 'Na — Awakening',
+    href: '/about',
+    meaning: 'The Mission'
   },
 ];
 
@@ -70,7 +75,7 @@ export function Navbar() {
               </span>
             </Link>
 
-            {/* Desktop Navigation - Sacred Na Nach */}
+            {/* Desktop Navigation - Sacred Na Nach (RTL Order) */}
             <div className="hidden md:flex items-center gap-6">
               {navLinks.map((link) => (
                 <Link
@@ -78,8 +83,9 @@ export function Navbar() {
                   href={link.href}
                   className="group relative"
                 >
-                  {/* Hebrew Letter - Engraved Gold */}
-                  <div className="flex flex-col items-center gap-1">
+                  {/* Hebrew Letter + Latin - Engraved Gold */}
+                  <div className="flex flex-col items-center gap-0.5">
+                    {/* Hebrew Letter */}
                     <span
                       className="font-sacred text-3xl font-bold text-gold transition-all duration-300 group-hover:scale-110 group-hover:text-cyan"
                       style={{
@@ -89,8 +95,12 @@ export function Navbar() {
                     >
                       {link.letter}
                     </span>
+                    {/* Latin Transliteration - Always Visible */}
+                    <span className="font-body text-[10px] text-gold/60 uppercase tracking-wider">
+                      {link.latin}
+                    </span>
                     {/* Meaning - Appears on Hover */}
-                    <span className="font-body text-xs text-transparent group-hover:text-light-gray transition-all duration-300 opacity-0 group-hover:opacity-100 whitespace-nowrap">
+                    <span className="font-body text-xs text-transparent group-hover:text-light-gray transition-all duration-300 opacity-0 group-hover:opacity-100 whitespace-nowrap mt-1">
                       {link.meaning}
                     </span>
                   </div>
@@ -168,7 +178,7 @@ export function Navbar() {
               </button>
             </div>
 
-            {/* Mobile Navigation Links - Sacred Na Nach */}
+            {/* Mobile Navigation Links - Sacred Na Nach (RTL Order) */}
             <div className="flex flex-col gap-6 p-6">
               {navLinks.map((link, index) => (
                 <motion.div
@@ -182,16 +192,21 @@ export function Navbar() {
                     onClick={closeMenu}
                     className="flex items-center gap-4 group py-2"
                   >
-                    {/* Hebrew Letter - Mobile */}
-                    <span
-                      className="font-sacred text-4xl font-bold text-gold group-hover:text-cyan transition-colors duration-300"
-                      style={{
-                        textShadow: '0 2px 4px rgba(0,0,0,0.5), 0 0 20px rgba(212,175,55,0.3)',
-                        fontFamily: 'Cormorant Garamond, serif'
-                      }}
-                    >
-                      {link.letter}
-                    </span>
+                    {/* Hebrew Letter + Latin - Mobile */}
+                    <div className="flex flex-col items-center">
+                      <span
+                        className="font-sacred text-4xl font-bold text-gold group-hover:text-cyan transition-colors duration-300"
+                        style={{
+                          textShadow: '0 2px 4px rgba(0,0,0,0.5), 0 0 20px rgba(212,175,55,0.3)',
+                          fontFamily: 'Cormorant Garamond, serif'
+                        }}
+                      >
+                        {link.letter}
+                      </span>
+                      <span className="font-body text-[9px] text-gold/60 uppercase tracking-wider -mt-1">
+                        {link.latin}
+                      </span>
+                    </div>
                     {/* Label and Meaning */}
                     <div className="flex flex-col">
                       <span className="font-display text-sm text-light-gray group-hover:text-gold transition-colors">

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Sparkles, Zap, Music } from "lucide-react";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
+import Image from "next/image";
 
 const features = [
   {
@@ -110,6 +111,32 @@ export function SolutionSection() {
               </ScrollReveal>
             );
           })}
+        </motion.div>
+
+        {/* Sacred Artifacts Showcase */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="relative mx-auto mb-16 max-w-2xl"
+        >
+          <p className="font-mono text-xs tracking-[0.3em] text-cyan text-center mb-6 uppercase">
+            The Sacred Artifacts
+          </p>
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-sacred/20 via-gold/10 to-cyan-sacred/20 rounded-2xl blur-3xl scale-105 opacity-50" />
+            <Image
+              src="/images/cyberpunk-camea-hero.png"
+              alt="Collection de Caméas Breslov — Artefacts sacrés inclus avec chaque Nova Key"
+              width={700}
+              height={700}
+              className="relative rounded-2xl shadow-2xl shadow-cyan-sacred/20 mx-auto"
+            />
+          </div>
+          <p className="text-center text-sm text-gray-400 mt-4">
+            Each Nova Key includes an authentic Breslov Caméa — handcrafted sacred amulets with the fire of Na Nach.
+          </p>
         </motion.div>
 
         {/* Code Block */}

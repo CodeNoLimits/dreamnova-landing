@@ -46,6 +46,24 @@ export function HeroSection() {
       {/* Background */}
       <SacredParticles />
 
+      {/* Cyberpunk Eshsheli Fire Background */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 0.15, scale: 1 }}
+          transition={{ duration: 2, ease: 'easeOut' }}
+          className="relative w-[800px] h-[800px]"
+        >
+          <Image
+            src="/images/cyberpunk-fire-bg.png"
+            alt=""
+            fill
+            className="object-contain"
+            priority
+          />
+        </motion.div>
+      </div>
+
       {/* Content */}
       <motion.div
         variants={containerVariants}
@@ -125,7 +143,7 @@ export function HeroSection() {
         {/* Nova Key Card Image */}
         <motion.div
           variants={itemVariants}
-          className="relative mx-auto mb-16 max-w-md"
+          className="relative mx-auto mb-8 max-w-md"
         >
           {/* Glow behind card */}
           <div className="absolute inset-0 bg-gradient-to-br from-gold/30 via-cyan-sacred/20 to-gold/30 rounded-2xl blur-3xl scale-110 opacity-60" />
@@ -150,6 +168,30 @@ export function HeroSection() {
               height={500}
               className="rounded-2xl shadow-2xl shadow-gold/20"
               priority
+            />
+          </motion.div>
+        </motion.div>
+
+        {/* Breslov Caméa — Included with every Nova Key */}
+        <motion.div
+          variants={itemVariants}
+          className="relative mx-auto mb-16 max-w-xs"
+        >
+          <p className="font-mono text-[10px] tracking-[0.3em] text-gold/60 text-center mb-4 uppercase">
+            Authentic Breslov Caméa Included
+          </p>
+          <motion.div
+            animate={{ y: [0, -8, 0], rotate: [0, 1, -1, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" as const }}
+            className="relative"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-sacred/30 via-gold/20 to-cyan-sacred/30 rounded-2xl blur-2xl scale-110 opacity-50" />
+            <Image
+              src="/images/cyberpunk-camea.png"
+              alt="Breslov Caméa — Authentique amulette sacrée incluse avec chaque Nova Key"
+              width={300}
+              height={300}
+              className="relative rounded-2xl shadow-2xl shadow-cyan-sacred/30 mx-auto"
             />
           </motion.div>
         </motion.div>
