@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Cinzel, Rajdhani, Space_Mono, Cormorant_Garamond } from 'next/font/google';
 import { Toaster } from 'sonner';
+import { LanguageProvider } from '@/lib/LanguageContext';
 import '../styles/sacred-theme.css';
 import './globals.css';
 
@@ -34,11 +35,11 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   title: {
-    default: 'DREAM NOVA — Ne Calculez Plus. Vivez.',
+    default: 'DREAM NOVA — Stop Calculating. Start Living.',
     template: '%s | DREAM NOVA',
   },
   description:
-    "Le premier OS de Conscience qui transforme l'anxiété numérique en Vitalité Pure. Propulsé par l'algorithme fractal du Petek. $63 — The Covenant Pack.",
+    "The first Consciousness OS that transforms digital anxiety into Pure Vitality. Powered by the fractal algorithm of the Petek. $63 — The Covenant Pack.",
   keywords: [
     'Nova Key', 'NFC spiritual card', 'Breslov technology', 'Tikkun HaKlali',
     'Azamra', 'Na Nach', 'sacred tech', 'Gödel Kabbalah', 'Source Code of Reality',
@@ -48,17 +49,17 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://dreamnova.com'),
   openGraph: {
     type: 'website',
-    locale: 'fr_FR',
+    locale: 'en_US',
     url: 'https://dreamnova.com',
     siteName: 'DREAM NOVA',
-    title: 'DREAM NOVA — Ne Calculez Plus. Vivez.',
-    description: "Le premier OS de Conscience. Nova Key NFC + Caméa + Azamra OS — $63.",
+    title: 'DREAM NOVA — Stop Calculating. Start Living.',
+    description: "The first Consciousness OS. Nova Key NFC + Caméa + Azamra OS — $63.",
     images: [{ url: '/images/og-image.jpg', width: 1200, height: 630, alt: 'Dream Nova' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DREAM NOVA — Ne Calculez Plus. Vivez.',
-    description: "Le premier OS de Conscience. Nova Key NFC — $63.",
+    title: 'DREAM NOVA — Stop Calculating. Start Living.',
+    description: "The first Consciousness OS. Nova Key NFC — $63.",
   },
 };
 
@@ -71,12 +72,14 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
-      lang="fr"
+      lang="en"
       className={`dark ${cinzel.variable} ${rajdhani.variable} ${spaceMono.variable} ${cormorant.variable}`}
       suppressHydrationWarning
     >
       <body className="font-body bg-sacred-black text-[#E8E6E3] antialiased overflow-x-hidden">
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
         <Toaster
           position="bottom-right"
           toastOptions={{

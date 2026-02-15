@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { SacredButton } from './sacred-button';
+import { LanguageSelector } from './language-selector';
+import { useTranslation } from '@/lib/LanguageContext';
 
 // Sacred Na Nach Navigation - Each letter is a portal
 // Order: Right-to-Left (Hebrew reading direction) - Nachman → Nachma → Nach → Na
@@ -42,6 +44,7 @@ const navLinks = [
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -110,15 +113,16 @@ export function Navbar() {
               ))}
             </div>
 
-            {/* Desktop CTA Button */}
-            <div className="hidden md:block">
+            {/* Desktop CTA + Language */}
+            <div className="hidden md:flex items-center gap-3">
+              <LanguageSelector />
               <SacredButton
                 href="/checkout"
                 variant="filled"
                 size="sm"
                 className="font-display"
               >
-                OBTENIR MA CLÉ
+                {t('nav.cta')}
               </SacredButton>
             </div>
 
@@ -221,15 +225,16 @@ export function Navbar() {
               ))}
             </div>
 
-            {/* Mobile CTA Button */}
-            <div className="p-6">
+            {/* Mobile CTA + Language */}
+            <div className="p-6 space-y-4">
+              <LanguageSelector />
               <Link href="/checkout" onClick={closeMenu}>
                 <SacredButton
                   variant="filled"
                   size="md"
                   className="w-full font-display"
                 >
-                  OBTENIR MA CLÉ
+                  {t('nav.cta')}
                 </SacredButton>
               </Link>
             </div>

@@ -5,6 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { SacredParticles } from "@/components/shared/sacred-particles";
+import { ScanLine, HoloParticles } from "@/components/shared/holographic-effects";
+import { useTranslation } from "@/lib/LanguageContext";
+import { formatPrice } from "@/lib/i18n";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -41,6 +44,8 @@ const chevronVariants = {
 };
 
 export function HeroSection() {
+  const { t, config } = useTranslation();
+  const priceLabel = formatPrice(config.code);
   return (
     <section className="relative min-h-screen bg-black overflow-hidden flex items-center justify-center">
       {/* Background */}
@@ -61,8 +66,22 @@ export function HeroSection() {
             className="object-contain"
             priority
           />
+          {/* My Fire label */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 1 }}
+            className="absolute bottom-[15%] left-1/2 -translate-x-1/2 text-center"
+          >
+            <p className="font-display text-lg text-gold/80 tracking-widest">{config.myFire}</p>
+            <p className="font-mono text-[10px] text-cyan/60 tracking-[0.2em] mt-1">{config.myFireSub}</p>
+          </motion.div>
         </motion.div>
       </div>
+
+      {/* Holographic Effects */}
+      <ScanLine />
+      <HoloParticles count={8} />
 
       {/* Content */}
       <motion.div
@@ -100,16 +119,16 @@ export function HeroSection() {
           variants={itemVariants}
           className="font-mono text-xs md:text-sm tracking-widest text-gold mb-6 uppercase"
         >
-          OS DE CONSCIENCE V.1
+          {t('hero.subtitle')}
         </motion.p>
 
         {/* Main Heading */}
         <motion.div variants={itemVariants} className="mb-8">
           <h1 className="font-display text-5xl md:text-7xl font-bold text-white leading-tight mb-2">
-            Ne Calculez Plus.
+            {t('hero.h1')}
           </h1>
           <h2 className="font-display text-5xl md:text-7xl font-bold leading-tight">
-            <span className="sacred-gradient">Vivez.</span>
+            <span className="sacred-gradient">{t('hero.h2')}</span>
           </h2>
         </motion.div>
 
@@ -118,8 +137,7 @@ export function HeroSection() {
           variants={itemVariants}
           className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Le premier système cognitif qui transforme l'anxiété numérique en Vitalité
-          Pure. Propulsé par l'algorithme fractal du Petek.
+          {t('hero.desc')}
         </motion.p>
 
         {/* CTA Button */}
@@ -128,7 +146,7 @@ export function HeroSection() {
             href="/checkout"
             className="inline-block px-8 py-4 bg-gold text-black font-bold text-lg hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg hover:shadow-gold/50 tracking-wide"
           >
-            OBTENIR MA NOVA KEY — $63
+            {t('hero.cta')} — {priceLabel}
           </Link>
         </motion.div>
 
@@ -137,7 +155,7 @@ export function HeroSection() {
           variants={itemVariants}
           className="text-sm text-gray-400 mb-12"
         >
-          Inclus: Nova Key NFC + Caméa + Accès Digital
+          {t('hero.includes')}
         </motion.p>
 
         {/* Nova Key Card Image */}
@@ -178,7 +196,7 @@ export function HeroSection() {
           className="relative mx-auto mb-16 max-w-xs"
         >
           <p className="font-mono text-[10px] tracking-[0.3em] text-gold/60 text-center mb-4 uppercase">
-            Authentic Breslov Caméa Included
+            {t('hero.camea')}
           </p>
           <motion.div
             animate={{ y: [0, -8, 0], rotate: [0, 1, -1, 0] }}

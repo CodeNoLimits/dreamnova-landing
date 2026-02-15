@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Package, Crown, Users, Loader2, ArrowRight } from "lucide-react";
+import { Package, Crown, Users, Loader2, ArrowRight, AlertCircle } from "lucide-react";
 import { PRODUCTS } from "@/lib/constants";
 import { Navbar } from "@/components/shared/navbar";
 import { Footer } from "@/components/shared/footer";
+import { useTranslation } from "@/lib/LanguageContext";
 
 type ProductKey = keyof typeof PRODUCTS;
 type ProductType = (typeof PRODUCTS)[ProductKey] & { key: string };
@@ -95,21 +96,40 @@ function ProductCard({
 export default function CheckoutPage() {
   const [loadingSlug, setLoadingSlug] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const { t } = useTranslation();
 
   const handleCheckout = async (slug: string, quantity: number) => {
     try {
       setError(null);
       setLoadingSlug(slug);
+
       const response = await fetch("/api/stripe/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ slug, quantity }),
       });
-      if (!response.ok) throw new Error("Failed to create checkout session");
+
+      // Parse response JSON (even for errors)
       const data = await response.json();
-      if (data.url) window.location.href = data.url;
+
+      if (!response.ok) {
+        // Show the API's error message (friendly, translated)
+        setError(data.error || t('checkout.error.generic'));
+        setLoadingSlug(null);
+        return;
+      }
+
+      // Redirect to Stripe checkout
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        setError(t('checkout.error.generic'));
+        setLoadingSlug(null);
+      }
     } catch (err) {
-      setError(err instanceof Error ? err.message : "An error occurred during checkout");
+      // Network error or JSON parse error
+      console.error('Checkout error:', err);
+      setError(t('checkout.error.generic'));
       setLoadingSlug(null);
     }
   };
@@ -128,8 +148,23 @@ export default function CheckoutPage() {
           </p>
         </div>
         {error && (
-          <div className="mb-8 p-4 bg-red-900/20 border border-red-500 rounded-lg text-red-200 text-center">
-            {error}
+          <div className="mb-8 p-6 bg-red-900/20 border border-red-500/50 rounded-lg backdrop-blur-sm">
+            <div className="flex items-start gap-4">
+              <AlertCircle className="w-6 h-6 text-red-400 flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="text-red-200 font-display font-bold mb-2">
+                  {t('checkout.error.generic')}
+                </h3>
+                <p className="text-red-300/80 text-sm font-body">
+                  {error}
+                </p>
+                {error.includes('not configured') && (
+                  <p className="mt-3 text-xs text-red-400/60">
+                    The payment system is being set up. Please check back soon or contact support.
+                  </p>
+                )}
+              </div>
+            </div>
           </div>
         )}
         <div className="grid md:grid-cols-3 gap-8 mb-12">
