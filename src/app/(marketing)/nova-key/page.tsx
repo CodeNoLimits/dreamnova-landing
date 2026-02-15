@@ -4,6 +4,7 @@ import { Navbar } from '@/components/shared/navbar';
 import { Footer } from '@/components/shared/footer';
 import { SacredButton } from '@/components/shared/sacred-button';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Zap, Shield } from 'lucide-react';
 
@@ -101,18 +102,33 @@ export default function NovaKeyPage() {
               </motion.div>
             </motion.div>
 
-            {/* Right Image Placeholder */}
+            {/* Nova Key Card Image */}
             <motion.div
               variants={itemVariants}
-              className="relative h-96 lg:h-full min-h-96 flex items-center justify-center"
+              className="relative flex items-center justify-center"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-[#D4AF37]/20 rounded-3xl blur-2xl" />
-              <div className="relative z-10 flex items-center justify-center w-64 h-80 bg-gradient-to-br from-[#D4AF37]/10 to-cyan-500/10 border-2 border-[#D4AF37]/30 rounded-3xl">
-                <div className="text-center">
-                  <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-[#D4AF37] to-cyan-400 rounded-full opacity-20 blur-xl" />
-                  <p className="text-gray-500 text-sm">Nova Key Product Image</p>
-                </div>
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-[#D4AF37]/20 rounded-3xl blur-3xl" />
+              <motion.div
+                animate={{
+                  y: [0, -10, 0],
+                  rotateY: [-2, 2, -2],
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: 'easeInOut' as const,
+                }}
+                className="relative z-10"
+              >
+                <Image
+                  src="/images/nova-key.jpg"
+                  alt="Nova Key — Carte NFC sacrée Na Nach Nachma Nachman MeUman"
+                  width={600}
+                  height={375}
+                  className="rounded-2xl shadow-2xl shadow-[#D4AF37]/30"
+                  priority
+                />
+              </motion.div>
             </motion.div>
           </div>
         </motion.section>

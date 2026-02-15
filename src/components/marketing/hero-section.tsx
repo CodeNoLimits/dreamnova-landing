@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { SacredParticles } from "@/components/shared/sacred-particles";
@@ -116,16 +117,48 @@ export function HeroSection() {
         {/* CTA Subtitle */}
         <motion.p
           variants={itemVariants}
-          className="text-sm text-gray-400 mb-20"
+          className="text-sm text-gray-400 mb-12"
         >
           Inclus: Nova Key NFC + Caméa + Accès Digital
         </motion.p>
+
+        {/* Nova Key Card Image */}
+        <motion.div
+          variants={itemVariants}
+          className="relative mx-auto mb-16 max-w-md"
+        >
+          {/* Glow behind card */}
+          <div className="absolute inset-0 bg-gradient-to-br from-gold/30 via-cyan-sacred/20 to-gold/30 rounded-2xl blur-3xl scale-110 opacity-60" />
+          <motion.div
+            animate={{
+              y: [0, -12, 0],
+              rotateX: [0, 2, 0],
+              rotateY: [-3, 3, -3],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut" as const,
+            }}
+            className="relative"
+            style={{ perspective: '1000px' }}
+          >
+            <Image
+              src="/images/nova-key.jpg"
+              alt="Nova Key — Carte NFC sacrée Na Nach Nachma Nachman MeUman"
+              width={800}
+              height={500}
+              className="rounded-2xl shadow-2xl shadow-gold/20"
+              priority
+            />
+          </motion.div>
+        </motion.div>
 
         {/* Scroll Indicator */}
         <motion.div
           animate="animate"
           variants={chevronVariants}
-          className="flex justify-center mt-12"
+          className="flex justify-center"
         >
           <ChevronDown className="w-6 h-6 text-cyan" />
         </motion.div>

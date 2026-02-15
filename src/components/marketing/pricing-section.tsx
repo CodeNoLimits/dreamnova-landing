@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const includes = [
@@ -54,6 +55,23 @@ export function PricingSection() {
           viewport={{ once: true }}
           className="max-w-lg mx-auto mb-16"
         >
+          {/* Nova Key Card Image */}
+          <div className="relative mb-8">
+            <div className="absolute inset-0 bg-gradient-to-br from-gold/20 to-cyan-sacred/10 rounded-2xl blur-2xl scale-105" />
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" as const }}
+              className="relative"
+            >
+              <Image
+                src="/images/nova-key.jpg"
+                alt="Nova Key NFC — Acier Inoxydable, Gravure Or"
+                width={500}
+                height={313}
+                className="rounded-xl mx-auto shadow-xl shadow-gold/15"
+              />
+            </motion.div>
+          </div>
           <div className="dark-card border-2 border-gold p-8 md:p-12 hover:shadow-lg hover:shadow-gold/30 transition-all duration-300">
             {/* Card Title */}
             <h3 className="font-display text-2xl md:text-3xl text-center font-bold text-gold mb-4 tracking-wide">
