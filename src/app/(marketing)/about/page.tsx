@@ -80,7 +80,18 @@ export default function AboutPage() {
       <Navbar />
       <main className="min-h-screen bg-gradient-to-b from-[#050508] via-[#0a0a0f] to-[#050508]">
         {/* Hero */}
-        <section className="relative min-h-[70vh] flex items-center justify-center px-4 pt-24">
+        <section className="relative min-h-[70vh] flex items-center justify-center px-4 pt-24 overflow-hidden">
+          {/* Cyberpunk Fire Background */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="relative w-[700px] h-[700px] opacity-[0.08]">
+              <Image
+                src="/images/cyberpunk-fire-bg.png"
+                alt=""
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
           <div className="relative z-10 text-center max-w-4xl mx-auto">
             <motion.p
               initial={{ opacity: 0 }}
@@ -204,13 +215,13 @@ export default function AboutPage() {
         <section className="py-24 px-4">
           <div className="max-w-4xl mx-auto text-center">
             <ScrollReveal>
-              <div className="relative mx-auto mb-12 max-w-md">
+              <div className="relative mx-auto mb-12 max-w-sm">
                 <div className="absolute inset-0 bg-gradient-to-br from-gold/30 via-cyan-400/20 to-gold/30 rounded-2xl blur-3xl scale-110 opacity-40" />
                 <Image
-                  src="/images/nova-key.jpg"
-                  alt="Nova Key NFC Card"
-                  width={500}
-                  height={313}
+                  src="/images/cyberpunk-camea.png"
+                  alt="Breslov Caméa — Sacred Amulet"
+                  width={350}
+                  height={350}
                   className="relative rounded-2xl shadow-2xl shadow-gold/20"
                 />
               </div>

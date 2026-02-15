@@ -140,6 +140,29 @@ export function PricingSection() {
           </div>
         </motion.div>
 
+        {/* Camea Showcase */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="max-w-sm mx-auto mb-12"
+        >
+          <p className="font-mono text-[10px] tracking-[0.3em] text-gold/60 text-center mb-4 uppercase">
+            Authentic Breslov Caméa Included
+          </p>
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-gold/20 via-cyan-sacred/10 to-gold/20 rounded-2xl blur-2xl scale-110 opacity-40" />
+            <Image
+              src="/images/cyberpunk-camea.png"
+              alt="Breslov Caméa — Amulette sacrée authentique incluse"
+              width={350}
+              height={350}
+              className="relative rounded-2xl shadow-xl shadow-gold/15 mx-auto"
+            />
+          </div>
+        </motion.div>
+
         {/* Breakdown */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

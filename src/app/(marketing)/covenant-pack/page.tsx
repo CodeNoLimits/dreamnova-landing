@@ -91,7 +91,18 @@ export default function CovenantPackPage() {
       <Navbar />
       <main className="min-h-screen bg-gradient-to-b from-[#050508] via-[#0a0a0f] to-[#050508]">
         {/* Hero */}
-        <section className="relative flex items-center justify-center px-4 pt-32 pb-16">
+        <section className="relative flex items-center justify-center px-4 pt-32 pb-16 overflow-hidden">
+          {/* Fire Background */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="relative w-[600px] h-[600px] opacity-10">
+              <Image
+                src="/images/cyberpunk-fire-bg.png"
+                alt=""
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
           <div className="relative z-10 text-center max-w-4xl mx-auto">
             <motion.p
               initial={{ opacity: 0 }}
@@ -119,19 +130,22 @@ export default function CovenantPackPage() {
           </div>
         </section>
 
-        {/* Nova Key Image */}
+        {/* Sacred Artifacts Showcase */}
         <section className="pb-16 px-4">
           <ScrollReveal>
-            <div className="relative mx-auto max-w-lg">
+            <div className="relative mx-auto max-w-2xl">
               <div className="absolute inset-0 bg-gradient-to-br from-gold/20 via-cyan-400/10 to-gold/20 rounded-2xl blur-3xl scale-110 opacity-50" />
               <Image
-                src="/images/nova-key.jpg"
-                alt="Nova Key NFC Card Collection"
-                width={600}
-                height={375}
+                src="/images/cyberpunk-camea-hero.png"
+                alt="Sacred Artifacts Collection — Breslov Caméas incluses"
+                width={700}
+                height={700}
                 className="relative rounded-2xl shadow-2xl shadow-gold/20 mx-auto"
                 priority
               />
+              <p className="text-center text-sm text-[#8A8A9A] mt-4">
+                Every kit includes authentic Breslov Caméas — handcrafted sacred amulets with the fire of Na Nach.
+              </p>
             </div>
           </ScrollReveal>
         </section>
