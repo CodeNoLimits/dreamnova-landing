@@ -1,0 +1,203 @@
+/* ═══════════════════════════════════════════
+   DREAM NOVA — SACRED THEME CSS
+   The Sacred Frequencies of Creation
+   Na Nach Nachma Nachman MeUman
+   ═══════════════════════════════════════════ */
+
+:root {
+  --gold: #D4AF37;
+  --gold-light: #F0D060;
+  --gold-glow: rgba(212, 175, 55, 0.4);
+  --neon-blue: #00D4FF;
+  --neon-blue-dim: #0099BB;
+  --neon-glow: rgba(0, 212, 255, 0.3);
+  --deep-black: #050508;
+  --dark-surface: #0A0A12;
+  --dark-card: #0E0E1A;
+  --dark-border: #1A1A2E;
+  --text-primary: #E8E6E3;
+  --text-secondary: #8A8A9A;
+  --text-muted: #5A5A6A;
+  --danger: #FF3366;
+  --danger-glow: rgba(255, 51, 102, 0.3);
+  --healing: #00FF88;
+  --healing-glow: rgba(0, 255, 136, 0.3);
+}
+
+/* Selection */
+::selection {
+  background: var(--gold);
+  color: var(--deep-black);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--deep-black); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* Sacred Background Grid */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ═══════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════ */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes particle-float {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+}
+
+/* ═══════════════════════════════════════════
+   UTILITY CLASSES
+   ═══════════════════════════════════════════ */
+.sacred-gradient {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--neon-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow-gold {
+  box-shadow: 0 0 20px var(--gold-glow), 0 0 60px rgba(212, 175, 55, 0.15);
+}
+
+.glow-blue {
+  box-shadow: 0 0 20px var(--neon-glow), 0 0 60px rgba(0, 212, 255, 0.15);
+}
+
+.glow-text-gold {
+  text-shadow: 0 0 20px var(--gold-glow);
+}
+
+.glow-text-blue {
+  text-shadow: 0 0 20px var(--neon-glow);
+}
+
+.sacred-border {
+  border: 1px solid var(--dark-border);
+  transition: border-color 0.3s;
+}
+
+.sacred-border:hover {
+  border-color: var(--gold);
+}
+
+.sacred-card {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sacred-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 0 30px var(--gold-glow);
+  transform: translateY(-4px);
+}
+
+.btn-sacred {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  font-family: var(--font-display, 'Cinzel', serif);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: 2px solid var(--gold);
+  color: var(--gold);
+  background: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.4s;
+  text-decoration: none;
+}
+
+.btn-sacred:hover {
+  background: var(--gold);
+  color: var(--deep-black);
+  box-shadow: 0 0 30px var(--gold-glow);
+}
+
+.btn-sacred-filled {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  font-family: var(--font-display, 'Cinzel', serif);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: none;
+  color: var(--deep-black);
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+  background-size: 200% auto;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.4s;
+  text-decoration: none;
+}
+
+.btn-sacred-filled:hover {
+  background-position: right center;
+  box-shadow: 0 0 40px var(--gold-glow);
+  transform: translateY(-2px);
+}
+
+/* Na Nach animated gradient */
+.na-nach-gradient {
+  background: linear-gradient(90deg, var(--gold), var(--neon-blue), var(--healing), var(--gold));
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s ease-in-out infinite;
+}

@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-gold: #D4AF37;
+  --color-gold-light: #F0D060;
+  --color-cyan-sacred: #00D4FF;
+  --color-sacred-black: #050508;
+  --color-sacred-surface: #0A0A12;
+  --color-sacred-card: #0E0E1A;
+  --color-sacred-border: #1A1A2E;
+  --color-danger: #FF3366;
+  --color-healing: #00FF88;
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.7;
+}
