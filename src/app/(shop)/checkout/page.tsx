@@ -6,6 +6,9 @@ import { PRODUCTS } from "@/lib/constants";
 import { Navbar } from "@/components/shared/navbar";
 import { Footer } from "@/components/shared/footer";
 import { useTranslation } from "@/lib/LanguageContext";
+import { formatPrice } from "@/lib/i18n";
+import { HolographicShimmer } from "@/components/shared/holographic-effects";
+import { playHover, playSacred } from "@/lib/sound-manager";
 
 type ProductKey = keyof typeof PRODUCTS;
 type ProductType = (typeof PRODUCTS)[ProductKey] & { key: string };
@@ -32,9 +35,16 @@ function ProductCard({
 }) {
   const [quantity, setQuantity] = useState(1);
   const Icon = iconMap[product.key] || Package;
+  const { t, config } = useTranslation();
+  const variant = product.key as 'standard' | 'platinum' | 'pair';
+  const localPrice = formatPrice(config.code, variant);
 
   return (
-    <div className="relative bg-gradient-to-br from-sacred-surface to-sacred-black border border-gold/20 rounded-lg p-6 hover:border-gold/50 transition-all duration-300">
+    <div
+      className="relative bg-gradient-to-br from-sacred-surface to-sacred-black border border-gold/20 rounded-lg p-6 hover:border-gold/50 transition-all duration-300 group"
+      onMouseEnter={() => playHover()}
+    >
+      <HolographicShimmer />
       <div className="absolute inset-0 rounded-lg opacity-0 hover:opacity-10 bg-gradient-to-br from-gold to-transparent transition-opacity duration-300" />
       <div className="relative z-10">
         <div className="flex items-center gap-3 mb-4">
@@ -42,7 +52,7 @@ function ProductCard({
           <h3 className="text-xl font-bold text-white">{product.name}</h3>
         </div>
         <div className="mb-2">
-          <span className="text-3xl font-bold text-gold">${product.price}</span>
+          <span className="text-3xl font-bold text-gold">{localPrice}</span>
         </div>
         <p className="text-sm text-[#8A8A9A] mb-4">{product.description}</p>
         <ul className="space-y-2 mb-6 text-sm text-gray-300">
@@ -78,14 +88,14 @@ function ProductCard({
           </div>
         </div>
         <button
-          onClick={() => onCheckout(product.slug, quantity)}
+          onClick={() => { playSacred(); onCheckout(product.slug, quantity); }}
           disabled={isLoading}
           className="w-full bg-gradient-to-r from-gold to-gold/80 hover:from-gold/90 hover:to-gold/70 disabled:opacity-50 disabled:cursor-not-allowed text-black font-bold py-3 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
         >
           {isLoading ? (
             <><Loader2 className="w-4 h-4 animate-spin" /> Creating Session...</>
           ) : (
-            <><ArrowRight className="w-4 h-4" /> Get Your Key — ${product.price}</>
+            <><ArrowRight className="w-4 h-4" /> {t('checkout.cta')} — {localPrice}</>
           )}
         </button>
       </div>
@@ -140,11 +150,10 @@ export default function CheckoutPage() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="mb-12 text-center">
           <h1 className="font-display text-4xl sm:text-5xl font-bold mb-4 sacred-gradient">
-            Nova Keys
+            {t('checkout.title')}
           </h1>
           <p className="text-lg text-[#8A8A9A] max-w-2xl mx-auto">
-            Each Nova Key unlocks a sacred journey of transformation with
-            Hafatsa wisdom and the teachings of Rabbi Nachman.
+            {t('checkout.desc')}
           </p>
         </div>
         {error && (
