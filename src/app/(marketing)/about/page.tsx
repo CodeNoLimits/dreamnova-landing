@@ -101,7 +101,7 @@ export default function AboutPage() {
               animate={{ opacity: 1 }}
               className="font-mono text-xs tracking-[0.3em] text-gold mb-6 uppercase"
             >
-              The Mission
+              {t('about.mission.label')}
             </motion.p>
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
@@ -130,10 +130,10 @@ export default function AboutPage() {
         <section className="py-8 border-y border-[#1A1A2E]">
           <div className="max-w-5xl mx-auto px-4 flex flex-wrap justify-center gap-8 md:gap-16">
             {[
-              { number: '1M', label: 'Nova Keys Target' },
-              { number: '$63M', label: 'Revenue Mission' },
-              { number: '10', label: 'Sefirot Channels' },
-              { number: '∞', label: 'Souls Touched' },
+              { number: '1M', label: t('about.stats.keys') },
+              { number: '$63M', label: t('about.stats.revenue') },
+              { number: '10', label: t('about.stats.channels') },
+              { number: '∞', label: t('about.stats.souls') },
             ].map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
                 <div className="text-center">
@@ -154,10 +154,10 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto">
             <ScrollReveal>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-center mb-4">
-                A <span className="sacred-gradient">250-Year</span> {t('about.timeline.subtitle')}
+                {t('about.timeline.title')}
               </h2>
               <p className="text-[#8A8A9A] text-center max-w-2xl mx-auto mb-16">
-                From Medzhybizh to Jerusalem, from parchment to NFC — the thread has never broken.
+                {t('about.timeline.desc')}
               </p>
             </ScrollReveal>
             <div className="space-y-0">
@@ -186,10 +186,10 @@ export default function AboutPage() {
           <div className="max-w-6xl mx-auto">
             <ScrollReveal>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-center mb-4">
-                The <span className="sacred-gradient">Strategy</span>
+                {t('about.strategy.title')} <span className="sacred-gradient">{t('about.strategy.subtitle')}</span>
               </h2>
               <p className="text-[#8A8A9A] text-center max-w-2xl mx-auto mb-16">
-                Six pillars powering the largest Hafatsa operation in Breslov history.
+                {t('about.strategy.desc')}
               </p>
             </ScrollReveal>
             <motion.div
@@ -206,8 +206,8 @@ export default function AboutPage() {
                   className="sacred-card hover:border-gold/50 transition-all duration-300"
                 >
                   <value.icon className="w-8 h-8 text-gold mb-4" />
-                  <h3 className="font-display text-lg font-bold mb-2">{value.title}</h3>
-                  <p className="text-[#8A8A9A] text-sm leading-relaxed">{value.description}</p>
+                  <h3 className="font-display text-lg font-bold mb-2">{t(value.titleKey)}</h3>
+                  <p className="text-[#8A8A9A] text-sm leading-relaxed">{t(value.descKey)}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -229,7 +229,7 @@ export default function AboutPage() {
                 />
               </div>
               <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-                Join the <span className="sacred-gradient">Mission</span>
+                <span className="sacred-gradient">{t('about.join.title')}</span>
               </h2>
               <p className="text-[#8A8A9A] max-w-xl mx-auto mb-8">
                 {t('about.join.desc')} is a step toward the Tikkun. Every scan is a soul touched.
@@ -238,11 +238,11 @@ export default function AboutPage() {
               <div className="flex flex-wrap justify-center gap-4">
                 <a href="/checkout" className="btn-sacred-filled">
                   <ArrowRight className="w-4 h-4" />
-                  Get Your Nova Key — $63
+                  {t('about.join.cta.key')}
                 </a>
                 <a href="/source-code" className="btn-sacred">
                   <BookOpen className="w-4 h-4" />
-                  Read the Research
+                  {t('about.join.cta.research')}
                 </a>
               </div>
             </ScrollReveal>

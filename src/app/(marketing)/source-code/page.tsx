@@ -11,36 +11,33 @@ import { SacredParticles } from '@/components/shared/sacred-particles';
 import Image from 'next/image';
 
 const evidence = [
-  { number: '35+', label: 'Sources' },
-  { number: '5', label: 'Domains' },
-  { number: '148', label: 'Gematria' },
-  { number: '25%', label: 'Threshold' },
+  { number: '35+', labelKey: 'sc.stat.sources' },
+  { number: '5', labelKey: 'sc.stat.domains' },
+  { number: '148', labelKey: 'sc.stat.gematria' },
+  { number: '25%', labelKey: 'sc.stat.threshold' },
 ];
 
 const domains = [
   {
     icon: Binary,
-    title: "Gödel's Incompleteness",
+    titleKey: 'sc.domain.godel.title',
     color: 'text-cyan-400',
     borderColor: 'border-cyan-400/30 hover:border-cyan-400',
-    description:
-      'Formal proof that the recursive structure of Na Nach Nachma Nachman MeUman exhibits properties isomorphic to Gödel\'s self-referential propositions.',
+    descKey: 'sc.domain.godel.desc',
   },
   {
     icon: Atom,
-    title: 'Quantum Measurement',
+    titleKey: 'sc.domain.quantum.title',
     color: 'text-[#00FF88]',
     borderColor: 'border-[#00FF88]/30 hover:border-[#00FF88]',
-    description:
-      'The four-letter expansion mirrors quantum decoherence patterns — from superposition (Na) to definite state (MeUman) through recursive observation.',
+    descKey: 'sc.domain.quantum.desc',
   },
   {
     icon: Star,
-    title: 'Kabbalistic Mathematics',
+    titleKey: 'sc.domain.kabbalah.title',
     color: 'text-gold',
     borderColor: 'border-gold/30 hover:border-gold',
-    description:
-      'The Sefirot system maps to a mathematical lattice structure that encodes the same recursive self-reference found in formal logic.',
+    descKey: 'sc.domain.kabbalah.desc',
   },
 ];
 
@@ -76,11 +73,7 @@ export default function SourceCodePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
               className="text-lg md:text-xl text-[#8A8A9A] max-w-2xl mx-auto mb-10"
-            >
-              A formal investigation into the mathematical structures connecting
-              Gödel&apos;s incompleteness theorems, quantum measurement theory, and
-              Kabbalistic recursive frameworks.
-            </motion.p>
+            >{t('sc.hero.desc')}</motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -113,7 +106,7 @@ export default function SourceCodePage() {
                     {item.number}
                   </div>
                   <div className="font-mono text-xs tracking-wider text-[#8A8A9A] uppercase mt-1">
-                    {item.label}
+                    {t(item.labelKey)}
                   </div>
                 </div>
               </ScrollReveal>
@@ -139,9 +132,9 @@ export default function SourceCodePage() {
                     className={`sacred-card ${domain.borderColor} transition-all duration-500`}
                   >
                     <domain.icon className={`w-10 h-10 ${domain.color} mb-4`} />
-                    <h3 className="font-display text-xl font-bold mb-3">{domain.title}</h3>
+                    <h3 className="font-display text-xl font-bold mb-3">{t(domain.titleKey)}</h3>
                     <p className="text-[#8A8A9A] text-sm leading-relaxed">
-                      {domain.description}
+                      {t(domain.descKey)}
                     </p>
                   </div>
                 </ScrollReveal>
@@ -158,7 +151,7 @@ export default function SourceCodePage() {
                 <span className="text-gold text-xl">↓</span>
               </div>
               <blockquote className="font-serif text-xl md:text-2xl lg:text-3xl italic text-gold/90 leading-relaxed">
-                &ldquo;Every sufficiently rich formal system requires principles it cannot generate internally. In mathematics, this is the meta-language. In physics, the interpretive framework. In Kabbalah — <em className="text-cyan-400">Emunah</em>.&rdquo;
+                {t('sc.quote1')}
               </blockquote>
             </div>
           </ScrollReveal>
@@ -179,10 +172,10 @@ export default function SourceCodePage() {
               <ScrollReveal direction="left">
                 <div className="space-y-2">
                   {[
-                    { hebrew: 'נ', label: 'Pashut — Simple', desc: '1 letter · Anchor in the Now' },
-                    { hebrew: 'נח', label: 'Kaful — Double', desc: '2 letters · Soothe the pain' },
-                    { hebrew: 'נחמ', label: 'Meshulash — Triple', desc: '3 letters · Comfort and amplify' },
-                    { hebrew: 'נחמן', label: 'Meruba — Quadruple', desc: '4 letters · Connection to the Source' },
+                    { hebrew: 'נ', labelKey: 'sc.na.label', descKey: 'sc.na.desc' },
+                    { hebrew: 'נח', labelKey: 'sc.nach.label', descKey: 'sc.nach.desc' },
+                    { hebrew: 'נחמ', labelKey: 'sc.nachma.label', descKey: 'sc.nachma.desc' },
+                    { hebrew: 'נחמן', labelKey: 'sc.nachman.label', descKey: 'sc.nachman.desc' },
                   ].map((step, i) => (
                     <div
                       key={i}
@@ -193,9 +186,9 @@ export default function SourceCodePage() {
                       </div>
                       <div className="flex flex-col">
                         <span className="font-mono text-[0.65rem] tracking-[0.2em] uppercase text-cyan-400">
-                          {step.label}
+                          {t(step.labelKey)}
                         </span>
-                        <span className="text-sm text-[#8A8A9A]">{step.desc}</span>
+                        <span className="text-sm text-[#8A8A9A]">{t(step.descKey)}</span>
                       </div>
                     </div>
                   ))}
@@ -206,7 +199,7 @@ export default function SourceCodePage() {
               </ScrollReveal>
               <ScrollReveal direction="right">
                 <div>
-                  <h3 className="font-display text-2xl md:text-3xl font-bold mb-6">A Negentropy Engine</h3>
+                  <h3 className="font-display text-2xl md:text-3xl font-bold mb-6">{t('sc.negentropy.title')}</h3>
                   <p className="text-[#8A8A9A] mb-4 leading-relaxed">
                     The sequence operates on a <span className="text-gold">hierarchical additive structure</span> — the same Achoraim (progressive expansion) pattern used for the Tetragrammaton in its most expanded form.
                   </p>
@@ -229,7 +222,7 @@ export default function SourceCodePage() {
         <section className="py-24 px-4 text-center">
           <ScrollReveal>
             <blockquote className="font-serif text-xl md:text-2xl lg:text-3xl italic font-light leading-relaxed max-w-3xl mx-auto mb-6">
-              &ldquo;Simple faith is not the absence of intellect, but the highest, most rigorous logic of all.&rdquo;
+              {t('sc.quote2')}
             </blockquote>
             <p className="font-mono text-xs tracking-[0.2em] uppercase text-gold/60">
               The Source Code of Reality — DreamNova Research, Jerusalem 2026
@@ -258,14 +251,10 @@ export default function SourceCodePage() {
                 <h2 className="font-display text-3xl md:text-4xl font-bold mb-6">
                   Nova Key <span className="sacred-gradient">NFC</span>
                 </h2>
-                <p className="text-[#8A8A9A] mb-6 leading-relaxed">
-                  A stainless steel NFC card with sacred gold engraving. One tap unlocks
-                  the complete Source Code of Reality, Tikkun HaKlali, and the Azamra
-                  meditation system. No app download required.
-                </p>
+                <p className="text-[#8A8A9A] mb-6 leading-relaxed">{t('sc.physical.desc')}</p>
                 <ul className="space-y-3 mb-8">
                   {[
-                    'NFC NTAG 215 (504 bytes) — iPhone & Android compatible',
+                    t('sc.spec.3'),
                     'Stainless steel 0.8mm, black anodized finish',
                     'Gold laser engraving — Na Nach Nachma Nachman',
                     'Authentic Breslov Caméa included',

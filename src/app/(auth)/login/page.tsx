@@ -5,8 +5,10 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Mail, Lock, ArrowRight, Loader2, Chrome } from 'lucide-react';
 import { createClient } from '@/lib/supabase/client';
+import { useTranslation } from '@/lib/LanguageContext';
 
 export default function LoginPage() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -32,7 +34,7 @@ export default function LoginPage() {
       // Redirect to dashboard on success
       window.location.href = '/dashboard/overview';
     } catch (err) {
-      setError('An unexpected error occurred. Please try again.');
+      setError(t('auth.login.error.generic'));
       console.error(err);
     } finally {
       setIsLoading(false);
@@ -56,7 +58,7 @@ export default function LoginPage() {
         setError(googleError.message);
       }
     } catch (err) {
-      setError('Failed to sign in with Google. Please try again.');
+      setError(t('auth.login.error.google'));
       console.error(err);
     } finally {
       setIsGoogleLoading(false);
@@ -98,7 +100,7 @@ export default function LoginPage() {
             <span className="text-cyan">NOVA</span>
           </h1>
           <p className="text-light-gray font-display text-sm tracking-wider uppercase">
-            Welcome Back
+            {t('auth.login.title')}
           </p>
         </motion.div>
 
@@ -121,7 +123,7 @@ export default function LoginPage() {
           {/* Email Input */}
           <motion.div variants={itemVariants} className="mb-5">
             <label htmlFor="email" className="block text-light-gray text-sm font-semibold mb-2">
-              Email Address
+              {t('auth.login.email.label')}
             </label>
             <div className="relative">
               <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gold/50" />
@@ -130,7 +132,7 @@ export default function LoginPage() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="hello@dreamnova.com"
+                placeholder={t('auth.login.email.placeholder')}
                 required
                 disabled={isLoading}
                 className="w-full bg-sacred-black border border-gold/20 rounded-lg pl-12 pr-4 py-3 text-light-gray placeholder-dark-gray focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 transition-all disabled:opacity-50"
@@ -141,7 +143,7 @@ export default function LoginPage() {
           {/* Password Input */}
           <motion.div variants={itemVariants} className="mb-6">
             <label htmlFor="password" className="block text-light-gray text-sm font-semibold mb-2">
-              Password
+              {t('auth.login.password.label')}
             </label>
             <div className="relative">
               <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gold/50" />
@@ -150,7 +152,7 @@ export default function LoginPage() {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••"
+                placeholder={t('auth.login.password.placeholder')}
                 required
                 disabled={isLoading}
                 className="w-full bg-sacred-black border border-gold/20 rounded-lg pl-12 pr-4 py-3 text-light-gray placeholder-dark-gray focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 transition-all disabled:opacity-50"
@@ -168,11 +170,11 @@ export default function LoginPage() {
             {isLoading ? (
               <>
                 <Loader2 className="w-5 h-5 animate-spin" />
-                Signing In...
+                {t('auth.login.button.signing')}
               </>
             ) : (
               <>
-                Sign In
+                {t('auth.login.button.signin')}
                 <ArrowRight className="w-4 h-4" />
               </>
             )}
@@ -181,7 +183,7 @@ export default function LoginPage() {
           {/* Divider */}
           <motion.div variants={itemVariants} className="flex items-center gap-4 my-6">
             <div className="flex-1 h-px bg-gold/20"></div>
-            <span className="text-dark-gray text-xs font-mono uppercase tracking-wider">Or</span>
+            <span className="text-dark-gray text-xs font-mono uppercase tracking-wider">{t('auth.login.divider')}</span>
             <div className="flex-1 h-px bg-gold/20"></div>
           </motion.div>
 
@@ -195,12 +197,12 @@ export default function LoginPage() {
             {isGoogleLoading ? (
               <>
                 <Loader2 className="w-5 h-5 animate-spin" />
-                Connecting...
+                {t('auth.login.google.connecting')}
               </>
             ) : (
               <>
                 <Chrome className="w-5 h-5" />
-                Sign In with Google
+                {t('auth.login.google.button')}
               </>
             )}
           </motion.button>
@@ -209,17 +211,17 @@ export default function LoginPage() {
         {/* Footer Links */}
         <motion.div variants={itemVariants} className="text-center mt-8">
           <p className="text-dark-gray text-sm">
-            Don&apos;t have an account?{' '}
+            {t('auth.login.footer.question')}{' '}
             <Link
               href="/register"
               className="text-gold hover:text-gold/80 font-semibold transition-colors"
             >
-              Create one
+              {t('auth.login.footer.create')}
             </Link>
           </p>
           <p className="text-dark-gray text-xs mt-4">
             <a href="/" className="text-gold/60 hover:text-gold transition-colors">
-              Back to Home
+              {t('auth.login.footer.home')}
             </a>
           </p>
         </motion.div>

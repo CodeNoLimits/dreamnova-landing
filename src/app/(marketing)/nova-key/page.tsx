@@ -41,6 +41,19 @@ const featureVariants = {
 
 export default function NovaKeyPage() {
   const { t } = useTranslation();
+
+  const features = [
+    { icon: '⚛️', titleKey: 'nova.feat.nfc.title', descKey: 'nova.feat.nfc.desc' },
+    { icon: '✨', titleKey: 'nova.feat.geometry.title', descKey: 'nova.feat.geometry.desc' },
+    { icon: '🛡️', titleKey: 'nova.feat.steel.title', descKey: 'nova.feat.steel.desc' },
+  ];
+
+  const steps = [
+    { step: '01', titleKey: 'nova.step.scan.title', descKey: 'nova.step.scan.desc', color: 'cyan' },
+    { step: '02', titleKey: 'nova.step.unlock.title', descKey: 'nova.step.unlock.desc', color: 'yellow' },
+    { step: '03', titleKey: 'nova.step.transform.title', descKey: 'nova.step.transform.desc', color: 'cyan' },
+  ];
+
   return (
     <>
       <Navbar />
@@ -67,21 +80,19 @@ export default function NovaKeyPage() {
                   variants={itemVariants}
                   className="text-cyan-400 font-semibold text-lg uppercase tracking-widest"
                 >
-                  The Sacred Key to Transformation
+                  {t('nova.hero.label')}
                 </motion.p>
                 <motion.h1
                   variants={itemVariants}
                   className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-[#D4AF37] via-cyan-300 to-[#D4AF37] bg-clip-text text-transparent leading-tight"
                 >
-                  Nova Key
+                  {t('nova.hero.title1')}
                 </motion.h1>
                 <motion.p
                   variants={itemVariants}
                   className="text-xl text-gray-300 leading-relaxed"
                 >
-                  Unlock the power of quantum consciousness. The Nova Key is more than
-                  a device—it's a portal to your highest potential. Tap into sacred
-                  geometry and advanced NFC technology to transform your reality.
+                  {t('nova.hero.desc')}
                 </motion.p>
               </div>
 
@@ -90,18 +101,18 @@ export default function NovaKeyPage() {
                   <SacredButton>
                     <span className="flex items-center gap-2">
                       <Zap className="w-5 h-5" />
-                      Get Nova Key
+                      {t('nova.cta.title')}
                     </span>
                   </SacredButton>
                 </Link>
                 <button className="px-8 py-3 border-2 border-cyan-400 text-cyan-400 rounded-lg hover:bg-cyan-400/10 transition-all duration-300 font-semibold">
-                  Learn More
+                  {t('nova.cta.learn')}
                 </button>
               </motion.div>
 
               <motion.div variants={itemVariants} className="flex items-center gap-2 text-gray-400">
                 <Shield className="w-5 h-5 text-[#D4AF37]" />
-                <span>30-day satisfaction guarantee • Lifetime activation</span>
+                <span>{t('nova.guarantee')}</span>
               </motion.div>
             </motion.div>
 
@@ -125,7 +136,7 @@ export default function NovaKeyPage() {
               >
                 <Image
                   src="/images/nova-key.jpg"
-                  alt="Nova Key — Carte NFC sacrée Na Nach Nachma Nachman MeUman"
+                  alt="Nova Key — NFC Sacred Card"
                   width={600}
                   height={375}
                   className="rounded-2xl shadow-2xl shadow-[#D4AF37]/30"
@@ -147,35 +158,15 @@ export default function NovaKeyPage() {
           <div className="max-w-6xl mx-auto">
             <motion.div variants={itemVariants} className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                Engineered for <span className="text-[#D4AF37]">Transformation</span>
+                {t('nova.features.title')}
               </h2>
               <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                Every detail of the Nova Key is designed to amplify your connection to
-                quantum consciousness and unlock your potential.
+                {t('nova.features.subtitle')}
               </p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: '⚛️',
-                  title: 'NFC Technology',
-                  description:
-                    'Advanced near-field communication for seamless activation and quantum resonance tuning.',
-                },
-                {
-                  icon: '✨',
-                  title: 'Sacred Geometry',
-                  description:
-                    'Embedded with ancient geometric patterns that align with universal frequencies.',
-                },
-                {
-                  icon: '🛡️',
-                  title: 'Stainless Steel',
-                  description:
-                    'Durable aerospace-grade materials built to last a lifetime of transformations.',
-                },
-              ].map((feature, index) => (
+              {features.map((feature, index) => (
                 <motion.div
                   key={index}
                   variants={featureVariants}
@@ -184,8 +175,8 @@ export default function NovaKeyPage() {
                   <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">{feature.description}</p>
+                  <h3 className="text-xl font-bold text-white mb-3">{t(feature.titleKey)}</h3>
+                  <p className="text-gray-400 leading-relaxed">{t(feature.descKey)}</p>
                 </motion.div>
               ))}
             </div>
@@ -203,10 +194,10 @@ export default function NovaKeyPage() {
           <div className="max-w-6xl mx-auto">
             <motion.div variants={itemVariants} className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                How It <span className="text-cyan-400">Works</span>
+                {t('nova.how.title')}
               </h2>
               <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                Three simple steps to unlock your quantum consciousness potential
+                {t('nova.how.subtitle')}
               </p>
             </motion.div>
 
@@ -214,29 +205,7 @@ export default function NovaKeyPage() {
               {/* Connection Lines */}
               <div className="absolute top-32 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent hidden md:block" />
 
-              {[
-                {
-                  step: '01',
-                  title: 'Scan',
-                  description:
-                    'Use your smartphone or Nova device to scan the Nova Key. The NFC chip activates instantly.',
-                  color: 'cyan',
-                },
-                {
-                  step: '02',
-                  title: 'Unlock',
-                  description:
-                    'Access your personalized quantum frequency library. Unlock exclusive transformational content.',
-                  color: 'yellow',
-                },
-                {
-                  step: '03',
-                  title: 'Transform',
-                  description:
-                    'Experience the power of sacred geometry and quantum consciousness. Start your transformation journey.',
-                  color: 'cyan',
-                },
-              ].map((item, index) => (
+              {steps.map((item, index) => (
                 <motion.div
                   key={index}
                   variants={itemVariants}
@@ -250,8 +219,8 @@ export default function NovaKeyPage() {
                       {item.step}
                     </span>
                   </motion.div>
-                  <h3 className="text-2xl font-bold text-white mb-3">{item.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">{item.description}</p>
+                  <h3 className="text-2xl font-bold text-white mb-3">{t(item.titleKey)}</h3>
+                  <p className="text-gray-400 leading-relaxed">{t(item.descKey)}</p>
                 </motion.div>
               ))}
             </div>
@@ -268,17 +237,17 @@ export default function NovaKeyPage() {
         >
           <div className="max-w-4xl mx-auto text-center">
             <motion.h2 variants={itemVariants} className="text-5xl font-bold text-white mb-6">
-              Ready to Transform?
+              {t('nova.final.title')}
             </motion.h2>
             <motion.p variants={itemVariants} className="text-xl text-gray-300 mb-8">
-              Join thousands of quantum pioneers unlocking their highest potential with the Nova Key.
+              {t('nova.final.desc')}
             </motion.p>
             <motion.div variants={itemVariants}>
               <Link href="/checkout">
                 <SacredButton className="px-12 py-4 text-lg">
                   <span className="flex items-center gap-2">
                     <Zap className="w-6 h-6" />
-                    Unlock Your Potential
+                    {t('nova.final.cta')}
                   </span>
                 </SacredButton>
               </Link>

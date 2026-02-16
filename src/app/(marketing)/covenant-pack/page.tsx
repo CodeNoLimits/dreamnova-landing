@@ -62,13 +62,13 @@ const products = [
   },
   {
     key: 'pair',
-    name: 'Nova Key Pair',
+    nameKey: 'covenant.pair.name',
     price: 99,
     icon: Users,
     popular: false,
     color: 'border-[#00FF88]',
     glowColor: 'shadow-[#00FF88]/20',
-    description: 'Two keys — masculine & feminine designs. Share the mission with someone you love.',
+    descKey: 'covenant.pair.desc',
     includes: [
       'Two Nova Key NFC Cards',
       'Masculine & Feminine designs',
@@ -166,17 +166,17 @@ export default function CovenantPackPage() {
                   )}
                   <div className="flex items-center gap-3 mb-4">
                     <product.icon className={`w-6 h-6 ${product.key === 'standard' ? 'text-gold' : product.key === 'platinum' ? 'text-cyan-400' : 'text-[#00FF88]'}`} />
-                    <h3 className="font-display text-xl font-bold">{t(product.nameKey || product.name)}</h3>
+                    <h3 className="font-display text-xl font-bold">{t(product.nameKey)}</h3>
                   </div>
                   <div className="mb-4">
                     <span className="text-4xl font-bold sacred-gradient">${product.price}</span>
-                    <span className="text-[#5A5A6A] ml-2 text-sm">one-time</span>
+                    <span className="text-[#5A5A6A] ml-2 text-sm">{t('covenant.onetime')}</span>
                   </div>
-                  <p className="text-[#8A8A9A] text-sm mb-6 leading-relaxed">{t(product.descKey || product.description)}</p>
+                  <p className="text-[#8A8A9A] text-sm mb-6 leading-relaxed">{t(product.descKey)}</p>
 
                   {/* What's Included */}
                   <div className="mb-6 flex-1">
-                    <p className="font-mono text-xs tracking-wider text-[#5A5A6A] uppercase mb-3">Includes</p>
+                    <p className="font-mono text-xs tracking-wider text-[#5A5A6A] uppercase mb-3">{t('covenant.includes')}</p>
                     <ul className="space-y-2">
                       {product.includes.map((item, j) => (
                         <li key={j} className="flex items-start gap-2 text-sm">
@@ -210,7 +210,7 @@ export default function CovenantPackPage() {
                     }`}
                   >
                     <ArrowRight className="w-4 h-4" />
-                    Get {t(product.nameKey || product.name)} — ${product.price}
+                    Get {t(product.nameKey)} — ${product.price}
                   </a>
                 </div>
               </ScrollReveal>

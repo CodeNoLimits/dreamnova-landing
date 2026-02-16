@@ -5,8 +5,10 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Mail, Lock, User, ArrowRight, Loader2, Chrome } from 'lucide-react';
 import { createClient } from '@/lib/supabase/client';
+import { useTranslation } from '@/lib/LanguageContext';
 
 export default function RegisterPage() {
+  const { t } = useTranslation();
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -19,12 +21,12 @@ export default function RegisterPage() {
     setError(null);
 
     if (password !== confirmPassword) {
-      setError('Passwords do not match.');
+      setError(t('auth.register.error.nomatch'));
       return;
     }
 
     if (password.length < 8) {
-      setError('Password must be at least 8 characters long.');
+      setError(t('auth.register.error.minlength'));
       return;
     }
 
@@ -49,11 +51,11 @@ export default function RegisterPage() {
 
       // Show success message and redirect after a delay
       alert(
-        'Account created! Please check your email to verify your account before signing in.'
+        t('auth.register.success.message')
       );
       window.location.href = '/login';
     } catch (err) {
-      setError('An unexpected error occurred. Please try again.');
+      setError(t('auth.register.error.generic'));
       console.error(err);
     } finally {
       setIsLoading(false);
@@ -77,7 +79,7 @@ export default function RegisterPage() {
         setError(googleError.message);
       }
     } catch (err) {
-      setError('Failed to sign up with Google. Please try again.');
+      setError(t('auth.register.error.google'));
       console.error(err);
     } finally {
       setIsGoogleLoading(false);
@@ -119,7 +121,7 @@ export default function RegisterPage() {
             <span className="text-cyan">NOVA</span>
           </h1>
           <p className="text-light-gray font-display text-sm tracking-wider uppercase">
-            Join The Journey
+            {t('auth.register.title')}
           </p>
         </motion.div>
 
@@ -142,7 +144,7 @@ export default function RegisterPage() {
           {/* Full Name Input */}
           <motion.div variants={itemVariants} className="mb-5">
             <label htmlFor="fullName" className="block text-light-gray text-sm font-semibold mb-2">
-              Full Name
+              {t('auth.register.name.label')}
             </label>
             <div className="relative">
               <User className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gold/50" />
@@ -151,7 +153,7 @@ export default function RegisterPage() {
                 type="text"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
-                placeholder="Your Full Name"
+                placeholder={t('auth.register.name.placeholder')}
                 required
                 disabled={isLoading}
                 className="w-full bg-sacred-black border border-gold/20 rounded-lg pl-12 pr-4 py-3 text-light-gray placeholder-dark-gray focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 transition-all disabled:opacity-50"
@@ -162,7 +164,7 @@ export default function RegisterPage() {
           {/* Email Input */}
           <motion.div variants={itemVariants} className="mb-5">
             <label htmlFor="email" className="block text-light-gray text-sm font-semibold mb-2">
-              Email Address
+              {t('auth.register.email.label')}
             </label>
             <div className="relative">
               <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gold/50" />
@@ -171,7 +173,7 @@ export default function RegisterPage() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="hello@dreamnova.com"
+                placeholder={t('auth.register.email.placeholder')}
                 required
                 disabled={isLoading}
                 className="w-full bg-sacred-black border border-gold/20 rounded-lg pl-12 pr-4 py-3 text-light-gray placeholder-dark-gray focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 transition-all disabled:opacity-50"
@@ -197,13 +199,13 @@ export default function RegisterPage() {
                 className="w-full bg-sacred-black border border-gold/20 rounded-lg pl-12 pr-4 py-3 text-light-gray placeholder-dark-gray focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 transition-all disabled:opacity-50"
               />
             </div>
-            <p className="text-dark-gray text-xs mt-1">At least 8 characters</p>
+            <p className="text-dark-gray text-xs mt-1">{t('auth.register.password.hint')}</p>
           </motion.div>
 
-          {/* Confirm Password Input */}
+          {/* {t('auth.register.confirm.label')} Input */}
           <motion.div variants={itemVariants} className="mb-6">
             <label htmlFor="confirmPassword" className="block text-light-gray text-sm font-semibold mb-2">
-              Confirm Password
+              {t('auth.register.confirm.label')}
             </label>
             <div className="relative">
               <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gold/50" />
@@ -230,11 +232,11 @@ export default function RegisterPage() {
             {isLoading ? (
               <>
                 <Loader2 className="w-5 h-5 animate-spin" />
-                Creating Account...
+                {t('auth.register.button.creating')}
               </>
             ) : (
               <>
-                Create Account
+                {t('auth.register.button.create')}
                 <ArrowRight className="w-4 h-4" />
               </>
             )}
@@ -243,7 +245,7 @@ export default function RegisterPage() {
           {/* Divider */}
           <motion.div variants={itemVariants} className="flex items-center gap-4 my-6">
             <div className="flex-1 h-px bg-gold/20"></div>
-            <span className="text-dark-gray text-xs font-mono uppercase tracking-wider">Or</span>
+            <span className="text-dark-gray text-xs font-mono uppercase tracking-wider">{t('auth.register.divider')}</span>
             <div className="flex-1 h-px bg-gold/20"></div>
           </motion.div>
 
@@ -257,12 +259,12 @@ export default function RegisterPage() {
             {isGoogleLoading ? (
               <>
                 <Loader2 className="w-5 h-5 animate-spin" />
-                Connecting...
+                {t('auth.register.google.connecting')}
               </>
             ) : (
               <>
                 <Chrome className="w-5 h-5" />
-                Sign Up with Google
+                {t('auth.register.google.button')}
               </>
             )}
           </motion.button>
@@ -271,17 +273,17 @@ export default function RegisterPage() {
         {/* Footer Links */}
         <motion.div variants={itemVariants} className="text-center mt-8">
           <p className="text-dark-gray text-sm">
-            Already have an account?{' '}
+            {t('auth.register.footer.question')}{' '}
             <Link
               href="/login"
               className="text-gold hover:text-gold/80 font-semibold transition-colors"
             >
-              Sign in
+              {t('auth.register.footer.signin')}
             </Link>
           </p>
           <p className="text-dark-gray text-xs mt-4">
             <a href="/" className="text-gold/60 hover:text-gold transition-colors">
-              Back to Home
+              {t('auth.register.footer.home')}
             </a>
           </p>
         </motion.div>
