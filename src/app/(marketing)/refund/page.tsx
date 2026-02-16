@@ -1,11 +1,14 @@
 'use client';
 
+import { useTranslation } from '@/lib/LanguageContext';
+
 import { Navbar } from '@/components/shared/navbar';
 import { Footer } from '@/components/shared/footer';
 import { motion } from 'framer-motion';
 import { CheckCircle, AlertCircle, Clock, Package } from 'lucide-react';
 
 export default function RefundPage() {
+  const { t } = useTranslation();
   const sections = [
     {
       id: 'overview',

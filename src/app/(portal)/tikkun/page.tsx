@@ -15,6 +15,7 @@ const PSALMS = [
 ];
 
 export default function TikkumPage() {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-sacred-black text-white px-4 py-12">
       <div className="max-w-4xl mx-auto">

@@ -1,5 +1,7 @@
 'use client';
 
+import { useTranslation } from '@/lib/LanguageContext';
+
 import { Navbar } from '@/components/shared/navbar';
 import { Footer } from '@/components/shared/footer';
 import { SacredButton } from '@/components/shared/sacred-button';
@@ -38,6 +40,7 @@ const featureVariants = {
 };
 
 export default function NovaKeyPage() {
+  const { t } = useTranslation();
   return (
     <>
       <Navbar />

@@ -145,6 +145,7 @@ function KeyCard({ novaKey }: { novaKey: NovaKey }) {
 }
 
 export default function NFCPage() {
+  const { t } = useTranslation();
   const [showActivateForm, setShowActivateForm] = useState(false);
   const activeKeys = mockNovaKeys.filter((k) => k.status === "active");
   const totalScans = mockNovaKeys.reduce((sum, k) => sum + k.scanCount, 0);

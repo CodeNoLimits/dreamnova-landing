@@ -80,6 +80,7 @@ function StatusBadge({ status }: { status: Order["status"] }) {
 }
 
 export default function OrdersPage() {
+  const { t } = useTranslation();
   const [selectedOrder, setSelectedOrder] = useState<string | null>(null);
 
   const deliveredCount = mockOrders.filter(

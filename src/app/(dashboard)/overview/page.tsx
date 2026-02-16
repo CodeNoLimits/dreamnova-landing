@@ -23,6 +23,7 @@ function StatCard({ icon, label, value, change }: StatCardProps) {
 }
 
 export default function DashboardPage() {
+  const { t } = useTranslation();
   const stats = [
     {
       icon: <BarChart3 className="w-6 h-6" />,

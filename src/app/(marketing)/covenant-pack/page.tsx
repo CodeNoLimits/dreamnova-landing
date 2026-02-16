@@ -1,5 +1,7 @@
 'use client';
 
+import { useTranslation } from '@/lib/LanguageContext';
+
 import { motion } from 'framer-motion';
 import { Navbar } from '@/components/shared/navbar';
 import { Footer } from '@/components/shared/footer';
@@ -86,6 +88,7 @@ const products = [
 ];
 
 export default function CovenantPackPage() {
+  const { t } = useTranslation();
   return (
     <>
       <Navbar />

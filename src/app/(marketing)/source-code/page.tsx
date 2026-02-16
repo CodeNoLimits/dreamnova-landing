@@ -1,5 +1,7 @@
 'use client';
 
+import { useTranslation } from '@/lib/LanguageContext';
+
 import { motion } from 'framer-motion';
 import { Download, ExternalLink, BookOpen, Atom, Binary, Star, ArrowRight } from 'lucide-react';
 import { Navbar } from '@/components/shared/navbar';
@@ -43,6 +45,7 @@ const domains = [
 ];
 
 export default function SourceCodePage() {
+  const { t } = useTranslation();
   return (
     <>
       <Navbar />

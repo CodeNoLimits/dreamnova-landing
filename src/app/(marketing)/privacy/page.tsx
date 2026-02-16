@@ -1,10 +1,13 @@
 'use client';
 
+import { useTranslation } from '@/lib/LanguageContext';
+
 import { Navbar } from '@/components/shared/navbar';
 import { Footer } from '@/components/shared/footer';
 import { motion } from 'framer-motion';
 
 export default function PrivacyPage() {
+  const { t } = useTranslation();
   const sections = [
     {
       id: 'introduction',

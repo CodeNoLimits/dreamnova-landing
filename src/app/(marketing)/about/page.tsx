@@ -1,5 +1,7 @@
 'use client';
 
+import { useTranslation } from '@/lib/LanguageContext';
+
 import { motion } from 'framer-motion';
 import { Navbar } from '@/components/shared/navbar';
 import { Footer } from '@/components/shared/footer';
@@ -75,6 +77,7 @@ const itemVariants = {
 };
 
 export default function AboutPage() {
+  const { t } = useTranslation();
   return (
     <>
       <Navbar />

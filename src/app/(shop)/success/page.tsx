@@ -4,6 +4,7 @@ import { Navbar } from "@/components/shared/navbar";
 import { Footer } from "@/components/shared/footer";
 
 export default function SuccessPage() {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-sacred-black text-white flex flex-col">
       <Navbar />
