@@ -99,6 +99,15 @@ const translations = {
     // Footer
     'footer.mission': 'Mission: 63M$ de Hafatsa',
     'footer.rights': '© 2026 Dream Nova. כל הזכויות שמורות.',
+    'footer.description': 'Débloquez les mystères de l\'existence à travers l\'architecture sacrée de la conscience.',
+    'footer.links.title': 'Liens Rapides',
+    'footer.newsletter.title': 'Rejoignez le Voyage',
+    'footer.newsletter.placeholder': 'Votre email',
+    'footer.newsletter.button': 'S\'abonner',
+    'footer.newsletter.success': 'Bienvenue dans le voyage!',
+    'footer.newsletter.error': 'Une erreur s\'est produite. Réessayez.',
+    'footer.copyright': '© 2026 Dream Nova — Jérusalem, Israël',
+    'footer.attribution': 'Créé avec ♥ pour la Mission Hafatsa',
   },
   en: {
     'nav.problem': 'The Problem',
