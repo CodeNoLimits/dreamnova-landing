@@ -3,8 +3,10 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Mail, Heart, ArrowRight } from 'lucide-react';
+import { useTranslation } from '@/lib/LanguageContext';
 
 export function Footer() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -14,7 +16,6 @@ export function Footer() {
     setIsSubmitting(true);
 
     try {
-      // TODO: Replace with actual newsletter endpoint
       await new Promise((resolve) => setTimeout(resolve, 1000));
       setSubmitStatus('success');
       setEmail('');
@@ -41,54 +42,60 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-light-gray text-sm leading-relaxed max-w-xs">
-              Unlock the mysteries of existence through the sacred architecture of consciousness.
+              {t('footer.description')}
             </p>
           </div>
 
           {/* Links Column */}
           <div className="flex flex-col gap-6">
             <h3 className="font-display text-gold uppercase tracking-wider text-sm font-semibold">
-              Quick Links
+              {t('footer.links.title')}
             </h3>
             <nav className="flex flex-col gap-3">
               <a
                 href="#entropy"
                 className="text-light-gray hover:text-gold transition-colors duration-300 text-sm"
               >
-                L'Entropie
+                {t('nav.problem')}
               </a>
               <a
                 href="#solution"
                 className="text-light-gray hover:text-gold transition-colors duration-300 text-sm"
               >
-                Nova-Tam
+                {t('nav.solution')}
               </a>
               <a
                 href="#pricing"
                 className="text-light-gray hover:text-gold transition-colors duration-300 text-sm"
               >
-                Le Modèle 63
+                {t('nav.pricing')}
               </a>
               <a
                 href="#manifesto"
                 className="text-light-gray hover:text-gold transition-colors duration-300 text-sm"
               >
-                Tikkun
+                {t('nav.tikkun')}
               </a>
+              <Link
+                href="/accessories"
+                className="text-light-gray hover:text-gold transition-colors duration-300 text-sm"
+              >
+                {t('acc.title')}
+              </Link>
             </nav>
           </div>
 
           {/* Newsletter Column */}
           <div className="flex flex-col gap-4">
             <h3 className="font-display text-gold uppercase tracking-wider text-sm font-semibold">
-              Join the Journey
+              {t('footer.newsletter.title')}
             </h3>
             <form onSubmit={handleSubscribe} className="flex flex-col gap-3">
               <div className="relative">
                 <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gold/50" />
                 <input
                   type="email"
-                  placeholder="Your email"
+                  placeholder={t('footer.newsletter.placeholder')}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -100,14 +107,14 @@ export function Footer() {
                 disabled={isSubmitting}
                 className="flex items-center justify-center gap-2 bg-gradient-to-r from-gold to-gold/80 text-sacred-black font-display font-semibold uppercase tracking-wider px-4 py-2.5 rounded-lg hover:shadow-lg hover:shadow-gold/50 transition-all duration-300 disabled:opacity-50 text-sm"
               >
-                Subscribe
+                {t('footer.newsletter.button')}
                 <ArrowRight className="w-4 h-4" />
               </button>
               {submitStatus === 'success' && (
-                <p className="text-gold text-xs">Welcome to the journey!</p>
+                <p className="text-gold text-xs">{t('footer.newsletter.success')}</p>
               )}
               {submitStatus === 'error' && (
-                <p className="text-red-500 text-xs">Something went wrong. Try again.</p>
+                <p className="text-red-500 text-xs">{t('footer.newsletter.error')}</p>
               )}
             </form>
           </div>
@@ -119,12 +126,10 @@ export function Footer() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-dark-gray text-xs text-center md:text-left">
-              © 2026 Dream Nova — Jerusalem, Israel
+              {t('footer.copyright')}
             </p>
             <div className="flex items-center gap-2 text-dark-gray text-xs">
-              Built with
-              <Heart className="w-3 h-3 text-gold" />
-              for the Hafatsa Mission
+              {t('footer.attribution')}
             </div>
           </div>
         </div>

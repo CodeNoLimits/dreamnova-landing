@@ -1,13 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const manifestoLines = [
-  "Nous ne vendons pas un produit.",
-  "Nous allumons un feu.",
-  "Chaque Nova Key qui quitte Jérusalem porte en elle 250 ans de flamme — de Rabbi Nachman au Saba, du Petek à votre poche.",
-  "Quand vous scannez votre carte, vous ne 'consommez' pas du contenu spirituel. Vous activez un circuit ancien. Vous devenez un maillon de la chaîne.",
-];
+import { useTranslation } from "@/lib/LanguageContext";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -48,6 +42,15 @@ const naGlowVariants = {
 };
 
 export function ManifestoSection() {
+  const { t } = useTranslation();
+
+  const manifestoLines = [
+    t('manifesto.line1'),
+    t('manifesto.line2'),
+    t('manifesto.line3'),
+    t('manifesto.line4'),
+  ];
+
   return (
     <section
       id="manifesto"
@@ -65,7 +68,7 @@ export function ManifestoSection() {
           viewport={{ once: true }}
           className="font-display text-5xl md:text-7xl font-bold text-center text-gold mb-12 md:mb-16 tracking-wide"
         >
-          TIKKUN
+          {t('manifesto.title')}
         </motion.h2>
 
         {/* Manifesto Text */}
@@ -106,7 +109,7 @@ export function ManifestoSection() {
           viewport={{ once: true }}
           className="text-center text-lg md:text-xl text-gold italic mb-12 md:mb-16"
         >
-          Ein Ye'ush Ba'olam Klal
+          {t('manifesto.sacred')}
         </motion.p>
 
         {/* Petek Signature */}
@@ -117,9 +120,9 @@ export function ManifestoSection() {
           viewport={{ once: true }}
           className="text-center text-xs md:text-sm text-gray-600 space-y-1"
         >
-          <p>Écrit le 12 Tevet, année de la Rénovation</p>
-          <p>Par la grâce du Saint, béni soit-Il</p>
-          <p>Et pour la bénédiction du monde</p>
+          <p>{t('manifesto.sig1')}</p>
+          <p>{t('manifesto.sig2')}</p>
+          <p>{t('manifesto.sig3')}</p>
         </motion.div>
       </div>
     </section>

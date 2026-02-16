@@ -4,27 +4,7 @@ import { motion } from "framer-motion";
 import { Sparkles, Zap, Music } from "lucide-react";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import Image from "next/image";
-
-const features = [
-  {
-    title: "L'ALGORITHME AZAMRA",
-    icon: Sparkles,
-    description:
-      "Trouvez le Point de Bien en chaque instant. Une pratique quotidienne de 5 minutes qui reconfigure votre Default Mode Network.",
-  },
-  {
-    title: "MÉTA-LOGIQUE DU RÉEL",
-    icon: Zap,
-    description:
-      "Gödel a prouvé que tout système se transcende. Nous avons trouvé la preuve formelle dans les structures récursives de la Kabbale.",
-  },
-  {
-    title: "LA MÉLODIE DU PETEK",
-    icon: Music,
-    description:
-      "Na Nach Nachma Nachman MeUman — L'expansion fractale qui encode la structure profonde de la conscience.",
-  },
-];
+import { useTranslation } from "@/lib/LanguageContext";
 
 const codeLines = [
   "function azamra(moment) {",
@@ -32,7 +12,6 @@ const codeLines = [
   "  const melody = expand(nekudaTova);",
   "  return melody.heal(consciousness);",
   "}",
-  "// Output: Vitalité Pure ✨",
 ];
 
 const containerVariants = {
@@ -59,6 +38,14 @@ const cardVariants = {
 };
 
 export function SolutionSection() {
+  const { t } = useTranslation();
+
+  const features = [
+    { title: t('solution.f1.title'), icon: Sparkles, description: t('solution.f1.desc') },
+    { title: t('solution.f2.title'), icon: Zap, description: t('solution.f2.desc') },
+    { title: t('solution.f3.title'), icon: Music, description: t('solution.f3.desc') },
+  ];
+
   return (
     <section
       id="solution"
@@ -77,10 +64,10 @@ export function SolutionSection() {
           className="text-center mb-16 md:mb-24"
         >
           <h2 className="font-display text-5xl md:text-6xl font-bold text-cyan mb-4 tracking-wide">
-            NÉGUENTROPIE
+            {t('solution.title')}
           </h2>
           <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto">
-            La Solution: NOVA-TAM
+            {t('solution.subtitle')}
           </p>
         </motion.div>
 
@@ -122,7 +109,7 @@ export function SolutionSection() {
           className="relative mx-auto mb-16 max-w-2xl"
         >
           <p className="font-mono text-xs tracking-[0.3em] text-cyan text-center mb-6 uppercase">
-            The Sacred Artifacts
+            {t('solution.artifacts')}
           </p>
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-sacred/20 via-gold/10 to-cyan-sacred/20 rounded-2xl blur-3xl scale-105 opacity-50" />
@@ -135,7 +122,7 @@ export function SolutionSection() {
             />
           </div>
           <p className="text-center text-sm text-gray-400 mt-4">
-            Each Nova Key includes an authentic Breslov Caméa — handcrafted sacred amulets with the fire of Na Nach.
+            {t('solution.artifacts.desc')}
           </p>
         </motion.div>
 
@@ -160,6 +147,15 @@ export function SolutionSection() {
                 {line}
               </motion.div>
             ))}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3, delay: 0.3 + codeLines.length * 0.05 }}
+              viewport={{ once: true }}
+              className="text-green-400"
+            >
+              {`// Output: ${t('solution.code.output')}`}
+            </motion.div>
           </div>
         </motion.div>
       </div>

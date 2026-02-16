@@ -3,28 +3,7 @@
 import { motion } from "framer-motion";
 import { AlertTriangle } from "lucide-react";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
-
-const problems = [
-  {
-    title: "BOUCLE DOPAMINERGIQUE",
-    description:
-      "Votre cerveau est hijacké par des algorithmes de rétention conçus pour maximiser l'engagement.",
-  },
-  {
-    title: "PARALYSIE DÉCISIONNELLE",
-    description:
-      "L'excès d'options crée l'illusion du choix. Résultat: anxiété chronique.",
-  },
-  {
-    title: "EROSION IDENTITAIRE",
-    description:
-      "Les réseaux sociaux fragmentent le Soi. Vous devenez une collection de personas.",
-  },
-  {
-    title: "LE VIDE EXISTENTIEL",
-    description: "79% de la Gen Z rapporte un sentiment de vide spirituel.",
-  },
-];
+import { useTranslation } from "@/lib/LanguageContext";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -50,6 +29,15 @@ const cardVariants = {
 };
 
 export function ProblemSection() {
+  const { t } = useTranslation();
+
+  const problems = [
+    { title: t('problem.card1.title'), description: t('problem.card1.desc') },
+    { title: t('problem.card2.title'), description: t('problem.card2.desc') },
+    { title: t('problem.card3.title'), description: t('problem.card3.desc') },
+    { title: t('problem.card4.title'), description: t('problem.card4.desc') },
+  ];
+
   return (
     <section
       id="entropy"
@@ -68,10 +56,10 @@ export function ProblemSection() {
           className="text-center mb-16 md:mb-24"
         >
           <h2 className="font-display text-5xl md:text-6xl font-bold text-gold mb-4 tracking-wide">
-            L'ENTROPIE
+            {t('problem.title')}
           </h2>
           <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto">
-            Le Problème Que Personne Ne Nomme
+            {t('problem.subtitle')}
           </p>
         </motion.div>
 
@@ -117,7 +105,7 @@ export function ProblemSection() {
             כל העולם כולו גשר צר מאוד
           </p>
           <p className="text-gray-400 text-lg">
-            Tout le monde est un pont très étroit — Rabbi Nachman
+            {t('problem.quote')} — {t('problem.quote.attr')}
           </p>
         </motion.div>
       </div>
