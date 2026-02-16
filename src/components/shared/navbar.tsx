@@ -39,6 +39,13 @@ const navLinks = [
     href: '/about',
     meaning: 'The Mission'
   },
+  {
+    letter: 'מ',
+    latin: 'Mem',
+    label: 'Mem — Adornments',
+    href: '/accessories',
+    meaning: 'Sacred Artifacts'
+  },
 ];
 
 export function Navbar() {
@@ -183,7 +190,7 @@ export function Navbar() {
             </div>
 
             {/* Mobile Navigation Links - Sacred Na Nach (RTL Order) */}
-            <div className="flex flex-col gap-6 p-6">
+            <div className="flex flex-col gap-3 p-4 pt-3">
               {navLinks.map((link, index) => (
                 <motion.div
                   key={link.href}
@@ -194,12 +201,12 @@ export function Navbar() {
                   <Link
                     href={link.href}
                     onClick={closeMenu}
-                    className="flex items-center gap-4 group py-2"
+                    className="flex items-center gap-3 group py-1"
                   >
                     {/* Hebrew Letter + Latin - Mobile */}
                     <div className="flex flex-col items-center">
                       <span
-                        className="font-sacred text-4xl font-bold text-gold group-hover:text-cyan transition-colors duration-300"
+                        className="font-sacred text-3xl font-bold text-gold group-hover:text-cyan transition-colors duration-300"
                         style={{
                           textShadow: '0 2px 4px rgba(0,0,0,0.5), 0 0 20px rgba(212,175,55,0.3)',
                           fontFamily: 'Cormorant Garamond, serif'
@@ -226,7 +233,7 @@ export function Navbar() {
             </div>
 
             {/* Mobile CTA + Language */}
-            <div className="p-6 space-y-4">
+            <div className="p-4 space-y-3">
               <LanguageSelector />
               <Link href="/checkout" onClick={closeMenu}>
                 <SacredButton
