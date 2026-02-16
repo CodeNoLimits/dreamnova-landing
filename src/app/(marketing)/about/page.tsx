@@ -12,20 +12,20 @@ import Image from 'next/image';
 const timeline = [
   {
     year: '1772',
-    title: 'Rabbi Nachman is born',
-    description: 'In Medzhybizh, Ukraine. He would become one of the most radical mystics in Jewish history, teaching that joy itself is the pathway to divine connection.',
+    titleKey: 'about.timeline.1772.title',
+    descKey: 'about.timeline.1772',
     color: 'text-gold',
   },
   {
     year: '1922',
-    title: 'The Petek is discovered',
-    description: 'Rabbi Yisroel Ber Odesser, the "Saba," discovers a miraculous letter — the Petek — containing the phrase Na Nach Nachma Nachman MeUman. A signature from a master who died 112 years earlier.',
+    titleKey: 'about.timeline.1922.title',
+    descKey: 'about.timeline.1922',
     color: 'text-cyan-400',
   },
   {
     year: '2026',
-    title: 'The Source Code of Reality',
-    description: 'David DreamNova proves the mathematical convergence between Gödel\'s incompleteness, quantum measurement, and the recursive Na Nach structure. The Nova Key is born — ancient wisdom meets modern technology.',
+    titleKey: 'about.timeline.2026.title',
+    descKey: 'about.timeline.2026',
     color: 'text-[#00FF88]',
   },
 ];
@@ -33,33 +33,33 @@ const timeline = [
 const values = [
   {
     icon: Target,
-    title: 'Hafatsa 2.0',
-    description: 'Instead of distributing books in the street, we distribute a premium artifact that TRANSMITS Torah through technology.',
+    titleKey: 'about.pillars.hafatsa.title',
+    descKey: 'about.pillars.hafatsa.desc',
   },
   {
     icon: Heart,
-    title: '$63 Sacred Pricing',
-    description: '63 = gematria of SaG (סג), a Kabbalistic divine name. This is not an arbitrary price — it\'s a code. Every purchase is an act of Tikkun.',
+    titleKey: 'about.pillars.pricing.title',
+    descKey: 'about.pillars.pricing.desc',
   },
   {
     icon: Zap,
-    title: 'Zero CAC Model',
-    description: 'Each Nova Key owner becomes a distributor. One scan creates awareness, one share creates a sale. The product markets itself like a Torah virus.',
+    titleKey: 'about.pillars.cac.title',
+    descKey: 'about.pillars.cac.desc',
   },
   {
     icon: Users,
-    title: 'Ambassador Network',
-    description: '20% commission for every referral. Hafatsa Points gamification. Community-driven distribution across continents.',
+    titleKey: 'about.pillars.ambassador.title',
+    descKey: 'about.pillars.ambassador.desc',
   },
   {
     icon: BookOpen,
-    title: 'Academic Legitimacy',
-    description: '35+ peer-reviewed sources, 5 convergent formal domains, collaboration with researchers from McGill, Bar-Ilan, and Hebrew University.',
+    titleKey: 'about.pillars.academic.title',
+    descKey: 'about.pillars.academic.desc',
   },
   {
     icon: Star,
-    title: '1M Keys Mission',
-    description: '1 million Nova Keys distributed = 63M$ in revenue = the completion of the Hafatsa mission initiated by the Saba.',
+    titleKey: 'about.pillars.mission.title',
+    descKey: 'about.pillars.mission.desc',
   },
 ];
 
@@ -109,9 +109,9 @@ export default function AboutPage() {
               transition={{ delay: 0.2 }}
               className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
             >
-              63 Million Dollars
+              {t('about.mission.title')}
               <br />
-              <span className="sacred-gradient">of Hafatsa</span>
+              <span className="sacred-gradient">{t('about.mission.subtitle')}</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -119,7 +119,7 @@ export default function AboutPage() {
               transition={{ delay: 0.4 }}
               className="text-lg md:text-xl text-[#8A8A9A] max-w-2xl mx-auto mb-10"
             >
-              Dream Nova is not a company. It&apos;s a mission. To distribute the teachings of
+              {t('about.mission.desc')}. It&apos;s a mission. To distribute the teachings of
               Rabbi Nachman of Breslov to 1 million souls through technology, beauty, and
               sacred mathematics.
             </motion.p>
@@ -154,7 +154,7 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto">
             <ScrollReveal>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-center mb-4">
-                A <span className="sacred-gradient">250-Year</span> Journey
+                A <span className="sacred-gradient">250-Year</span> {t('about.timeline.subtitle')}
               </h2>
               <p className="text-[#8A8A9A] text-center max-w-2xl mx-auto mb-16">
                 From Medzhybizh to Jerusalem, from parchment to NFC — the thread has never broken.
@@ -172,8 +172,8 @@ export default function AboutPage() {
                     <div className={`font-mono text-sm ${event.color} mb-1`}>
                       {event.year}
                     </div>
-                    <h3 className="font-display text-xl font-bold mb-2">{event.title}</h3>
-                    <p className="text-[#8A8A9A] leading-relaxed">{event.description}</p>
+                    <h3 className="font-display text-xl font-bold mb-2">{t(event.titleKey)}</h3>
+                    <p className="text-[#8A8A9A] leading-relaxed">{t(event.descKey)}</p>
                   </div>
                 </ScrollReveal>
               ))}
@@ -232,7 +232,7 @@ export default function AboutPage() {
                 Join the <span className="sacred-gradient">Mission</span>
               </h2>
               <p className="text-[#8A8A9A] max-w-xl mx-auto mb-8">
-                Every Nova Key sold is a step toward the Tikkun. Every scan is a soul touched.
+                {t('about.join.desc')} is a step toward the Tikkun. Every scan is a soul touched.
                 Every share is an act of Hafatsa.
               </p>
               <div className="flex flex-wrap justify-center gap-4">

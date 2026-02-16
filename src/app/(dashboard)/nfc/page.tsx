@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslation } from '@/lib/LanguageContext';
+
 import { CreditCard, Activity, Plus, Trash2, Eye } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";

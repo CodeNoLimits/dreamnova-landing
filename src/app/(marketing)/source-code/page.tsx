@@ -69,7 +69,7 @@ export default function SourceCodePage() {
             >
               The Source Code
               <br />
-              <span className="sacred-gradient">of Reality</span>
+              <span className="sacred-gradient">{t('sourcecode.hero.title2')}</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

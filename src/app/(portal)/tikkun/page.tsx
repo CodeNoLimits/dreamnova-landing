@@ -1,3 +1,4 @@
+import { useTranslation } from '@/lib/LanguageContext';
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 

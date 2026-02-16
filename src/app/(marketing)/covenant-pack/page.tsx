@@ -12,13 +12,13 @@ import Image from 'next/image';
 const products = [
   {
     key: 'standard',
-    name: 'The Covenant Pack',
+    nameKey: 'covenant.standard.name',
     price: 63,
     icon: Package,
     popular: true,
     color: 'border-gold',
     glowColor: 'shadow-gold/20',
-    description: 'The essential sacred kit — everything you need to begin your Hafatsa journey.',
+    descKey: 'covenant.standard.desc',
     includes: [
       'Nova Key NFC Card (Stainless Steel)',
       'Sacred gold laser engraving',
@@ -37,13 +37,13 @@ const products = [
   },
   {
     key: 'platinum',
-    name: 'Nova Key Platinum',
+    nameKey: 'covenant.platinum.name',
     price: 149,
     icon: Crown,
     popular: false,
     color: 'border-cyan-400',
     glowColor: 'shadow-cyan-400/20',
-    description: 'The collector edition — for those who want the ultimate expression of sacred technology.',
+    descKey: 'covenant.platinum.desc',
     includes: [
       'Everything in Covenant Pack',
       'Titanium card with 24K gold plating',
@@ -166,13 +166,13 @@ export default function CovenantPackPage() {
                   )}
                   <div className="flex items-center gap-3 mb-4">
                     <product.icon className={`w-6 h-6 ${product.key === 'standard' ? 'text-gold' : product.key === 'platinum' ? 'text-cyan-400' : 'text-[#00FF88]'}`} />
-                    <h3 className="font-display text-xl font-bold">{product.name}</h3>
+                    <h3 className="font-display text-xl font-bold">{t(product.nameKey || product.name)}</h3>
                   </div>
                   <div className="mb-4">
                     <span className="text-4xl font-bold sacred-gradient">${product.price}</span>
                     <span className="text-[#5A5A6A] ml-2 text-sm">one-time</span>
                   </div>
-                  <p className="text-[#8A8A9A] text-sm mb-6 leading-relaxed">{product.description}</p>
+                  <p className="text-[#8A8A9A] text-sm mb-6 leading-relaxed">{t(product.descKey || product.description)}</p>
 
                   {/* What's Included */}
                   <div className="mb-6 flex-1">
@@ -210,7 +210,7 @@ export default function CovenantPackPage() {
                     }`}
                   >
                     <ArrowRight className="w-4 h-4" />
-                    Get {product.name} — ${product.price}
+                    Get {t(product.nameKey || product.name)} — ${product.price}
                   </a>
                 </div>
               </ScrollReveal>

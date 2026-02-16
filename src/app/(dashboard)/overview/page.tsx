@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslation } from '@/lib/LanguageContext';
+
 import { BarChart3, ShoppingCart, Zap, Users, Send, Mail, Plus } from "lucide-react";
 
 interface StatCardProps {

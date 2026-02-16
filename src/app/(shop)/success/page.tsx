@@ -1,3 +1,4 @@
+import { useTranslation } from '@/lib/LanguageContext';
 import Link from "next/link";
 import { CheckCircle } from "lucide-react";
 import { Navbar } from "@/components/shared/navbar";
