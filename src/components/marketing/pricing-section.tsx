@@ -83,7 +83,7 @@ export function PricingSection() {
             <HolographicShimmer />
             {/* Card Title */}
             <h3 className="font-display text-2xl md:text-3xl text-center font-bold text-gold mb-4 tracking-wide">
-              {t('pricing.pack')}
+              {t('pricing.product')}
             </h3>
 
             {/* Price */}
@@ -194,7 +194,7 @@ export function PricingSection() {
           className="max-w-md mx-auto p-6 md:p-8 dark-card border border-gold/20 bg-black/50"
         >
           <h4 className="font-bold text-gold text-center mb-6 tracking-wide">
-            {t('pricing.breakdown')}
+            {t('pricing.breakdown.title')}
           </h4>
           <div className="space-y-3">
             {breakdown.map((item, index) => (
