@@ -184,7 +184,7 @@ export default function RegisterPage() {
           {/* Password Input */}
           <motion.div variants={itemVariants} className="mb-5">
             <label htmlFor="password" className="block text-light-gray text-sm font-semibold mb-2">
-              Password
+              {t('auth.register.password.label')}
             </label>
             <div className="relative">
               <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gold/50" />
@@ -193,7 +193,7 @@ export default function RegisterPage() {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••"
+                placeholder={t('auth.register.password.placeholder')}
                 required
                 disabled={isLoading}
                 className="w-full bg-sacred-black border border-gold/20 rounded-lg pl-12 pr-4 py-3 text-light-gray placeholder-dark-gray focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 transition-all disabled:opacity-50"
@@ -214,7 +214,7 @@ export default function RegisterPage() {
                 type="password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                placeholder="••••••••"
+                placeholder={t('auth.register.confirm.placeholder')}
                 required
                 disabled={isLoading}
                 className="w-full bg-sacred-black border border-gold/20 rounded-lg pl-12 pr-4 py-3 text-light-gray placeholder-dark-gray focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 transition-all disabled:opacity-50"
