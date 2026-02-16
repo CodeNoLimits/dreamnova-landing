@@ -4,6 +4,11 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "@/lib/LanguageContext";
+import { formatPrice } from "@/lib/i18n";
+import { AmbassadorShowcase } from "@/components/shared/ambassador-showcase";
+import { HolographicShimmer, HoloBorder } from "@/components/shared/holographic-effects";
+import { playHover } from "@/lib/sound-manager";
 
 const includes = [
   "Nova Key NFC (Acier Inoxydable, Gravure Or)",
@@ -22,6 +27,8 @@ const breakdown = [
 ];
 
 export function PricingSection() {
+  const { t, config } = useTranslation();
+  const price = formatPrice(config.code);
   return (
     <section
       id="pricing"
@@ -40,10 +47,10 @@ export function PricingSection() {
           className="text-center mb-16 md:mb-24"
         >
           <h2 className="font-display text-5xl md:text-6xl font-bold text-gold mb-4 tracking-wide">
-            LE MODÈLE 63
+            {t('pricing.title')}
           </h2>
           <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto">
-            Pas Un Prix. Un Code Sacré.
+            {t('pricing.subtitle')}
           </p>
         </motion.div>
 
@@ -72,22 +79,23 @@ export function PricingSection() {
               />
             </motion.div>
           </div>
-          <div className="dark-card border-2 border-gold p-8 md:p-12 hover:shadow-lg hover:shadow-gold/30 transition-all duration-300">
+          <div className="dark-card border-2 border-gold p-8 md:p-12 hover:shadow-lg hover:shadow-gold/30 transition-all duration-300 relative group" onMouseEnter={() => playHover()}>
+            <HolographicShimmer />
             {/* Card Title */}
             <h3 className="font-display text-2xl md:text-3xl text-center font-bold text-gold mb-4 tracking-wide">
-              THE COVENANT PACK
+              {t('pricing.pack')}
             </h3>
 
             {/* Price */}
             <div className="text-center mb-2">
               <p className="font-display text-5xl md:text-6xl font-bold sacred-gradient">
-                $63
+                {price}
               </p>
             </div>
 
             {/* Subtitle */}
             <p className="text-center text-gray-400 text-sm mb-8">
-              SaG (סג) — Gematria de la Réparation
+              {t('pricing.gematria')}
             </p>
 
             {/* Divider */}
@@ -115,7 +123,7 @@ export function PricingSection() {
               href="/checkout"
               className="block w-full py-3 md:py-4 bg-gold text-black font-bold text-center hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg hover:shadow-gold/50 tracking-wide mb-6"
             >
-              RECEVOIR MA CLEF
+              {t('nav.cta')}
             </Link>
 
             {/* Alternative Options */}
@@ -163,6 +171,20 @@ export function PricingSection() {
           </div>
         </motion.div>
 
+        {/* Ambassador Showcase */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.15 }}
+          viewport={{ once: true }}
+          className="max-w-sm mx-auto mb-16"
+        >
+          <p className="font-mono text-[10px] tracking-[0.3em] text-gold/60 text-center mb-4 uppercase">
+            {config.myFire}
+          </p>
+          <AmbassadorShowcase />
+        </motion.div>
+
         {/* Breakdown */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -172,7 +194,7 @@ export function PricingSection() {
           className="max-w-md mx-auto p-6 md:p-8 dark-card border border-gold/20 bg-black/50"
         >
           <h4 className="font-bold text-gold text-center mb-6 tracking-wide">
-            Où Va Votre $63?
+            {t('pricing.breakdown')}
           </h4>
           <div className="space-y-3">
             {breakdown.map((item, index) => (
