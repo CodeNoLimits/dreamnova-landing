@@ -52,30 +52,30 @@ export function Footer() {
               {t('footer.links.title')}
             </h3>
             <nav className="flex flex-col gap-3">
-              <a
-                href="#entropy"
+              <Link
+                href="/source-code"
                 className="text-light-gray hover:text-gold transition-colors duration-300 text-sm"
               >
                 {t('nav.problem')}
-              </a>
-              <a
-                href="#solution"
+              </Link>
+              <Link
+                href="/codex"
                 className="text-light-gray hover:text-gold transition-colors duration-300 text-sm"
               >
                 {t('nav.solution')}
-              </a>
-              <a
-                href="#pricing"
+              </Link>
+              <Link
+                href="/nova-key"
                 className="text-light-gray hover:text-gold transition-colors duration-300 text-sm"
               >
                 {t('nav.pricing')}
-              </a>
-              <a
-                href="#manifesto"
+              </Link>
+              <Link
+                href="/tikkun"
                 className="text-light-gray hover:text-gold transition-colors duration-300 text-sm"
               >
                 {t('nav.tikkun')}
-              </a>
+              </Link>
               <Link
                 href="/accessories"
                 className="text-light-gray hover:text-gold transition-colors duration-300 text-sm"
