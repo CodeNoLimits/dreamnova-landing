@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 interface NovaKey {
   id: string;
-  name: string;
+  nameKey: string;
   serial: string;
   status: "active" | "inactive";
   lastScan?: string;
@@ -19,7 +19,7 @@ interface NovaKey {
 const mockNovaKeys: NovaKey[] = [
   {
     id: "1",
-    name: "Main Nova Key",
+    nameKey: 'nfc.key.main',
     serial: "NV-2025-001-12345",
     status: "active",
     lastScan: "2025-02-14T14:30:00",
@@ -28,7 +28,7 @@ const mockNovaKeys: NovaKey[] = [
   },
   {
     id: "2",
-    name: "Community Event Key",
+    nameKey: 'nfc.key.community',
     serial: "NV-2025-002-67890",
     status: "active",
     lastScan: "2025-02-13T18:45:00",
@@ -37,7 +37,7 @@ const mockNovaKeys: NovaKey[] = [
   },
   {
     id: "3",
-    name: "Platinum Edition",
+    nameKey: 'nfc.key.platinum',
     serial: "NV-PLAT-2025-11111",
     status: "active",
     lastScan: "2025-02-12T10:15:00",
@@ -46,7 +46,7 @@ const mockNovaKeys: NovaKey[] = [
   },
   {
     id: "4",
-    name: "Backup Key",
+    nameKey: 'nfc.key.backup',
     serial: "NV-2025-003-99999",
     status: "inactive",
     scanCount: 0,
@@ -55,6 +55,7 @@ const mockNovaKeys: NovaKey[] = [
 ];
 
 function KeyCard({ novaKey }: { novaKey: NovaKey }) {
+  const { t } = useTranslation();
   const daysActive = Math.floor(
     (new Date().getTime() - new Date(novaKey.activatedDate).getTime()) /
       (1000 * 60 * 60 * 24)
@@ -90,7 +91,7 @@ function KeyCard({ novaKey }: { novaKey: NovaKey }) {
             />
           </div>
           <div>
-            <h3 className="font-bold text-white">{novaKey.name}</h3>
+            <h3 className="font-bold text-white">{t(novaKey.nameKey)}</h3>
             <p className="text-gray-400 text-sm font-mono">
               {novaKey.serial}
             </p>
@@ -110,17 +111,17 @@ function KeyCard({ novaKey }: { novaKey: NovaKey }) {
       {/* Stats Grid */}
       <div className="grid grid-cols-2 gap-4 mb-6 py-6 border-y border-gold/10">
         <div>
-          <p className="text-gray-400 text-sm mb-1">Total Scans</p>
+          <p className="text-gray-400 text-sm mb-1">{t("nfc.total.scans")}</p>
           <p className="text-2xl font-bold text-white">{novaKey.scanCount}</p>
         </div>
         <div>
-          <p className="text-gray-400 text-sm mb-1">Days Active</p>
+          <p className="text-gray-400 text-sm mb-1">{t("nfc.days.active")}</p>
           <p className="text-2xl font-bold text-white">{daysActive}</p>
         </div>
         {novaKey.lastScan && (
           <>
             <div className="col-span-2">
-              <p className="text-gray-400 text-sm mb-1">Last Scan</p>
+              <p className="text-gray-400 text-sm mb-1">{t("nfc.last.scan")}</p>
               <p className="text-white">
                 {new Date(novaKey.lastScan).toLocaleDateString()}{" "}
                 <span className="text-gray-400">
@@ -157,7 +158,7 @@ export default function NFCPage() {
       {/* Header */}
       <div>
         <h1 className="text-4xl font-bold text-white mb-2">NFC Management</h1>
-        <p className="text-gray-400">Manage your registered Nova Keys</p>
+        <p className="text-gray-400">{t("nfc.subtitle")}</p>
       </div>
 
       {/* Stats */}
@@ -176,7 +177,7 @@ export default function NFCPage() {
               +{mockNovaKeys.length}
             </span>
           </div>
-          <p className="text-gray-400 text-sm mb-1">Total Keys</p>
+          <p className="text-gray-400 text-sm mb-1">{t("nfc.total.keys")}</p>
           <p className="text-3xl font-bold text-white">
             {mockNovaKeys.length}
           </p>
@@ -196,7 +197,7 @@ export default function NFCPage() {
               +{activeKeys.length}
             </span>
           </div>
-          <p className="text-gray-400 text-sm mb-1">Active Keys</p>
+          <p className="text-gray-400 text-sm mb-1">{t("nfc.active.keys")}</p>
           <p className="text-3xl font-bold text-white">{activeKeys.length}</p>
         </motion.div>
 
@@ -214,7 +215,7 @@ export default function NFCPage() {
               +{totalScans}
             </span>
           </div>
-          <p className="text-gray-400 text-sm mb-1">Total Scans</p>
+          <p className="text-gray-400 text-sm mb-1">{t("nfc.total.scans")}</p>
           <p className="text-3xl font-bold text-white">{totalScans}</p>
         </motion.div>
       </div>
@@ -281,7 +282,7 @@ export default function NFCPage() {
                 </label>
                 <input
                   type="text"
-                  placeholder="Tap your key to scan UID"
+                  placeholder={t("nfc.placeholder.scan")}
                   className="w-full bg-sacred-surface border border-gold/20 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-gold/50 transition-colors duration-200"
                 />
               </div>

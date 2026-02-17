@@ -24,17 +24,16 @@ export default function SuccessPage() {
 
           {/* Heading */}
           <h1 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-gold via-gold to-gold/60 bg-clip-text text-transparent">
-            Your Hafatsa Journey Begins
+            {t('success.title')}
           </h1>
 
           {/* Message */}
-          <p className="text-xl text-gray-300 mb-8">Order confirmed</p>
+          <p className="text-xl text-gray-300 mb-8">{t("success.message")}</p>
 
           {/* Sacred Note */}
           <div className="bg-sacred-surface border border-gold/20 rounded-lg p-6 mb-10 text-gray-300">
             <p className="text-sm">
-              Your Nova Key is being prepared in Jerusalem. You will receive
-              your activation link and NFC key details via email shortly.
+              {t('success.note')}
             </p>
           </div>
 
@@ -44,7 +43,7 @@ export default function SuccessPage() {
               href="/portal"
               className="bg-gradient-to-r from-gold to-gold/80 hover:from-gold/90 hover:to-gold/70 text-black font-bold py-3 px-6 rounded-lg transition-all duration-300"
             >
-              Access Digital Content
+              {t('success.button.access')}
             </Link>
             <a
               href={`https://dreamnova.com?ref=${Date.now()}`}
@@ -52,7 +51,7 @@ export default function SuccessPage() {
               rel="noopener noreferrer"
               className="bg-sacred-surface border border-gold/40 hover:border-gold text-gold font-bold py-3 px-6 rounded-lg transition-all duration-300"
             >
-              Share with a Friend
+              {t('success.button.share')}
             </a>
           </div>
 
@@ -61,7 +60,7 @@ export default function SuccessPage() {
             href="/"
             className="inline-block text-gold hover:text-gold/80 underline transition-colors"
           >
-            ← Back to Home
+            {t('success.button.home')}
           </Link>
         </div>
       </main>

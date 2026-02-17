@@ -3,14 +3,16 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ChevronRight, Play, Pause, Save } from "lucide-react";
-
-const DURATION_OPTIONS = [
-  { label: "5 min", seconds: 300 },
-  { label: "10 min", seconds: 600 },
-  { label: "15 min", seconds: 900 },
-];
+import { useTranslation } from "@/lib/LanguageContext";
 
 export default function AzamraPage() {
+  const { t } = useTranslation();
+
+  const DURATION_OPTIONS = [
+    { labelKey: "portal.azamra.timer.5min", seconds: 300 },
+    { labelKey: "portal.azamra.timer.10min", seconds: 600 },
+    { labelKey: "portal.azamra.timer.15min", seconds: 900 },
+  ];
   const [selectedDuration, setSelectedDuration] = useState(300);
   const [timeLeft, setTimeLeft] = useState(300);
   const [isRunning, setIsRunning] = useState(false);
@@ -74,38 +76,38 @@ export default function AzamraPage() {
             className="inline-flex items-center gap-2 text-gold hover:text-gold/80 mb-6 transition-colors"
           >
             <ChevronRight className="w-4 h-4 rotate-180" />
-            Back to Portal
+            {t('portal.azamra.nav.back')}
           </Link>
 
           <h1 className="text-5xl font-bold mb-2 bg-gradient-to-r from-gold via-gold to-gold/60 bg-clip-text text-transparent">
-            אזמרה
+            {t('portal.azamra.title.hebrew')}
           </h1>
           <h2 className="text-3xl text-gray-300 mb-6">
-            Azamra — Find the Good Point
+            {t('portal.azamra.title')}
           </h2>
 
           <p className="text-gray-400 mb-2 italic">
-            אזמרה לאלקי בעודי — I will sing to my God with what I have left
+            {t('portal.azamra.subtitle.hebrew')}
           </p>
           <p className="text-gray-400">
-            The meditation of finding and celebrating the good within yourself.
+            {t('portal.azamra.subtitle')}
           </p>
         </div>
 
         {/* Sacred Quote Box */}
         <div className="bg-gradient-to-r from-green-500/10 to-green-500/5 border border-green-500/30 rounded-lg p-6 mb-12">
           <p className="text-green-300 text-center text-lg">
-            "When you find the good point within yourself, you find the good point within all of creation."
+            {t('portal.azamra.quote')}
           </p>
           <p className="text-green-400/70 text-center text-sm mt-3">
-            — Rabbi Nachman of Breslev
+            {t('portal.azamra.quote.author')}
           </p>
         </div>
 
         {/* Timer Section */}
         <div className="bg-sacred-surface border border-gold/20 rounded-lg p-8 mb-8">
           <h3 className="text-xl font-bold text-gold mb-6 text-center">
-            Meditation Timer
+            {t('portal.azamra.timer.title')}
           </h3>
 
           {/* Duration Selector */}
@@ -121,7 +123,7 @@ export default function AzamraPage() {
                     : "bg-sacred-black border border-gold/30 text-gold hover:border-gold disabled:opacity-50"
                 }`}
               >
-                {option.label}
+                {t(option.labelKey)}
               </button>
             ))}
           </div>
@@ -139,19 +141,19 @@ export default function AzamraPage() {
             {isRunning ? (
               <>
                 <Pause className="w-5 h-5" />
-                Pause
+                {t('portal.azamra.timer.pause')}
               </>
             ) : (
               <>
                 <Play className="w-5 h-5" />
-                Start Meditation
+                {t('portal.azamra.timer.start')}
               </>
             )}
           </button>
 
           {timeLeft === 0 && !isRunning && selectedDuration > 0 && (
             <div className="text-center text-green-400 font-semibold">
-              Meditation Complete! May your soul be elevated.
+              {t('portal.azamra.timer.complete')}
             </div>
           )}
         </div>
@@ -159,11 +161,10 @@ export default function AzamraPage() {
         {/* Journal Section */}
         <div className="bg-sacred-surface border border-gold/20 rounded-lg p-8">
           <h3 className="text-xl font-bold text-gold mb-4">
-            Nekuda Tova — Your Good Point
+            {t('portal.azamra.journal.title')}
           </h3>
           <p className="text-gray-400 text-sm mb-4">
-            Write what goodness, strength, or light you discovered in yourself
-            during this meditation.
+            {t('portal.azamra.journal.desc')}
           </p>
 
           <textarea
@@ -172,7 +173,7 @@ export default function AzamraPage() {
               setGoodPoint(e.target.value);
               setSaved(false);
             }}
-            placeholder="What is your good point today? What light remains within you?"
+            placeholder={t('portal.azamra.journal.placeholder')}
             className="w-full h-32 bg-sacred-black border border-gold/20 rounded-lg p-4 text-white placeholder-gray-600 focus:border-gold/50 focus:outline-none resize-none mb-4"
           />
 
@@ -185,7 +186,7 @@ export default function AzamraPage() {
             }`}
           >
             <Save className="w-4 h-4" />
-            {saved ? "Saved" : "Save Your Good Point"}
+            {saved ? t('portal.azamra.journal.saved') : t('portal.azamra.journal.save')}
           </button>
         </div>
 
@@ -196,14 +197,14 @@ export default function AzamraPage() {
             className="inline-flex items-center gap-2 text-gold hover:text-gold/80 transition-colors"
           >
             <ChevronRight className="w-4 h-4 rotate-180" />
-            Back to Tikkun
+            {t('portal.azamra.nav.tikkun')}
           </Link>
 
           <Link
             href="/portal/unlock"
             className="inline-flex items-center gap-2 text-gold hover:text-gold/80 transition-colors"
           >
-            Portal Home
+            {t('portal.azamra.nav.home')}
             <ChevronRight className="w-4 h-4" />
           </Link>
         </div>

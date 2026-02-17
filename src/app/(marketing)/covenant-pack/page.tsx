@@ -29,10 +29,10 @@ const products = [
       'Hafatsa Ambassador Kit',
     ],
     specs: [
-      { label: 'Material', value: 'Stainless Steel 0.8mm' },
-      { label: 'NFC Chip', value: 'NTAG 215 (504 bytes)' },
-      { label: 'Finish', value: 'Black Anodized' },
-      { label: 'Engraving', value: 'Gold Laser' },
+      { labelKey: 'spec.material', value: 'Stainless Steel 0.8mm' },
+      { labelKey: 'spec.nfc.chip', value: 'NTAG 215 (504 bytes)' },
+      { labelKey: 'spec.finish', value: 'Black Anodized' },
+      { labelKey: 'spec.engraving', value: 'Gold Laser' },
     ],
   },
   {
@@ -54,10 +54,10 @@ const products = [
       'VIP Hafatsa Ambassador status',
     ],
     specs: [
-      { label: 'Material', value: 'Titanium' },
-      { label: 'NFC Chip', value: 'NTAG 215 (504 bytes)' },
-      { label: 'Plating', value: '24K Gold' },
-      { label: 'Edition', value: 'Numbered (#001-#999)' },
+      { labelKey: 'spec.material', value: 'Titanium' },
+      { labelKey: 'spec.nfc.chip', value: 'NTAG 215 (504 bytes)' },
+      { labelKey: 'spec.plating', value: '24K Gold' },
+      { labelKey: 'spec.edition', value: 'Numbered (#001-#999)' },
     ],
   },
   {
@@ -79,10 +79,10 @@ const products = [
       'Shared referral dashboard',
     ],
     specs: [
-      { label: 'Material', value: 'Stainless Steel 0.8mm' },
-      { label: 'NFC Chips', value: '2× NTAG 215' },
-      { label: 'Designs', value: 'Masculine + Feminine' },
-      { label: 'Finish', value: 'Black + Gold Anodized' },
+      { labelKey: 'spec.material', value: 'Stainless Steel 0.8mm' },
+      { labelKey: 'spec.nfc.chips', value: '2× NTAG 215' },
+      { labelKey: 'spec.designs', value: 'Masculine + Feminine' },
+      { labelKey: 'spec.finish', value: 'Black + Gold Anodized' },
     ],
   },
 ];
@@ -189,11 +189,11 @@ export default function CovenantPackPage() {
 
                   {/* Specs */}
                   <div className="mb-6 pt-4 border-t border-[#1A1A2E]">
-                    <p className="font-mono text-xs tracking-wider text-[#5A5A6A] uppercase mb-3">Specifications</p>
+                    <p className="font-mono text-xs tracking-wider text-[#5A5A6A] uppercase mb-3">{t("covenant.specifications")}</p>
                     <div className="grid grid-cols-2 gap-2">
                       {product.specs.map((spec, j) => (
                         <div key={j}>
-                          <div className="font-mono text-[0.6rem] text-[#5A5A6A] uppercase">{spec.label}</div>
+                          <div className="font-mono text-[0.6rem] text-[#5A5A6A] uppercase">{t(spec.labelKey)}</div>
                           <div className="text-sm text-[#C0C0C0]">{spec.value}</div>
                         </div>
                       ))}
@@ -223,7 +223,7 @@ export default function CovenantPackPage() {
           <div className="max-w-4xl mx-auto">
             <ScrollReveal>
               <h2 className="font-display text-3xl font-bold text-center mb-12">
-                Compare <span className="sacred-gradient">Editions</span>
+                Compare <span className="sacred-gradient">{t("covenant.editions")}</span>
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
@@ -231,10 +231,10 @@ export default function CovenantPackPage() {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-[#1A1A2E]">
-                      <th className="text-left py-4 pr-4 text-[#5A5A6A] font-mono text-xs uppercase tracking-wider">Feature</th>
-                      <th className="py-4 px-4 text-gold font-display text-base">Standard</th>
-                      <th className="py-4 px-4 text-cyan-400 font-display text-base">Platinum</th>
-                      <th className="py-4 px-4 text-[#00FF88] font-display text-base">Pair</th>
+                      <th className="text-left py-4 pr-4 text-[#5A5A6A] font-mono text-xs uppercase tracking-wider">{t("covenant.feature")}</th>
+                      <th className="py-4 px-4 text-gold font-display text-base">{t("covenant.standard")}</th>
+                      <th className="py-4 px-4 text-cyan-400 font-display text-base">{t("covenant.platinum")}</th>
+                      <th className="py-4 px-4 text-[#00FF88] font-display text-base">{t("covenant.pair")}</th>
                     </tr>
                   </thead>
                   <tbody className="text-[#C0C0C0]">

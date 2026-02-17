@@ -8,7 +8,7 @@ import { playChime } from '@/lib/sound-manager';
 import { Globe } from 'lucide-react';
 
 export function LanguageSelector() {
-  const { locale, setLocale, config } = useTranslation();
+  const { t, locale, setLocale, config } = useTranslation();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -31,7 +31,7 @@ export function LanguageSelector() {
       <button
         onClick={() => setOpen(!open)}
         className="group flex items-center gap-2 px-3 py-1.5 rounded-lg border border-gold/20 hover:border-gold/50 bg-sacred-surface/50 backdrop-blur-sm transition-all duration-300"
-        aria-label="Select language"
+        aria-label={t("aria.select.language")}
       >
         <Globe className="w-4 h-4 text-gold/60 group-hover:text-gold transition-colors" />
         <span className="text-sm font-mono">{config.flag}</span>

@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslation } from "@/lib/LanguageContext";
+
 import { User, MapPin, Bell, Save, AlertCircle } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -28,6 +30,7 @@ interface NotificationPreferences {
 }
 
 export default function SettingsPage() {
+  const { t } = useTranslation();
   const [profile, setProfile] = useState<ProfileFormData>({
     firstName: "Sarah",
     lastName: "Cohen",
@@ -79,8 +82,8 @@ export default function SettingsPage() {
     <div className="space-y-8 max-w-4xl">
       {/* Header */}
       <div>
-        <h1 className="text-4xl font-bold text-white mb-2">Settings</h1>
-        <p className="text-gray-400">Manage your account and preferences</p>
+        <h1 className="text-4xl font-bold text-white mb-2">{t("settings.title")}</h1>
+        <p className="text-gray-400">{t("settings.subtitle")}</p>
       </div>
 
       {/* Profile Section */}
@@ -92,7 +95,7 @@ export default function SettingsPage() {
       >
         <div className="flex items-center gap-3 mb-6">
           <User className="w-6 h-6 text-gold" />
-          <h2 className="text-2xl font-bold text-gold">Profile Information</h2>
+          <h2 className="text-2xl font-bold text-gold">{t("settings.profile")}</h2>
         </div>
 
         <div className="space-y-6">
@@ -160,7 +163,7 @@ export default function SettingsPage() {
       >
         <div className="flex items-center gap-3 mb-6">
           <MapPin className="w-6 h-6 text-gold" />
-          <h2 className="text-2xl font-bold text-gold">Shipping Address</h2>
+          <h2 className="text-2xl font-bold text-gold">{t("settings.shipping")}</h2>
         </div>
 
         <div className="space-y-6">
@@ -240,14 +243,14 @@ export default function SettingsPage() {
       >
         <div className="flex items-center gap-3 mb-6">
           <Bell className="w-6 h-6 text-gold" />
-          <h2 className="text-2xl font-bold text-gold">Notification Preferences</h2>
+          <h2 className="text-2xl font-bold text-gold">{t("settings.notifications")}</h2>
         </div>
 
         <div className="space-y-4">
           {/* Email Notifications Toggle */}
           <div className="flex items-center justify-between p-4 bg-sacred-black/50 rounded-lg border border-gold/10">
             <div>
-              <h3 className="text-white font-semibold">Email Notifications</h3>
+              <h3 className="text-white font-semibold">{t("settings.email.notif")}</h3>
               <p className="text-gray-400 text-sm">
                 Receive email updates about your account
               </p>
@@ -273,7 +276,7 @@ export default function SettingsPage() {
           {/* Order Updates Toggle */}
           <div className="flex items-center justify-between p-4 bg-sacred-black/50 rounded-lg border border-gold/10">
             <div>
-              <h3 className="text-white font-semibold">Order Updates</h3>
+              <h3 className="text-white font-semibold">{t("settings.order.updates")}</h3>
               <p className="text-gray-400 text-sm">
                 Get notified about your order status
               </p>
@@ -297,7 +300,7 @@ export default function SettingsPage() {
           {/* Hafatsa Alerts Toggle */}
           <div className="flex items-center justify-between p-4 bg-sacred-black/50 rounded-lg border border-gold/10">
             <div>
-              <h3 className="text-white font-semibold">Hafatsa Alerts</h3>
+              <h3 className="text-white font-semibold">{t("settings.hafatsa.alerts")}</h3>
               <p className="text-gray-400 text-sm">
                 Notifications about your Hafatsa progress
               </p>
@@ -321,7 +324,7 @@ export default function SettingsPage() {
           {/* Weekly Digest Toggle */}
           <div className="flex items-center justify-between p-4 bg-sacred-black/50 rounded-lg border border-gold/10">
             <div>
-              <h3 className="text-white font-semibold">Weekly Digest</h3>
+              <h3 className="text-white font-semibold">{t("settings.weekly.digest")}</h3>
               <p className="text-gray-400 text-sm">
                 Summary email every Sunday
               </p>
@@ -345,7 +348,7 @@ export default function SettingsPage() {
           {/* Promotions Toggle */}
           <div className="flex items-center justify-between p-4 bg-sacred-black/50 rounded-lg border border-gold/10">
             <div>
-              <h3 className="text-white font-semibold">Promotions</h3>
+              <h3 className="text-white font-semibold">{t("settings.promotions")}</h3>
               <p className="text-gray-400 text-sm">
                 Special offers and announcements
               </p>
@@ -384,12 +387,12 @@ export default function SettingsPage() {
               <div className="w-5 h-5 rounded-full bg-green-400 flex items-center justify-center">
                 <span className="text-green-900 font-bold">✓</span>
               </div>
-              <span className="font-semibold">Settings saved successfully!</span>
+              <span className="font-semibold">{t("settings.saved")}</span>
             </>
           ) : (
             <>
               <AlertCircle className="w-5 h-5" />
-              <span className="font-semibold">Saving changes...</span>
+              <span className="font-semibold">{t("settings.saving")}</span>
             </>
           )}
         </motion.div>
@@ -415,7 +418,7 @@ export default function SettingsPage() {
       {/* Information Note */}
       <div className="bg-gold/5 border border-gold/20 rounded-lg p-6">
         <p className="text-gray-300">
-          <span className="text-gold font-semibold">Note:</span> Your settings
+          <span className="text-gold font-semibold">{t("settings.note")}</span> Your settings
           are automatically synchronized across all devices. Changes take effect
           immediately.
         </p>

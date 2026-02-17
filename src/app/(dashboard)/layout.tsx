@@ -14,19 +14,22 @@ import {
   Settings,
   Menu,
   X,
+  Layers,
 } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from '@/lib/LanguageContext';
 
 const NAV_ITEMS = [
-  { label: "Overview", href: "/dashboard", icon: BarChart3 },
-  { label: "Orders", href: "/dashboard/orders", icon: ShoppingCart },
-  { label: "Analytics", href: "/dashboard/analytics", icon: TrendingUp },
-  { label: "Hafatsa", href: "/dashboard/hafatsa", icon: Zap },
-  { label: "Waitlist", href: "/dashboard/waitlist", icon: Users },
-  { label: "Academics", href: "/dashboard/academics", icon: BookOpen },
-  { label: "Grants", href: "/dashboard/grants", icon: Gift },
+  { labelKey: 'dash.nav.overview', href: "/dashboard", icon: BarChart3 },
+  { labelKey: 'dash.nav.orders', href: "/dashboard/orders", icon: ShoppingCart },
+  { labelKey: 'dash.nav.analytics', href: "/dashboard/analytics", icon: TrendingUp },
+  { labelKey: 'dash.nav.hafatsa', href: "/dashboard/hafatsa", icon: Zap },
+  { labelKey: 'dash.nav.waitlist', href: "/dashboard/waitlist", icon: Users },
+  { labelKey: 'dash.nav.academics', href: "/dashboard/academics", icon: BookOpen },
+  { labelKey: 'dash.nav.grants', href: "/dashboard/grants", icon: Gift },
+  { labelKey: 'dash.nav.library', href: "/dashboard/library", icon: Layers },
   { label: "NFC", href: "/dashboard/nfc", icon: Nfc },
-  { label: "Settings", href: "/dashboard/settings", icon: Settings },
+  { labelKey: 'dash.nav.settings', href: "/dashboard/settings", icon: Settings },
 ];
 
 export default function DashboardLayout({
@@ -34,6 +37,7 @@ export default function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const { t } = useTranslation();
   const pathname = usePathname();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -81,7 +85,7 @@ export default function DashboardLayout({
                 >
                   <Icon className="w-5 h-5 flex-shrink-0" />
                   <span className="hidden lg:inline text-sm font-medium">
-                    {item.label}
+                    {item.labelKey ? t(item.labelKey) : (item as any).label}
                   </span>
                 </Link>
               );

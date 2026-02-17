@@ -1,5 +1,7 @@
 'use client';
 
+import { useTranslation } from '@/lib/LanguageContext';
+
 import { useState, FormEvent, ChangeEvent } from 'react';
 import { Navbar } from '@/components/shared/navbar';
 import { Footer } from '@/components/shared/footer';
@@ -34,6 +36,7 @@ interface FormData {
 }
 
 export default function ContactPage() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -146,7 +149,7 @@ export default function ContactPage() {
                     onChange={handleInputChange}
                     required
                     className="w-full px-6 py-3 bg-[#0a0a0f] border border-gray-600 text-white rounded-lg focus:outline-none focus:border-cyan-400 transition-colors duration-300"
-                    placeholder="Your name"
+                    placeholder={t("contact.placeholder.name")}
                   />
                 </div>
 
@@ -199,7 +202,7 @@ export default function ContactPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="bg-red-500/20 border border-red-500/50 text-red-300 px-6 py-4 rounded-lg"
                   >
-                    <p className="font-semibold">Error sending message</p>
+                    <p className="font-semibold">{t("contact.error")}</p>
                     <p className="text-sm">{errorMessage}</p>
                   </motion.div>
                 )}
@@ -224,15 +227,15 @@ export default function ContactPage() {
             {/* Company Info Sidebar */}
             <motion.div variants={itemVariants} className="space-y-8">
               <div className="bg-gradient-to-br from-[#D4AF37]/5 to-cyan-500/5 border border-[#D4AF37]/30 rounded-2xl p-8">
-                <h3 className="text-2xl font-bold text-white mb-6">Dream Nova</h3>
+                <h3 className="text-2xl font-bold text-white mb-6">{t("contact.brand")}</h3>
                 <div className="space-y-6">
                   <div className="flex gap-4">
                     <div className="flex-shrink-0">
                       <MapPin className="w-6 h-6 text-[#D4AF37] mt-1" />
                     </div>
                     <div>
-                      <p className="font-semibold text-white mb-1">Location</p>
-                      <p className="text-gray-400">Jerusalem, Israel</p>
+                      <p className="font-semibold text-white mb-1">{t("contact.location.title")}</p>
+                      <p className="text-gray-400">{t("contact.location")}</p>
                     </div>
                   </div>
 
@@ -256,7 +259,7 @@ export default function ContactPage() {
                       <Phone className="w-6 h-6 text-[#D4AF37] mt-1" />
                     </div>
                     <div>
-                      <p className="font-semibold text-white mb-1">Response Time</p>
+                      <p className="font-semibold text-white mb-1">{t("contact.response.time")}</p>
                       <p className="text-gray-400">Within 24 hours</p>
                     </div>
                   </div>
@@ -268,7 +271,7 @@ export default function ContactPage() {
                 whileHover={{ scale: 1.05 }}
                 className="bg-gradient-to-br from-cyan-500/10 to-[#D4AF37]/10 border border-cyan-400/30 rounded-2xl p-6"
               >
-                <h4 className="font-semibold text-cyan-300 mb-2">Quick Response</h4>
+                <h4 className="font-semibold text-cyan-300 mb-2">{t("contact.quick")}</h4>
                 <p className="text-gray-400 text-sm">
                   Our team typically responds to inquiries within 24 hours on business days.
                 </p>
@@ -278,7 +281,7 @@ export default function ContactPage() {
                 whileHover={{ scale: 1.05 }}
                 className="bg-gradient-to-br from-[#D4AF37]/10 to-cyan-500/10 border border-[#D4AF37]/30 rounded-2xl p-6"
               >
-                <h4 className="font-semibold text-[#D4AF37] mb-2">Secure & Confidential</h4>
+                <h4 className="font-semibold text-[#D4AF37] mb-2">{t("contact.secure")}</h4>
                 <p className="text-gray-400 text-sm">
                   Your information is protected and treated with complete confidentiality.
                 </p>
@@ -300,7 +303,7 @@ export default function ContactPage() {
               variants={itemVariants}
               className="text-4xl font-bold text-white text-center mb-12"
             >
-              Frequently Asked <span className="text-[#D4AF37]">Questions</span>
+              Frequently Asked <span className="text-[#D4AF37]">{t("contact.questions")}</span>
             </motion.h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

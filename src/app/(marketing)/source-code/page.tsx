@@ -119,7 +119,7 @@ export default function SourceCodePage() {
           <div className="max-w-6xl mx-auto">
             <ScrollReveal>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-center mb-4">
-                Three Domains, <span className="sacred-gradient">One Structure</span>
+                Three Domains, <span className="sacred-gradient">{t("sc.domains.title2")}</span>
               </h2>
               <p className="text-[#8A8A9A] text-center max-w-2xl mx-auto mb-16">
                 Independent mathematical frameworks converging on the same recursive pattern.
@@ -279,7 +279,7 @@ export default function SourceCodePage() {
           <div className="max-w-4xl mx-auto text-center">
             <ScrollReveal>
               <h2 className="font-display text-3xl md:text-4xl font-bold mb-12">
-                Download the <span className="sacred-gradient">Research</span>
+                Download the <span className="sacred-gradient">{t("sc.research")}</span>
               </h2>
             </ScrollReveal>
             <div className="grid md:grid-cols-3 gap-6">

@@ -94,8 +94,8 @@ export default function OrdersPage() {
     <div className="space-y-8">
       {/* Header */}
       <div>
-        <h1 className="text-4xl font-bold text-white mb-2">Orders</h1>
-        <p className="text-gray-400">Manage and track all orders</p>
+        <h1 className="text-4xl font-bold text-white mb-2">{t("orders.title")}</h1>
+        <p className="text-gray-400">{t("orders.subtitle")}</p>
       </div>
 
       {/* Summary Stats */}
@@ -109,7 +109,7 @@ export default function OrdersPage() {
               +{mockOrders.length}
             </span>
           </div>
-          <p className="text-gray-400 text-sm mb-1">Total Orders</p>
+          <p className="text-gray-400 text-sm mb-1">{t("orders.total")}</p>
           <p className="text-3xl font-bold text-white">{mockOrders.length}</p>
         </div>
 
@@ -122,7 +122,7 @@ export default function OrdersPage() {
               +{deliveredCount}
             </span>
           </div>
-          <p className="text-gray-400 text-sm mb-1">Delivered</p>
+          <p className="text-gray-400 text-sm mb-1">{t("orders.delivered")}</p>
           <p className="text-3xl font-bold text-white">{deliveredCount}</p>
         </div>
 
@@ -133,7 +133,7 @@ export default function OrdersPage() {
             </div>
             <span className="text-gold text-sm font-semibold">+2.4%</span>
           </div>
-          <p className="text-gray-400 text-sm mb-1">Total Revenue</p>
+          <p className="text-gray-400 text-sm mb-1">{t("orders.revenue")}</p>
           <p className="text-3xl font-bold text-white">${totalRevenue.toFixed(2)}</p>
         </div>
       </div>
@@ -216,21 +216,21 @@ export default function OrdersPage() {
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
-                    <p className="text-gray-400 text-sm mb-1">Product</p>
+                    <p className="text-gray-400 text-sm mb-1">{t("orders.product")}</p>
                     <p className="text-white font-semibold">{order.product}</p>
                   </div>
                   <div>
-                    <p className="text-gray-400 text-sm mb-1">Order Date</p>
+                    <p className="text-gray-400 text-sm mb-1">{t("orders.date")}</p>
                     <p className="text-white font-semibold">
                       {new Date(order.date).toLocaleDateString()}
                     </p>
                   </div>
                   <div>
-                    <p className="text-gray-400 text-sm mb-1">Status</p>
+                    <p className="text-gray-400 text-sm mb-1">{t("orders.status")}</p>
                     <StatusBadge status={order.status} />
                   </div>
                   <div>
-                    <p className="text-gray-400 text-sm mb-1">Amount</p>
+                    <p className="text-gray-400 text-sm mb-1">{t("orders.amount")}</p>
                     <p className="text-white font-semibold">
                       ${order.amount.toFixed(2)}
                     </p>

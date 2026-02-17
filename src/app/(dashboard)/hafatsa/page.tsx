@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslation } from "@/lib/LanguageContext";
+
 import { Share2, Users, Award, TrendingUp, Copy, Check } from "lucide-react";
 import { useState } from "react";
 import { HAFATSA_POINTS } from "@/lib/constants";
@@ -8,7 +10,7 @@ import { motion } from "framer-motion";
 interface HafatsaActivity {
   id: string;
   type: "scan" | "share" | "referral" | "distribution";
-  description: string;
+  descKey: string;
   points: number;
   date: string;
 }
@@ -17,42 +19,42 @@ const mockActivity: HafatsaActivity[] = [
   {
     id: "1",
     type: "scan",
-    description: "Nova Key scan at local event",
+    descKey: 'hafatsa.scan.event',
     points: 1,
     date: "2025-02-14",
   },
   {
     id: "2",
     type: "share",
-    description: "Shared with friend",
+    descKey: 'hafatsa.shared.friend',
     points: 5,
     date: "2025-02-13",
   },
   {
     id: "3",
     type: "referral",
-    description: "Friend made purchase",
+    descKey: 'hafatsa.friend.purchase',
     points: 63,
     date: "2025-02-12",
   },
   {
     id: "4",
     type: "distribution",
-    description: "Free distribution at community",
+    descKey: 'hafatsa.free.dist',
     points: 10,
     date: "2025-02-11",
   },
   {
     id: "5",
     type: "scan",
-    description: "Nova Key scan",
+    descKey: 'hafatsa.scan',
     points: 1,
     date: "2025-02-10",
   },
   {
     id: "6",
     type: "share",
-    description: "Shared via social media",
+    descKey: 'hafatsa.shared.social',
     points: 5,
     date: "2025-02-09",
   },
@@ -75,6 +77,7 @@ const referralCode = "NOVA-DN-" + Math.random().toString(36).substr(2, 9).toUppe
 const referralLink = `https://dreamnova.com?ref=${referralCode}`;
 
 function ActivityCard({ activity }: { activity: HafatsaActivity }) {
+  const { t } = useTranslation();
   const typeColors = {
     scan: "bg-blue-500/20 text-blue-400",
     share: "bg-cyan-500/20 text-cyan-400",
@@ -96,7 +99,7 @@ function ActivityCard({ activity }: { activity: HafatsaActivity }) {
           {typeLabels[activity.type]}
         </div>
         <div className="flex-1">
-          <p className="text-white font-medium">{activity.description}</p>
+          <p className="text-white font-medium">{t(activity.descKey)}</p>
           <p className="text-gray-400 text-sm">
             {new Date(activity.date).toLocaleDateString()}
           </p>
@@ -111,6 +114,7 @@ function ActivityCard({ activity }: { activity: HafatsaActivity }) {
 }
 
 export default function HafatsaPage() {
+  const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
 
   const handleCopyLink = () => {
@@ -139,7 +143,7 @@ export default function HafatsaPage() {
         className="bg-gradient-to-br from-sacred-surface to-sacred-card border border-gold/30 rounded-lg p-8"
       >
         <div className="mb-8">
-          <p className="text-gray-400 text-sm mb-2">Current Points Balance</p>
+          <p className="text-gray-400 text-sm mb-2">{t("hafatsa.points")}</p>
           <p className="text-5xl font-bold text-gold mb-2">{userPoints}</p>
           <p className="text-gray-400">
             Total earned: {totalPoints} points from Hafatsa activities
@@ -171,17 +175,17 @@ export default function HafatsaPage() {
 
           <div className="grid sm:grid-cols-3 gap-4 text-sm">
             <div>
-              <p className="text-gray-400 mb-1">Current Level</p>
+              <p className="text-gray-400 mb-1">{t("hafatsa.level")}</p>
               <p className="text-gold font-bold">{currentLevel.title}</p>
             </div>
             <div>
-              <p className="text-gray-400 mb-1">Points Needed</p>
+              <p className="text-gray-400 mb-1">{t("hafatsa.needed")}</p>
               <p className="text-white font-bold">
                 {nextLevel.points - userPoints}
               </p>
             </div>
             <div>
-              <p className="text-gray-400 mb-1">Next Level</p>
+              <p className="text-gray-400 mb-1">{t("hafatsa.next")}</p>
               <p className="text-gold font-bold">{nextLevel.title}</p>
             </div>
           </div>
@@ -190,7 +194,7 @@ export default function HafatsaPage() {
 
       {/* Hafatsa Levels */}
       <div className="bg-sacred-surface border border-gold/20 rounded-lg p-8">
-        <h2 className="text-2xl font-bold text-gold mb-6">Hafatsa Levels</h2>
+        <h2 className="text-2xl font-bold text-gold mb-6">{t("hafatsa.levels")}</h2>
         <div className="grid sm:grid-cols-2 gap-6">
           {HAFATSA_POINTS.milestones.map((milestone, idx) => {
             const isUnlocked = userPoints >= milestone.points;
@@ -223,7 +227,7 @@ export default function HafatsaPage() {
                   {milestone.points} points required
                 </p>
                 {isCurrent && (
-                  <p className="text-xs text-gold mt-2">Current Level</p>
+                  <p className="text-xs text-gold mt-2">{t("hafatsa.level")}</p>
                 )}
               </motion.div>
             );
@@ -235,7 +239,7 @@ export default function HafatsaPage() {
       <div className="bg-sacred-surface border border-gold/20 rounded-lg p-8">
         <div className="flex items-center gap-3 mb-6">
           <Share2 className="w-6 h-6 text-gold" />
-          <h2 className="text-2xl font-bold text-gold">Share Your Hafatsa</h2>
+          <h2 className="text-2xl font-bold text-gold">{t("hafatsa.share")}</h2>
         </div>
 
         <div className="bg-sacred-black/50 rounded-lg p-6 mb-6">
@@ -265,21 +269,21 @@ export default function HafatsaPage() {
           <div className="border border-gold/20 rounded-lg p-4">
             <div className="flex items-center gap-3 mb-3">
               <Users className="w-5 h-5 text-gold" />
-              <p className="text-gray-400 text-sm">Referrals</p>
+              <p className="text-gray-400 text-sm">{t("hafatsa.referrals")}</p>
             </div>
             <p className="text-3xl font-bold text-white">4</p>
           </div>
           <div className="border border-gold/20 rounded-lg p-4">
             <div className="flex items-center gap-3 mb-3">
               <TrendingUp className="w-5 h-5 text-gold" />
-              <p className="text-gray-400 text-sm">Conversions</p>
+              <p className="text-gray-400 text-sm">{t("hafatsa.conversions")}</p>
             </div>
             <p className="text-3xl font-bold text-white">2</p>
           </div>
           <div className="border border-gold/20 rounded-lg p-4">
             <div className="flex items-center gap-3 mb-3">
               <Award className="w-5 h-5 text-gold" />
-              <p className="text-gray-400 text-sm">Earned Points</p>
+              <p className="text-gray-400 text-sm">{t("hafatsa.earned")}</p>
             </div>
             <p className="text-3xl font-bold text-gold">126</p>
           </div>
@@ -288,7 +292,7 @@ export default function HafatsaPage() {
 
       {/* Activity Log */}
       <div className="bg-sacred-surface border border-gold/20 rounded-lg p-8">
-        <h2 className="text-2xl font-bold text-gold mb-6">Recent Activity</h2>
+        <h2 className="text-2xl font-bold text-gold mb-6">{t("hafatsa.recent")}</h2>
         <div className="space-y-2">
           {mockActivity.map((activity, idx) => (
             <motion.div

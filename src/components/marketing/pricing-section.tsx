@@ -21,8 +21,8 @@ const includes = [
 
 const breakdown = [
   { label: "Production (NFC + Caméa)", amount: "$18" },
-  { label: "Shipping", amount: "$8" },
-  { label: "Digital Platform", amount: "$10" },
+  { labelKey: 'pricing.shipping', amount: "$8" },
+  { labelKey: 'pricing.digital', amount: "$10" },
   { label: "Hafatsa Mission (63M$)", amount: "$27" },
 ];
 
@@ -204,7 +204,7 @@ export function PricingSection() {
               </div>
             ))}
             <div className="border-t border-gold/20 pt-3 mt-3 flex justify-between font-bold">
-              <span className="text-gold">Total</span>
+              <span className="text-gold">{t("pricing.total")}</span>
               <span className="text-gold">$63</span>
             </div>
           </div>

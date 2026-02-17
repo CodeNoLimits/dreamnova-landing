@@ -64,7 +64,7 @@ function ProductCard({
           ))}
         </ul>
         <div className="mb-6">
-          <label className="block text-sm font-semibold text-gray-300 mb-2">Quantity</label>
+          <label className="block text-sm font-semibold text-gray-300 mb-2">{t("checkout.quantity")}</label>
           <div className="flex items-center gap-2">
             <button
               onClick={() => setQuantity(Math.max(1, quantity - 1))}

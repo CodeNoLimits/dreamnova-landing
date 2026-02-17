@@ -1,12 +1,14 @@
-"use client";
+'use client';
 
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { BookOpen, Zap, FileText, Loader2 } from "lucide-react";
+import { useTranslation } from "@/lib/LanguageContext";
 
 function UnlockContent() {
+  const { t } = useTranslation();
   const searchParams = useSearchParams();
   const key = searchParams.get("key");
   const [showContent, setShowContent] = useState(false);
@@ -55,18 +57,18 @@ function UnlockContent() {
         transition={{ duration: 1 }}
       >
         <h1 className="text-5xl sm:text-7xl font-bold mb-6 sacred-gradient animate-pulse">
-          Your Nova Key is Alive
+          {t('portal.unlock.title')}
         </h1>
 
         {key && (
           <p className="text-lg text-gray-400 mb-12 font-mono">
-            Key: <span className="text-gold">{key}</span>
+            {t('portal.unlock.key')} <span className="text-gold">{key}</span>
           </p>
         )}
 
         {!key && (
           <p className="text-lg text-gray-400 mb-12">
-            Scan your Nova Key to begin
+            {t('portal.unlock.scan')}
           </p>
         )}
 
@@ -85,8 +87,8 @@ function UnlockContent() {
                 <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-10 bg-gradient-to-br from-gold to-transparent transition-opacity duration-300" />
                 <div className="relative z-10">
                   <BookOpen className="w-8 h-8 text-gold mb-4 mx-auto" />
-                  <h2 className="text-lg font-bold text-white mb-2">Tikkun HaKlali</h2>
-                  <p className="text-sm text-gray-400">The General Remedy of the Ten Psalms</p>
+                  <h2 className="text-lg font-bold text-white mb-2">{t("portal.unlock.tikkun.title")}</h2>
+                  <p className="text-sm text-gray-400">{t("portal.unlock.tikkun.desc")}</p>
                 </div>
               </Link>
 
@@ -97,8 +99,8 @@ function UnlockContent() {
                 <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-10 bg-gradient-to-br from-gold to-transparent transition-opacity duration-300" />
                 <div className="relative z-10">
                   <Zap className="w-8 h-8 text-gold mb-4 mx-auto" />
-                  <h2 className="text-lg font-bold text-white mb-2">Azamra Meditation</h2>
-                  <p className="text-sm text-gray-400">Find the Good Point within yourself</p>
+                  <h2 className="text-lg font-bold text-white mb-2">{t("portal.unlock.azamra.title")}</h2>
+                  <p className="text-sm text-gray-400">{t("portal.unlock.azamra.desc")}</p>
                 </div>
               </Link>
 
@@ -109,8 +111,8 @@ function UnlockContent() {
                 <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-10 bg-gradient-to-br from-gold to-transparent transition-opacity duration-300" />
                 <div className="relative z-10">
                   <FileText className="w-8 h-8 text-gold mb-4 mx-auto" />
-                  <h2 className="text-lg font-bold text-white mb-2">Source Code Paper</h2>
-                  <p className="text-sm text-gray-400">The foundation of your transformation</p>
+                  <h2 className="text-lg font-bold text-white mb-2">{t("portal.unlock.source.title")}</h2>
+                  <p className="text-sm text-gray-400">{t("portal.unlock.source.desc")}</p>
                 </div>
               </Link>
             </motion.div>
