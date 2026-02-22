@@ -51,7 +51,7 @@ export async function POST(request: NextRequest) {
     }
 
     const stripe = new Stripe(stripeSecretKey, {
-      apiVersion: '2025-12-18.acacia' as Stripe.LatestApiVersion,
+      apiVersion: '2026-01-28.clover' as Stripe.LatestApiVersion,
     });
 
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dreamnova.vercel.app';
