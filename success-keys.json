@@ -1,0 +1,72 @@
+{
+  "fr": {
+    "success.title": "Votre Voyage Hafatsa Commence",
+    "success.note": "Votre Nova Key est en préparation à Jérusalem. Vous recevrez votre lien d'activation par email sous peu.",
+    "success.button.access": "Accéder au Contenu Digital",
+    "success.button.share": "Partager avec un Ami",
+    "success.button.home": "← Retour à l'Accueil"
+  },
+  "en": {
+    "success.title": "Your Hafatsa Journey Begins",
+    "success.note": "Your Nova Key is being prepared in Jerusalem. You will receive your activation link and NFC key details via email shortly.",
+    "success.button.access": "Access Digital Content",
+    "success.button.share": "Share with a Friend",
+    "success.button.home": "← Back to Home"
+  },
+  "es": {
+    "success.title": "Tu Viaje Hafatsa Comienza",
+    "success.note": "Tu Nova Key se está preparando en Jerusalén. Recibirás tu enlace de activación por correo electrónico en breve.",
+    "success.button.access": "Acceder al Contenido Digital",
+    "success.button.share": "Compartir con un Amigo",
+    "success.button.home": "← Volver al Inicio"
+  },
+  "he": {
+    "success.title": "מסע ההפצה שלך מתחיל",
+    "success.note": "הנובה קי שלך מוכן בירושלים. תקבל את קישור ההפעלה בדוא\"ל בקרוב.",
+    "success.button.access": "גישה לתוכן הדיגיטלי",
+    "success.button.share": "שתף עם חבר",
+    "success.button.home": "← חזרה לדף הבית"
+  },
+  "zh": {
+    "success.title": "你的Hafatsa之旅开始了",
+    "success.note": "你的Nova Key正在耶路撒冷准备中。你将很快通过电子邮件收到激活链接。",
+    "success.button.access": "访问数字内容",
+    "success.button.share": "与朋友分享",
+    "success.button.home": "← 返回首页"
+  },
+  "ko": {
+    "success.title": "당신의 Hafatsa 여정이 시작됩니다",
+    "success.note": "Nova Key가 예루살렘에서 준비 중입니다. 활성화 링크와 NFC 키 세부정보를 곧 이메일로 받으실 것입니다.",
+    "success.button.access": "디지털 콘텐츠 액세스",
+    "success.button.share": "친구와 공유",
+    "success.button.home": "← 홈으로 돌아가기"
+  },
+  "pt": {
+    "success.title": "Sua Jornada Hafatsa Começa",
+    "success.note": "Sua Nova Key está sendo preparada em Jerusalém. Você receberá seu link de ativação por e-mail em breve.",
+    "success.button.access": "Acessar Conteúdo Digital",
+    "success.button.share": "Compartilhar com um Amigo",
+    "success.button.home": "← Voltar ao Início"
+  },
+  "de": {
+    "success.title": "Deine Hafatsa-Reise Beginnt",
+    "success.note": "Dein Nova Key wird in Jerusalem vorbereitet. Du erhältst deinen Aktivierungslink in Kürze per E-Mail.",
+    "success.button.access": "Zugriff auf Digitale Inhalte",
+    "success.button.share": "Mit einem Freund Teilen",
+    "success.button.home": "← Zurück zur Startseite"
+  },
+  "ja": {
+    "success.title": "あなたのHafatsaの旅が始まります",
+    "success.note": "Nova Keyはエルサレムで準備中です。アクティベーションリンクがまもなくメールで届きます。",
+    "success.button.access": "デジタルコンテンツにアクセス",
+    "success.button.share": "友達と共有",
+    "success.button.home": "← ホームに戻る"
+  },
+  "it": {
+    "success.title": "Il Tuo Viaggio Hafatsa Inizia",
+    "success.note": "La tua Nova Key è in preparazione a Gerusalemme. Riceverai il tuo link di attivazione via email a breve.",
+    "success.button.access": "Accedi ai Contenuti Digitali",
+    "success.button.share": "Condividi con un Amico",
+    "success.button.home": "← Torna alla Home"
+  }
+}

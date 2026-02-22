@@ -1,0 +1,52 @@
+{
+  "fr": {
+    "hafatsa.scan.event": "Scan Nova Key lors d'un événement local",
+    "hafatsa.scan": "Scan Nova Key",
+    "dash.nfc.scans": "Scans NFC"
+  },
+  "en": {
+    "hafatsa.scan.event": "Nova Key scan at local event",
+    "hafatsa.scan": "Nova Key scan",
+    "dash.nfc.scans": "NFC Scans"
+  },
+  "es": {
+    "hafatsa.scan.event": "Escaneo Nova Key en evento local",
+    "hafatsa.scan": "Escaneo Nova Key",
+    "dash.nfc.scans": "Escaneos NFC"
+  },
+  "he": {
+    "hafatsa.scan.event": "סריקת Nova Key באירוע מקומי",
+    "hafatsa.scan": "סריקת Nova Key",
+    "dash.nfc.scans": "סריקות NFC"
+  },
+  "zh": {
+    "hafatsa.scan.event": "本地活动Nova Key扫描",
+    "hafatsa.scan": "Nova Key扫描",
+    "dash.nfc.scans": "NFC扫描"
+  },
+  "ko": {
+    "hafatsa.scan.event": "로컬 이벤트에서 Nova Key 스캔",
+    "hafatsa.scan": "Nova Key 스캔",
+    "dash.nfc.scans": "NFC 스캔"
+  },
+  "pt": {
+    "hafatsa.scan.event": "Scan Nova Key em evento local",
+    "hafatsa.scan": "Scan Nova Key",
+    "dash.nfc.scans": "Scans NFC"
+  },
+  "de": {
+    "hafatsa.scan.event": "Nova Key Scan bei lokalem Event",
+    "hafatsa.scan": "Nova Key Scan",
+    "dash.nfc.scans": "NFC Scans"
+  },
+  "ja": {
+    "hafatsa.scan.event": "ローカルイベントでのNova Keyスキャン",
+    "hafatsa.scan": "Nova Keyスキャン",
+    "dash.nfc.scans": "NFCスキャン"
+  },
+  "it": {
+    "hafatsa.scan.event": "Scansione Nova Key evento locale",
+    "hafatsa.scan": "Scansione Nova Key",
+    "dash.nfc.scans": "Scansioni NFC"
+  }
+}

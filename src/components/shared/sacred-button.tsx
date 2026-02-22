@@ -49,10 +49,8 @@ export function SacredButton({
   // Render as Link if href is provided
   if (href) {
     return (
-      <Link href={href}>
-        <a className={buttonClass} onClick={onClick}>
-          {children}
-        </a>
+      <Link href={href} className={buttonClass} onClick={onClick}>
+        {children}
       </Link>
     );
   }

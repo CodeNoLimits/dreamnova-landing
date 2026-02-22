@@ -69,6 +69,28 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://dreamnova.com/#organization',
+      name: 'DreamNova',
+      url: 'https://dreamnova.com',
+      description: 'Sacred NFC platform merging Breslov spirituality with technology. Na Nach Nachman MeUman.',
+      foundingLocation: { '@type': 'Place', name: 'Jerusalem, Israel' },
+      sameAs: ['https://dreamnova.com', 'https://dreamnova.vercel.app'],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://dreamnova.com/#website',
+      url: 'https://dreamnova.com',
+      name: 'DreamNova',
+      publisher: { '@id': 'https://dreamnova.com/#organization' },
+    },
+  ],
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
@@ -76,7 +98,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`dark ${cinzel.variable} ${rajdhani.variable} ${spaceMono.variable} ${cormorant.variable}`}
       suppressHydrationWarning
     >
-      <body className="font-body bg-sacred-black text-[#E8E6E3] antialiased overflow-x-hidden">
+      <body className="font-body bg-sacred-black text-[#E8E6E3] antialiased overflow-x-hidden" suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <LanguageProvider>
           {children}
         </LanguageProvider>

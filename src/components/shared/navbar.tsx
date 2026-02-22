@@ -9,42 +9,48 @@ import { LanguageSelector } from './language-selector';
 import { useTranslation } from '@/lib/LanguageContext';
 
 // Sacred Na Nach Navigation - Each letter is a portal
-// Order: Right-to-Left (Hebrew reading direction) - Nachman → Nachma → Nach → Na
+// Na Nach Nachma Nachman MeUman — The fractal expansion of consciousness
+// Order: Na → Nach → Nachma → Nachman → Mem (following the Petek's sacred progression)
 const navLinks = [
   {
-    letter: 'נחמן',
-    latin: 'Nachman',
-    label: 'Nachman — Completion',
-    href: '/covenant-pack',
-    meaning: 'The Covenant'
-  },
-  {
-    letter: 'נחמ',
-    latin: 'Nachma',
-    label: 'Nachma — Wisdom',
-    href: '/source-code',
-    meaning: 'The Source Code'
+    letter: 'נ',
+    latin: 'Na',
+    label: 'Na — Awakening',
+    href: '/about',
+    meaning: 'The Mission',
+    tooltip: 'The 1st level — Simple awakening. The single letter Nun, the seed of all expansion in the Petek.'
   },
   {
     letter: 'נח',
     latin: 'Nach',
     label: 'Nach — Journey',
     href: '/nova-key',
-    meaning: 'The Sacred Key'
+    meaning: 'The Sacred Key',
+    tooltip: 'The 2nd level — Rest and healing. Nach means "rest" — the soothing of pain through sacred melody.'
   },
   {
-    letter: 'נ',
-    latin: 'Na',
-    label: 'Na — Awakening',
-    href: '/about',
-    meaning: 'The Mission'
+    letter: 'נחמ',
+    latin: 'Nachma',
+    label: 'Nachma — Wisdom',
+    href: '/source-code',
+    meaning: 'The Source Code',
+    tooltip: 'The 3rd level — Comfort and amplification. Nachma represents the triple expansion of divine consolation.'
+  },
+  {
+    letter: 'נחמן',
+    latin: 'Nachman',
+    label: 'Nachman — Completion',
+    href: '/covenant-pack',
+    meaning: 'The Covenant',
+    tooltip: 'The 4th level — Full connection to the Source. Rabbi Nachman of Breslov, the great-grandson of the Baal Shem Tov.'
   },
   {
     letter: 'מ',
     latin: 'Mem',
-    label: 'Mem — Adornments',
+    label: 'Mem — MeUman',
     href: '/accessories',
-    meaning: 'Sacred Artifacts'
+    meaning: 'Sacred Artifacts',
+    tooltip: 'From Uman — The source city where Rabbi Nachman is buried. Mem completes the sacred formula: Na Nach Nachma Nachman MeUman.'
   },
 ];
 
@@ -113,6 +119,11 @@ export function Navbar() {
                     <span className="font-body text-xs text-transparent group-hover:text-light-gray transition-all duration-300 opacity-0 group-hover:opacity-100 whitespace-nowrap mt-1">
                       {link.meaning}
                     </span>
+                  </div>
+                  {/* Tooltip popup on hover */}
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 px-4 py-3 bg-sacred-black/95 border border-gold/30 rounded-xl text-xs text-gray-300 leading-relaxed opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-500 group-hover:translate-y-0 translate-y-2 z-50 shadow-lg shadow-black/50 backdrop-blur-xl">
+                    <p>{link.tooltip}</p>
+                    <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-sacred-black/95 border-t border-l border-gold/30 rotate-45" />
                   </div>
                   {/* Underline Effect */}
                   <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

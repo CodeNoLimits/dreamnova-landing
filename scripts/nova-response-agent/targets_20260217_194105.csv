@@ -1,0 +1,10 @@
+name,address,phone,website,rating,total_reviews,prospect_score,prospect_tier,prospect_reasons,status
+Rehavia Premium Estates,"12 Azza St, Rehavia, Jerusalem",02-563-XXXX,rehavia-estates.co.il,4.8,156,75,A_PRIORITY,high_rating|high_volume|premium_area:Rehavia,READY_TO_CONTACT
+Katamon Luxury Properties,"45 Rachel Imeinu, Katamon, Jerusalem",02-671-XXXX,katamon-luxury.com,4.5,89,60,A_PRIORITY,high_rating|medium_volume|premium_area:Katamon,READY_TO_CONTACT
+Jerusalem Gold Realty,"8 King George, City Center, Jerusalem",02-622-XXXX,jlm-gold.co.il,4.2,234,40,B_QUALIFIED,good_rating|high_volume,READY_TO_CONTACT
+Holy City Real Estate,"3 Emek Refaim, German Colony, Jerusalem",02-566-XXXX,holycity-re.com,5.0,67,60,A_PRIORITY,high_rating|medium_volume|premium_area:German Colony,READY_TO_CONTACT
+Talbiye Prestige,"22 Hovevei Zion, Talbiye, Jerusalem",02-561-XXXX,talbiye-prestige.co.il,4.6,112,75,A_PRIORITY,high_rating|high_volume|premium_area:Talbiye,READY_TO_CONTACT
+Ein Kerem Properties,"1 HaMaayan, Ein Kerem, Jerusalem",02-641-XXXX,,4.3,45,50,A_PRIORITY,good_rating|premium_area:Ein Kerem|no_website_needs_tech,READY_TO_CONTACT
+Anglo-Saxon Jerusalem,"34 Keren HaYesod, Jerusalem",02-625-XXXX,anglo-saxon.co.il,4.7,312,55,A_PRIORITY,high_rating|high_volume,READY_TO_CONTACT
+RE/MAX Vision Jerusalem,"15 Hillel St, Jerusalem",02-624-XXXX,remax-vision.co.il,4.1,198,40,B_QUALIFIED,good_rating|high_volume,READY_TO_CONTACT
+Old Katamon Estates,"9 HaPalmach, Old Katamon, Jerusalem",02-563-XXXX,,4.4,76,60,A_PRIORITY,good_rating|medium_volume|premium_area:Katamon|no_website_needs_tech,READY_TO_CONTACT

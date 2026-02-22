@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { createClient } from '@supabase/supabase-js';
+import { sendOrderConfirmation } from '@/lib/brevo/emails';
 
 export const dynamic = 'force-dynamic';
 
@@ -137,6 +138,13 @@ export async function POST(request: NextRequest) {
         return NextResponse.json(
           { error: 'Failed to create order' },
           { status: 500 }
+        );
+      }
+
+      // Send Brevo order confirmation email (non-blocking)
+      if (process.env.BREVO_API_KEY) {
+        sendOrderConfirmation(customerEmail, totalAmount, sessionId).catch((err) =>
+          console.error('Brevo order confirmation error:', err)
         );
       }
 
