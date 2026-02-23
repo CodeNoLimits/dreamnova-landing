@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[24077,["/_next/static/chunks/676422587894ff86.js","/_next/static/chunks/74e671a5936f0220.js","/_next/static/chunks/938f9d12ba352b52.js","/_next/static/chunks/b6e5a14e8592e257.js","/_next/static/chunks/2f5ab92563abeecc.js","/_next/static/chunks/b62b001ad660c1b6.js"],"DocumentReader"]
-9:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+2:I[24077,["/dreamnova-landing/_next/static/chunks/676422587894ff86.js","/dreamnova-landing/_next/static/chunks/74e671a5936f0220.js","/dreamnova-landing/_next/static/chunks/938f9d12ba352b52.js","/dreamnova-landing/_next/static/chunks/b6e5a14e8592e257.js","/dreamnova-landing/_next/static/chunks/2f5ab92563abeecc.js","/dreamnova-landing/_next/static/chunks/b62b001ad660c1b6.js"],"DocumentReader"]
+9:I[97367,["/dreamnova-landing/_next/static/chunks/ff1a16fafef87110.js","/dreamnova-landing/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
 a:"$Sreact.suspense"
 3:T2e5f,# Breslov and Tisha B'Av: The Spiritual Guide to Mourning, Destruction, and Rebuilding
 
@@ -105,10 +105,10 @@ This is the essence of the Breslov relationship to Tisha B'Av: not performance o
 *Ein ye'ush ba'olam klal — There is no despair in the world at all.*
 
 *Na Nach Nachma Nachman MeUman.*
-0:{"buildId":"f_j30IFClRFlXffIVvfbs","rsc":["$","$1","c",{"children":[["$","$L2",null,{"doc":{"title":"Breslov and Tisha B'Av: The Spiritual Guide to Mourning, Destruction, and Rebuilding","slug":"breslov-tisha-bav-mourning-destruction-guide","category":"seo_breslov","categoryLabel":"Breslov Spirituality","categoryIcon":"🕊️","categoryColor":"#FF6B35","language":"en","wordCount":1916,"sections":[{"title":"Tisha B'Av in Breslov: The Deepest Dark, the Nearest Light","anchor":"tisha-bav-breslov-deepest-dark","level":2},{"title":"The Theology of Destruction in Breslov Thought","anchor":"theology-destruction-breslov","level":2},{"title":"The Kinot: Lamentation as Spiritual Practice","anchor":"kinot-lamentation-spiritual-practice","level":2},{"title":"Tisha B'Av as Preparation for Redemption","anchor":"tisha-bav-preparation-redemption","level":2}]},"content":"$3","prevDoc":{"title":"Rabbi Nachman on Music, Niggun, and Healing: The Complete Guide","slug":"rabbi-nachman-niggun-music-healing-guide"},"nextDoc":{"title":"Rabbi Nachman's Wisdom for Entrepreneurs: Breslov Teachings on Business, Risk, and Success","slug":"rabbi-nachman-wisdom-entrepreneurs"}}],["$L4","$L5","$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
-4:["$","script","script-0",{"src":"/_next/static/chunks/938f9d12ba352b52.js","async":true}]
-5:["$","script","script-1",{"src":"/_next/static/chunks/b6e5a14e8592e257.js","async":true}]
-6:["$","script","script-2",{"src":"/_next/static/chunks/2f5ab92563abeecc.js","async":true}]
-7:["$","script","script-3",{"src":"/_next/static/chunks/b62b001ad660c1b6.js","async":true}]
+0:{"buildId":"sgyHcDKt5ypTckjkVrLuR","rsc":["$","$1","c",{"children":[["$","$L2",null,{"doc":{"title":"Breslov and Tisha B'Av: The Spiritual Guide to Mourning, Destruction, and Rebuilding","slug":"breslov-tisha-bav-mourning-destruction-guide","category":"seo_breslov","categoryLabel":"Breslov Spirituality","categoryIcon":"🕊️","categoryColor":"#FF6B35","language":"en","wordCount":1916,"sections":[{"title":"Tisha B'Av in Breslov: The Deepest Dark, the Nearest Light","anchor":"tisha-bav-breslov-deepest-dark","level":2},{"title":"The Theology of Destruction in Breslov Thought","anchor":"theology-destruction-breslov","level":2},{"title":"The Kinot: Lamentation as Spiritual Practice","anchor":"kinot-lamentation-spiritual-practice","level":2},{"title":"Tisha B'Av as Preparation for Redemption","anchor":"tisha-bav-preparation-redemption","level":2}]},"content":"$3","prevDoc":{"title":"Rabbi Nachman on Music, Niggun, and Healing: The Complete Guide","slug":"rabbi-nachman-niggun-music-healing-guide"},"nextDoc":{"title":"Rabbi Nachman's Wisdom for Entrepreneurs: Breslov Teachings on Business, Risk, and Success","slug":"rabbi-nachman-wisdom-entrepreneurs"}}],["$L4","$L5","$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/dreamnova-landing/_next/static/chunks/938f9d12ba352b52.js","async":true}]
+5:["$","script","script-1",{"src":"/dreamnova-landing/_next/static/chunks/b6e5a14e8592e257.js","async":true}]
+6:["$","script","script-2",{"src":"/dreamnova-landing/_next/static/chunks/2f5ab92563abeecc.js","async":true}]
+7:["$","script","script-3",{"src":"/dreamnova-landing/_next/static/chunks/b62b001ad660c1b6.js","async":true}]
 8:["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]
 b:null

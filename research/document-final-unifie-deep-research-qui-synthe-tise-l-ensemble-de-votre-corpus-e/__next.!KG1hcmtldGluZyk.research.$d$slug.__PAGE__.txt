@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[24077,["/_next/static/chunks/676422587894ff86.js","/_next/static/chunks/74e671a5936f0220.js","/_next/static/chunks/938f9d12ba352b52.js","/_next/static/chunks/b6e5a14e8592e257.js","/_next/static/chunks/2f5ab92563abeecc.js","/_next/static/chunks/b62b001ad660c1b6.js"],"DocumentReader"]
-9:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+2:I[24077,["/dreamnova-landing/_next/static/chunks/676422587894ff86.js","/dreamnova-landing/_next/static/chunks/74e671a5936f0220.js","/dreamnova-landing/_next/static/chunks/938f9d12ba352b52.js","/dreamnova-landing/_next/static/chunks/b6e5a14e8592e257.js","/dreamnova-landing/_next/static/chunks/2f5ab92563abeecc.js","/dreamnova-landing/_next/static/chunks/b62b001ad660c1b6.js"],"DocumentReader"]
+9:I[97367,["/dreamnova-landing/_next/static/chunks/ff1a16fafef87110.js","/dreamnova-landing/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
 a:"$Sreact.suspense"
 3:T36e4,Voici le document final unifié, qui synthétise l'ensemble de votre corpus en intégrant méticuleusement toutes les corrections académiques et scientifiques de l'audit \(physique quantique, théorie de l'information, mathématiques, Kabbale\)\. Il est suivi du "Super\-Prompt" conçu pour guider une IA de Deep Research afin de générer la thèse exhaustive\.
 
@@ -116,10 +116,10 @@ TONALITÉ ET FORMAT :
 
 Le texte doit être magistral, implacablement logique, rédigé dans un français académique parfait, en utilisant les notations mathématiques \(LaTeX\) adéquates et des citations croisées rigoureuses\. Le ton final doit convaincre un jury de physiciens théoriciens et de maîtres de la Kabbale\.
 
-\[FIN DU PROMPT\]0:{"buildId":"f_j30IFClRFlXffIVvfbs","rsc":["$","$1","c",{"children":[["$","$L2",null,{"doc":{"title":"Document final unifié Deep research , qui synthétise l ensemble de votre corpus en intégrant méticuleusement toutes les corrections académiques et scientifiques de l audit (physique quantique, théorie de l information, mathématiques, Kabbale)","slug":"document-final-unifie-deep-research-qui-synthe-tise-l-ensemble-de-votre-corpus-e","category":"deep_research","categoryLabel":"Deep Research","categoryIcon":"🔬","categoryColor":"#00D4FF","language":"fr","wordCount":1907,"sections":[]},"content":"$3","prevDoc":{"title":"Deep Research  Chapter 6 Analysis","slug":"deep-research-chapter-6-analysis-1"},"nextDoc":null}],["$L4","$L5","$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
-4:["$","script","script-0",{"src":"/_next/static/chunks/938f9d12ba352b52.js","async":true}]
-5:["$","script","script-1",{"src":"/_next/static/chunks/b6e5a14e8592e257.js","async":true}]
-6:["$","script","script-2",{"src":"/_next/static/chunks/2f5ab92563abeecc.js","async":true}]
-7:["$","script","script-3",{"src":"/_next/static/chunks/b62b001ad660c1b6.js","async":true}]
+\[FIN DU PROMPT\]0:{"buildId":"sgyHcDKt5ypTckjkVrLuR","rsc":["$","$1","c",{"children":[["$","$L2",null,{"doc":{"title":"Document final unifié Deep research , qui synthétise l ensemble de votre corpus en intégrant méticuleusement toutes les corrections académiques et scientifiques de l audit (physique quantique, théorie de l information, mathématiques, Kabbale)","slug":"document-final-unifie-deep-research-qui-synthe-tise-l-ensemble-de-votre-corpus-e","category":"deep_research","categoryLabel":"Deep Research","categoryIcon":"🔬","categoryColor":"#00D4FF","language":"fr","wordCount":1907,"sections":[]},"content":"$3","prevDoc":{"title":"Deep Research  Chapter 6 Analysis","slug":"deep-research-chapter-6-analysis-1"},"nextDoc":null}],["$L4","$L5","$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/dreamnova-landing/_next/static/chunks/938f9d12ba352b52.js","async":true}]
+5:["$","script","script-1",{"src":"/dreamnova-landing/_next/static/chunks/b6e5a14e8592e257.js","async":true}]
+6:["$","script","script-2",{"src":"/dreamnova-landing/_next/static/chunks/2f5ab92563abeecc.js","async":true}]
+7:["$","script","script-3",{"src":"/dreamnova-landing/_next/static/chunks/b62b001ad660c1b6.js","async":true}]
 8:["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]
 b:null

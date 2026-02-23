@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[24077,["/_next/static/chunks/676422587894ff86.js","/_next/static/chunks/74e671a5936f0220.js","/_next/static/chunks/938f9d12ba352b52.js","/_next/static/chunks/b6e5a14e8592e257.js","/_next/static/chunks/2f5ab92563abeecc.js","/_next/static/chunks/b62b001ad660c1b6.js"],"DocumentReader"]
-9:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+2:I[24077,["/dreamnova-landing/_next/static/chunks/676422587894ff86.js","/dreamnova-landing/_next/static/chunks/74e671a5936f0220.js","/dreamnova-landing/_next/static/chunks/938f9d12ba352b52.js","/dreamnova-landing/_next/static/chunks/b6e5a14e8592e257.js","/dreamnova-landing/_next/static/chunks/2f5ab92563abeecc.js","/dreamnova-landing/_next/static/chunks/b62b001ad660c1b6.js"],"DocumentReader"]
+9:I[97367,["/dreamnova-landing/_next/static/chunks/ff1a16fafef87110.js","/dreamnova-landing/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
 a:"$Sreact.suspense"
 3:T2a82,# Breslov and Gratitude: Morning Blessings and the Practice of Daily Thankfulness
 
@@ -115,10 +115,10 @@ Morning blessings are not religious performance. They are the daily training of 
 That is the Breslov gratitude practice. That is, Rabbi Nachman teaches, the beginning of real spiritual life.
 
 *Modeh Ani. Na Nach Nachma Nachman MeUman.*
-0:{"buildId":"f_j30IFClRFlXffIVvfbs","rsc":["$","$1","c",{"children":[["$","$L2",null,{"doc":{"title":"Breslov and Gratitude: Morning Blessings and the Practice of Daily Thankfulness","slug":"breslov-gratitude-morning-blessings-practice","category":"seo_breslov","categoryLabel":"Breslov Spirituality","categoryIcon":"🕊️","categoryColor":"#FF6B35","language":"en","wordCount":1685,"sections":[{"title":"Gratitude as Foundation, Not Supplement","anchor":"gratitude-as-foundation-not-supplement","level":2},{"title":"Modeh Ani: The First Words of the Day","anchor":"modeh-ani-the-first-words-of-the-day","level":2},{"title":"The Seven Steps of Breslov Morning Practice","anchor":"the-seven-steps-of-breslov-morning-practice","level":2},{"title":"Gratitude for Difficulty: The Advanced Practice","anchor":"gratitude-for-difficulty-the-advanced-practice","level":2}]},"content":"$3","prevDoc":{"title":"Breslov and Kibbud Av VaEm: The Complete Guide to Honoring Parents","slug":"breslov-kibbud-av-vaem-honor-parents-guide"},"nextDoc":{"title":"Breslov and Sefirat HaOmer: The Complete Spiritual Guide to the 49-Day Ascent","slug":"breslov-sefirat-haomer-spiritual-guide"}}],["$L4","$L5","$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
-4:["$","script","script-0",{"src":"/_next/static/chunks/938f9d12ba352b52.js","async":true}]
-5:["$","script","script-1",{"src":"/_next/static/chunks/b6e5a14e8592e257.js","async":true}]
-6:["$","script","script-2",{"src":"/_next/static/chunks/2f5ab92563abeecc.js","async":true}]
-7:["$","script","script-3",{"src":"/_next/static/chunks/b62b001ad660c1b6.js","async":true}]
+0:{"buildId":"sgyHcDKt5ypTckjkVrLuR","rsc":["$","$1","c",{"children":[["$","$L2",null,{"doc":{"title":"Breslov and Gratitude: Morning Blessings and the Practice of Daily Thankfulness","slug":"breslov-gratitude-morning-blessings-practice","category":"seo_breslov","categoryLabel":"Breslov Spirituality","categoryIcon":"🕊️","categoryColor":"#FF6B35","language":"en","wordCount":1685,"sections":[{"title":"Gratitude as Foundation, Not Supplement","anchor":"gratitude-as-foundation-not-supplement","level":2},{"title":"Modeh Ani: The First Words of the Day","anchor":"modeh-ani-the-first-words-of-the-day","level":2},{"title":"The Seven Steps of Breslov Morning Practice","anchor":"the-seven-steps-of-breslov-morning-practice","level":2},{"title":"Gratitude for Difficulty: The Advanced Practice","anchor":"gratitude-for-difficulty-the-advanced-practice","level":2}]},"content":"$3","prevDoc":{"title":"Breslov and Kibbud Av VaEm: The Complete Guide to Honoring Parents","slug":"breslov-kibbud-av-vaem-honor-parents-guide"},"nextDoc":{"title":"Breslov and Sefirat HaOmer: The Complete Spiritual Guide to the 49-Day Ascent","slug":"breslov-sefirat-haomer-spiritual-guide"}}],["$L4","$L5","$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/dreamnova-landing/_next/static/chunks/938f9d12ba352b52.js","async":true}]
+5:["$","script","script-1",{"src":"/dreamnova-landing/_next/static/chunks/b6e5a14e8592e257.js","async":true}]
+6:["$","script","script-2",{"src":"/dreamnova-landing/_next/static/chunks/2f5ab92563abeecc.js","async":true}]
+7:["$","script","script-3",{"src":"/dreamnova-landing/_next/static/chunks/b62b001ad660c1b6.js","async":true}]
 8:["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]
 b:null

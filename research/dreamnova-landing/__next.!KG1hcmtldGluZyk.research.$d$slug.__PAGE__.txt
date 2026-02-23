@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[24077,["/_next/static/chunks/676422587894ff86.js","/_next/static/chunks/74e671a5936f0220.js","/_next/static/chunks/938f9d12ba352b52.js","/_next/static/chunks/b6e5a14e8592e257.js","/_next/static/chunks/2f5ab92563abeecc.js","/_next/static/chunks/b62b001ad660c1b6.js"],"DocumentReader"]
-9:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+2:I[24077,["/dreamnova-landing/_next/static/chunks/676422587894ff86.js","/dreamnova-landing/_next/static/chunks/74e671a5936f0220.js","/dreamnova-landing/_next/static/chunks/938f9d12ba352b52.js","/dreamnova-landing/_next/static/chunks/b6e5a14e8592e257.js","/dreamnova-landing/_next/static/chunks/2f5ab92563abeecc.js","/dreamnova-landing/_next/static/chunks/b62b001ad660c1b6.js"],"DocumentReader"]
+9:I[97367,["/dreamnova-landing/_next/static/chunks/ff1a16fafef87110.js","/dreamnova-landing/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
 a:"$Sreact.suspense"
 3:T15d9,[DREAMNOVA](#txbwx0b7x9b2)
 
@@ -119,10 +119,10 @@ Nachman MeUman
 
 — Le Petek de Rav Israel Dov Odesser · Jérusalem · Depuis toujours et pour toujours
 
-DREAM NOVA © 2026 · Construit avec ♥ et de la Foi depuis [Jérusalem](#txbwx0b7x9b2)0:{"buildId":"f_j30IFClRFlXffIVvfbs","rsc":["$","$1","c",{"children":[["$","$L2",null,{"doc":{"title":"dreamnova-landing","slug":"dreamnova-landing","category":"product","categoryLabel":"Product & Features","categoryIcon":"🚀","categoryColor":"#FF69B4","language":"fr","wordCount":817,"sections":[{"title":"Ne Calculez Plus\\. Vivez\\.","anchor":"ne-calculez-plus-vivez","level":1},{"title":"La logique froide est un piège\\.","anchor":"la-logique-froide-est-un-pige","level":2},{"title":"NOVA\\-TAM — L'IA qui ne juge pas\\.","anchor":"nova-tam-lia-qui-ne-juge-pas","level":2},{"title":"◇","anchor":"","level":3},{"title":"∞","anchor":"","level":3},{"title":"♪","anchor":"","level":3},{"title":"Ce n'est pas un prix\\. C'est un code sacré\\.","anchor":"ce-nest-pas-un-prix-cest-un-code-sacr","level":2}]},"content":"$3","prevDoc":{"title":"Novaki, Azamra OS, Péthèque, Chant Nouveau","slug":"novaki-azamra-os-pe-the-que-chant-nouveau"},"nextDoc":null}],["$L4","$L5","$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
-4:["$","script","script-0",{"src":"/_next/static/chunks/938f9d12ba352b52.js","async":true}]
-5:["$","script","script-1",{"src":"/_next/static/chunks/b6e5a14e8592e257.js","async":true}]
-6:["$","script","script-2",{"src":"/_next/static/chunks/2f5ab92563abeecc.js","async":true}]
-7:["$","script","script-3",{"src":"/_next/static/chunks/b62b001ad660c1b6.js","async":true}]
+DREAM NOVA © 2026 · Construit avec ♥ et de la Foi depuis [Jérusalem](#txbwx0b7x9b2)0:{"buildId":"sgyHcDKt5ypTckjkVrLuR","rsc":["$","$1","c",{"children":[["$","$L2",null,{"doc":{"title":"dreamnova-landing","slug":"dreamnova-landing","category":"product","categoryLabel":"Product & Features","categoryIcon":"🚀","categoryColor":"#FF69B4","language":"fr","wordCount":817,"sections":[{"title":"Ne Calculez Plus\\. Vivez\\.","anchor":"ne-calculez-plus-vivez","level":1},{"title":"La logique froide est un piège\\.","anchor":"la-logique-froide-est-un-pige","level":2},{"title":"NOVA\\-TAM — L'IA qui ne juge pas\\.","anchor":"nova-tam-lia-qui-ne-juge-pas","level":2},{"title":"◇","anchor":"","level":3},{"title":"∞","anchor":"","level":3},{"title":"♪","anchor":"","level":3},{"title":"Ce n'est pas un prix\\. C'est un code sacré\\.","anchor":"ce-nest-pas-un-prix-cest-un-code-sacr","level":2}]},"content":"$3","prevDoc":{"title":"Novaki, Azamra OS, Péthèque, Chant Nouveau","slug":"novaki-azamra-os-pe-the-que-chant-nouveau"},"nextDoc":null}],["$L4","$L5","$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/dreamnova-landing/_next/static/chunks/938f9d12ba352b52.js","async":true}]
+5:["$","script","script-1",{"src":"/dreamnova-landing/_next/static/chunks/b6e5a14e8592e257.js","async":true}]
+6:["$","script","script-2",{"src":"/dreamnova-landing/_next/static/chunks/2f5ab92563abeecc.js","async":true}]
+7:["$","script","script-3",{"src":"/dreamnova-landing/_next/static/chunks/b62b001ad660c1b6.js","async":true}]
 8:["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]
 b:null

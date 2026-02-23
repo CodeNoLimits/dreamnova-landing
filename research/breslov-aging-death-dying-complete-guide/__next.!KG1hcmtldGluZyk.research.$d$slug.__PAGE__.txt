@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[24077,["/_next/static/chunks/676422587894ff86.js","/_next/static/chunks/74e671a5936f0220.js","/_next/static/chunks/938f9d12ba352b52.js","/_next/static/chunks/b6e5a14e8592e257.js","/_next/static/chunks/2f5ab92563abeecc.js","/_next/static/chunks/b62b001ad660c1b6.js"],"DocumentReader"]
-9:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+2:I[24077,["/dreamnova-landing/_next/static/chunks/676422587894ff86.js","/dreamnova-landing/_next/static/chunks/74e671a5936f0220.js","/dreamnova-landing/_next/static/chunks/938f9d12ba352b52.js","/dreamnova-landing/_next/static/chunks/b6e5a14e8592e257.js","/dreamnova-landing/_next/static/chunks/2f5ab92563abeecc.js","/dreamnova-landing/_next/static/chunks/b62b001ad660c1b6.js"],"DocumentReader"]
+9:I[97367,["/dreamnova-landing/_next/static/chunks/ff1a16fafef87110.js","/dreamnova-landing/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
 a:"$Sreact.suspense"
 3:T2ed8,# Breslov and Aging, Death, and Dying: A Complete Spiritual Guide
 
@@ -123,10 +123,10 @@ The Rebbe died in Uman so that his grave would be a meeting point for broken sou
 ---
 
 *Access the Tikkun HaKlali — Rabbi Nachman's gift to souls navigating transition — through the [DreamNova portal](/tikkun).*
-0:{"buildId":"f_j30IFClRFlXffIVvfbs","rsc":["$","$1","c",{"children":[["$","$L2",null,{"doc":{"title":"Breslov and Aging, Death, and Dying: A Complete Spiritual Guide","slug":"breslov-aging-death-dying-complete-guide","category":"seo_breslov","categoryLabel":"Breslov Spirituality","categoryIcon":"🕊️","categoryColor":"#FF6B35","language":"en","wordCount":1941,"sections":[{"title":"The Courage to Look at the End","anchor":"the-courage-to-look-at-the-end","level":2},{"title":"Aging in Breslov: The Accumulation of Years as Spiritual Asset","anchor":"aging-in-breslov","level":2},{"title":"What Breslov Teaches About Death Itself","anchor":"what-breslov-teaches-about-death-itself","level":2},{"title":"Preparing for Death: The Breslov Way","anchor":"preparing-for-death-the-breslov-way","level":2},{"title":"Mourning in Breslov: The Shiva and Beyond","anchor":"mourning-in-breslov","level":2}]},"content":"$3","prevDoc":{"title":"Breslov Prayer for Fertility and Pregnancy: A Complete Guide to Rabbi Nachman's Teachings","slug":"breslov-prayer-fertility-pregnancy"},"nextDoc":{"title":"Rabbi Nachman on Music, Niggun, and Healing: The Complete Guide","slug":"rabbi-nachman-niggun-music-healing-guide"}}],["$L4","$L5","$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
-4:["$","script","script-0",{"src":"/_next/static/chunks/938f9d12ba352b52.js","async":true}]
-5:["$","script","script-1",{"src":"/_next/static/chunks/b6e5a14e8592e257.js","async":true}]
-6:["$","script","script-2",{"src":"/_next/static/chunks/2f5ab92563abeecc.js","async":true}]
-7:["$","script","script-3",{"src":"/_next/static/chunks/b62b001ad660c1b6.js","async":true}]
+0:{"buildId":"sgyHcDKt5ypTckjkVrLuR","rsc":["$","$1","c",{"children":[["$","$L2",null,{"doc":{"title":"Breslov and Aging, Death, and Dying: A Complete Spiritual Guide","slug":"breslov-aging-death-dying-complete-guide","category":"seo_breslov","categoryLabel":"Breslov Spirituality","categoryIcon":"🕊️","categoryColor":"#FF6B35","language":"en","wordCount":1941,"sections":[{"title":"The Courage to Look at the End","anchor":"the-courage-to-look-at-the-end","level":2},{"title":"Aging in Breslov: The Accumulation of Years as Spiritual Asset","anchor":"aging-in-breslov","level":2},{"title":"What Breslov Teaches About Death Itself","anchor":"what-breslov-teaches-about-death-itself","level":2},{"title":"Preparing for Death: The Breslov Way","anchor":"preparing-for-death-the-breslov-way","level":2},{"title":"Mourning in Breslov: The Shiva and Beyond","anchor":"mourning-in-breslov","level":2}]},"content":"$3","prevDoc":{"title":"Breslov Prayer for Fertility and Pregnancy: A Complete Guide to Rabbi Nachman's Teachings","slug":"breslov-prayer-fertility-pregnancy"},"nextDoc":{"title":"Rabbi Nachman on Music, Niggun, and Healing: The Complete Guide","slug":"rabbi-nachman-niggun-music-healing-guide"}}],["$L4","$L5","$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/dreamnova-landing/_next/static/chunks/938f9d12ba352b52.js","async":true}]
+5:["$","script","script-1",{"src":"/dreamnova-landing/_next/static/chunks/b6e5a14e8592e257.js","async":true}]
+6:["$","script","script-2",{"src":"/dreamnova-landing/_next/static/chunks/2f5ab92563abeecc.js","async":true}]
+7:["$","script","script-3",{"src":"/dreamnova-landing/_next/static/chunks/b62b001ad660c1b6.js","async":true}]
 8:["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]
 b:null

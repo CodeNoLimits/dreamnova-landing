@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[24077,["/_next/static/chunks/676422587894ff86.js","/_next/static/chunks/74e671a5936f0220.js","/_next/static/chunks/938f9d12ba352b52.js","/_next/static/chunks/b6e5a14e8592e257.js","/_next/static/chunks/2f5ab92563abeecc.js","/_next/static/chunks/b62b001ad660c1b6.js"],"DocumentReader"]
-9:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+2:I[24077,["/dreamnova-landing/_next/static/chunks/676422587894ff86.js","/dreamnova-landing/_next/static/chunks/74e671a5936f0220.js","/dreamnova-landing/_next/static/chunks/938f9d12ba352b52.js","/dreamnova-landing/_next/static/chunks/b6e5a14e8592e257.js","/dreamnova-landing/_next/static/chunks/2f5ab92563abeecc.js","/dreamnova-landing/_next/static/chunks/b62b001ad660c1b6.js"],"DocumentReader"]
+9:I[97367,["/dreamnova-landing/_next/static/chunks/ff1a16fafef87110.js","/dreamnova-landing/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
 a:"$Sreact.suspense"
 3:T2792,# What Is Tikkun HaKlali for Shabbat Eve? The Friday Night Practice Explained
 
@@ -117,10 +117,10 @@ Tikkun HaKlali on Shabbat eve is one of the most accessible and transformative p
 The promise attached to it — Rabbi Nachman's personal intercession — is among the most remarkable declarations any Jewish teacher has ever made. And the experience of entering Shabbat spiritually cleared, connected, and open is available to anyone willing to try.
 
 *Na Nach Nachma Nachman MeUman.*
-0:{"buildId":"f_j30IFClRFlXffIVvfbs","rsc":["$","$1","c",{"children":[["$","$L2",null,{"doc":{"title":"What Is Tikkun HaKlali for Shabbat Eve? The Friday Night Practice Explained","slug":"tikkun-haklali-shabbat-eve-friday-night","category":"seo_breslov","categoryLabel":"Breslov Spirituality","categoryIcon":"🕊️","categoryColor":"#FF6B35","language":"en","wordCount":1554,"sections":[{"title":"What Is Tikkun HaKlali?","anchor":"what-is-tikkun-haklali","level":2},{"title":"The Connection Between Tikkun HaKlali and Shabbat","anchor":"the-connection-between-tikkun-haklali-and-shabbat","level":2},{"title":"When to Recite Tikkun HaKlali on Friday Night","anchor":"when-to-recite-tikkun-haklali-on-friday-night","level":2},{"title":"Special Kavvanot for Friday Night Tikkun HaKlali","anchor":"special-kavvanot-intentions-for-friday-night-tikkun-haklali","level":2}]},"content":"$3","prevDoc":{"title":"Breslov and Social Anxiety: How Rabbi Nachman's Teachings Transform Shyness Through Prayer","slug":"breslov-social-anxiety-shyness-prayer"},"nextDoc":{"title":"Rabbi Nachman and Fasting: The Real Significance of Taanit in Breslov Teaching","slug":"rabbi-nachman-fasting-taanit-significance"}}],["$L4","$L5","$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
-4:["$","script","script-0",{"src":"/_next/static/chunks/938f9d12ba352b52.js","async":true}]
-5:["$","script","script-1",{"src":"/_next/static/chunks/b6e5a14e8592e257.js","async":true}]
-6:["$","script","script-2",{"src":"/_next/static/chunks/2f5ab92563abeecc.js","async":true}]
-7:["$","script","script-3",{"src":"/_next/static/chunks/b62b001ad660c1b6.js","async":true}]
+0:{"buildId":"sgyHcDKt5ypTckjkVrLuR","rsc":["$","$1","c",{"children":[["$","$L2",null,{"doc":{"title":"What Is Tikkun HaKlali for Shabbat Eve? The Friday Night Practice Explained","slug":"tikkun-haklali-shabbat-eve-friday-night","category":"seo_breslov","categoryLabel":"Breslov Spirituality","categoryIcon":"🕊️","categoryColor":"#FF6B35","language":"en","wordCount":1554,"sections":[{"title":"What Is Tikkun HaKlali?","anchor":"what-is-tikkun-haklali","level":2},{"title":"The Connection Between Tikkun HaKlali and Shabbat","anchor":"the-connection-between-tikkun-haklali-and-shabbat","level":2},{"title":"When to Recite Tikkun HaKlali on Friday Night","anchor":"when-to-recite-tikkun-haklali-on-friday-night","level":2},{"title":"Special Kavvanot for Friday Night Tikkun HaKlali","anchor":"special-kavvanot-intentions-for-friday-night-tikkun-haklali","level":2}]},"content":"$3","prevDoc":{"title":"Breslov and Social Anxiety: How Rabbi Nachman's Teachings Transform Shyness Through Prayer","slug":"breslov-social-anxiety-shyness-prayer"},"nextDoc":{"title":"Rabbi Nachman and Fasting: The Real Significance of Taanit in Breslov Teaching","slug":"rabbi-nachman-fasting-taanit-significance"}}],["$L4","$L5","$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/dreamnova-landing/_next/static/chunks/938f9d12ba352b52.js","async":true}]
+5:["$","script","script-1",{"src":"/dreamnova-landing/_next/static/chunks/b6e5a14e8592e257.js","async":true}]
+6:["$","script","script-2",{"src":"/dreamnova-landing/_next/static/chunks/2f5ab92563abeecc.js","async":true}]
+7:["$","script","script-3",{"src":"/dreamnova-landing/_next/static/chunks/b62b001ad660c1b6.js","async":true}]
 8:["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]
 b:null

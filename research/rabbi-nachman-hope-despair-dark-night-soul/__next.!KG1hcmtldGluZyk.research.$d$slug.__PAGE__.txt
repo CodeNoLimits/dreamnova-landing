@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[24077,["/_next/static/chunks/676422587894ff86.js","/_next/static/chunks/74e671a5936f0220.js","/_next/static/chunks/938f9d12ba352b52.js","/_next/static/chunks/b6e5a14e8592e257.js","/_next/static/chunks/2f5ab92563abeecc.js","/_next/static/chunks/b62b001ad660c1b6.js"],"DocumentReader"]
-9:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+2:I[24077,["/dreamnova-landing/_next/static/chunks/676422587894ff86.js","/dreamnova-landing/_next/static/chunks/74e671a5936f0220.js","/dreamnova-landing/_next/static/chunks/938f9d12ba352b52.js","/dreamnova-landing/_next/static/chunks/b6e5a14e8592e257.js","/dreamnova-landing/_next/static/chunks/2f5ab92563abeecc.js","/dreamnova-landing/_next/static/chunks/b62b001ad660c1b6.js"],"DocumentReader"]
+9:I[97367,["/dreamnova-landing/_next/static/chunks/ff1a16fafef87110.js","/dreamnova-landing/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
 a:"$Sreact.suspense"
 3:T2b13,# Rabbi Nachman and Hope: Navigating Despair and the Dark Night of the Soul Through Breslov Teaching
 
@@ -98,10 +98,10 @@ The dark night of the soul, in Rabbi Nachman's teaching, is not a sign that God 
 There is no such thing as despair in the world at all.
 
 *Na Nach Nachma Nachman MeUman.*
-0:{"buildId":"f_j30IFClRFlXffIVvfbs","rsc":["$","$1","c",{"children":[["$","$L2",null,{"doc":{"title":"Rabbi Nachman and Hope: Navigating Despair and the Dark Night of the Soul Through Breslov","slug":"rabbi-nachman-hope-despair-dark-night-soul","category":"seo_breslov","categoryLabel":"Breslov Spirituality","categoryIcon":"🕊️","categoryColor":"#FF6B35","language":"en","wordCount":1779,"sections":[{"title":"The Teacher Who Knew Darkness","anchor":"the-teacher-who-knew-darkness","level":2},{"title":"There Is No Such Thing as Despair in the World","anchor":"there-is-no-such-thing-as-despair-in-the-world","level":2},{"title":"Three Kinds of Despair Rabbi Nachman Addresses","anchor":"three-kinds-of-despair-rabbi-nachman-addresses","level":2},{"title":"Azamra: Finding the Point of Light","anchor":"azamra-finding-the-point-of-light","level":2}]},"content":"$3","prevDoc":{"title":"Rabbi Nachman on Poverty, Wealth, and Teshuvah: The Complete Spiritual Guide","slug":"rabbi-nachman-poverty-wealth-teshuva-guide"},"nextDoc":{"title":"Rabbi Nachman and Purim: Joy, the Hidden Face, and the Mask of Revelation","slug":"rabbi-nachman-purim-joy-mask-hidden-face"}}],["$L4","$L5","$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
-4:["$","script","script-0",{"src":"/_next/static/chunks/938f9d12ba352b52.js","async":true}]
-5:["$","script","script-1",{"src":"/_next/static/chunks/b6e5a14e8592e257.js","async":true}]
-6:["$","script","script-2",{"src":"/_next/static/chunks/2f5ab92563abeecc.js","async":true}]
-7:["$","script","script-3",{"src":"/_next/static/chunks/b62b001ad660c1b6.js","async":true}]
+0:{"buildId":"sgyHcDKt5ypTckjkVrLuR","rsc":["$","$1","c",{"children":[["$","$L2",null,{"doc":{"title":"Rabbi Nachman and Hope: Navigating Despair and the Dark Night of the Soul Through Breslov","slug":"rabbi-nachman-hope-despair-dark-night-soul","category":"seo_breslov","categoryLabel":"Breslov Spirituality","categoryIcon":"🕊️","categoryColor":"#FF6B35","language":"en","wordCount":1779,"sections":[{"title":"The Teacher Who Knew Darkness","anchor":"the-teacher-who-knew-darkness","level":2},{"title":"There Is No Such Thing as Despair in the World","anchor":"there-is-no-such-thing-as-despair-in-the-world","level":2},{"title":"Three Kinds of Despair Rabbi Nachman Addresses","anchor":"three-kinds-of-despair-rabbi-nachman-addresses","level":2},{"title":"Azamra: Finding the Point of Light","anchor":"azamra-finding-the-point-of-light","level":2}]},"content":"$3","prevDoc":{"title":"Rabbi Nachman on Poverty, Wealth, and Teshuvah: The Complete Spiritual Guide","slug":"rabbi-nachman-poverty-wealth-teshuva-guide"},"nextDoc":{"title":"Rabbi Nachman and Purim: Joy, the Hidden Face, and the Mask of Revelation","slug":"rabbi-nachman-purim-joy-mask-hidden-face"}}],["$L4","$L5","$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/dreamnova-landing/_next/static/chunks/938f9d12ba352b52.js","async":true}]
+5:["$","script","script-1",{"src":"/dreamnova-landing/_next/static/chunks/b6e5a14e8592e257.js","async":true}]
+6:["$","script","script-2",{"src":"/dreamnova-landing/_next/static/chunks/2f5ab92563abeecc.js","async":true}]
+7:["$","script","script-3",{"src":"/dreamnova-landing/_next/static/chunks/b62b001ad660c1b6.js","async":true}]
 8:["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]
 b:null

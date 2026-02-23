@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[24077,["/_next/static/chunks/676422587894ff86.js","/_next/static/chunks/74e671a5936f0220.js","/_next/static/chunks/938f9d12ba352b52.js","/_next/static/chunks/b6e5a14e8592e257.js","/_next/static/chunks/2f5ab92563abeecc.js","/_next/static/chunks/b62b001ad660c1b6.js"],"DocumentReader"]
-9:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+2:I[24077,["/dreamnova-landing/_next/static/chunks/676422587894ff86.js","/dreamnova-landing/_next/static/chunks/74e671a5936f0220.js","/dreamnova-landing/_next/static/chunks/938f9d12ba352b52.js","/dreamnova-landing/_next/static/chunks/b6e5a14e8592e257.js","/dreamnova-landing/_next/static/chunks/2f5ab92563abeecc.js","/dreamnova-landing/_next/static/chunks/b62b001ad660c1b6.js"],"DocumentReader"]
+9:I[97367,["/dreamnova-landing/_next/static/chunks/ff1a16fafef87110.js","/dreamnova-landing/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
 a:"$Sreact.suspense"
 3:T326f,# Breslov for Post-Trauma Healing and PTSD: Rabbi Nachman's Path Through the Broken Places
 
@@ -126,10 +126,10 @@ The promise is this: you are not finished. The chapter you are in is not the las
 *Na Nach Nachma Nachman MeUman.*
 
 The broken heart is not a failed heart. It is the heart that opened.
-0:{"buildId":"f_j30IFClRFlXffIVvfbs","rsc":["$","$1","c",{"children":[["$","$L2",null,{"doc":{"title":"Breslov for Post-Trauma Healing and PTSD: Rabbi Nachman's Path Through the Broken Places","slug":"breslov-post-trauma-healing-ptsd","category":"seo_breslov","categoryLabel":"Breslov Spirituality","categoryIcon":"🕊️","categoryColor":"#FF6B35","language":"en","wordCount":1990,"sections":[{"title":"Understanding Trauma Through a Breslov Lens","anchor":"understanding-trauma-through-a-breslov-lens","level":2},{"title":"The Specific Breslov Gifts for Trauma Recovery","anchor":"the-specific-breslov-gifts-for-trauma-recovery","level":2},{"title":"Breslov and Clinical PTSD: Important Boundaries","anchor":"breslov-and-clinical-ptsd-important-boundaries","level":2},{"title":"Practical Protocol for Trauma Recovery","anchor":"practical-protocol-for-trauma-recovery","level":2}]},"content":"$3","prevDoc":{"title":"Breslov and Shabbat: The Complete Spiritual Guide to the Holy Day of Rest","slug":"breslov-shabbat-complete-spiritual-guide"},"nextDoc":{"title":"Breslov Prayer for Fertility and Pregnancy: A Complete Guide to Rabbi Nachman's Teachings","slug":"breslov-prayer-fertility-pregnancy"}}],["$L4","$L5","$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
-4:["$","script","script-0",{"src":"/_next/static/chunks/938f9d12ba352b52.js","async":true}]
-5:["$","script","script-1",{"src":"/_next/static/chunks/b6e5a14e8592e257.js","async":true}]
-6:["$","script","script-2",{"src":"/_next/static/chunks/2f5ab92563abeecc.js","async":true}]
-7:["$","script","script-3",{"src":"/_next/static/chunks/b62b001ad660c1b6.js","async":true}]
+0:{"buildId":"sgyHcDKt5ypTckjkVrLuR","rsc":["$","$1","c",{"children":[["$","$L2",null,{"doc":{"title":"Breslov for Post-Trauma Healing and PTSD: Rabbi Nachman's Path Through the Broken Places","slug":"breslov-post-trauma-healing-ptsd","category":"seo_breslov","categoryLabel":"Breslov Spirituality","categoryIcon":"🕊️","categoryColor":"#FF6B35","language":"en","wordCount":1990,"sections":[{"title":"Understanding Trauma Through a Breslov Lens","anchor":"understanding-trauma-through-a-breslov-lens","level":2},{"title":"The Specific Breslov Gifts for Trauma Recovery","anchor":"the-specific-breslov-gifts-for-trauma-recovery","level":2},{"title":"Breslov and Clinical PTSD: Important Boundaries","anchor":"breslov-and-clinical-ptsd-important-boundaries","level":2},{"title":"Practical Protocol for Trauma Recovery","anchor":"practical-protocol-for-trauma-recovery","level":2}]},"content":"$3","prevDoc":{"title":"Breslov and Shabbat: The Complete Spiritual Guide to the Holy Day of Rest","slug":"breslov-shabbat-complete-spiritual-guide"},"nextDoc":{"title":"Breslov Prayer for Fertility and Pregnancy: A Complete Guide to Rabbi Nachman's Teachings","slug":"breslov-prayer-fertility-pregnancy"}}],["$L4","$L5","$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/dreamnova-landing/_next/static/chunks/938f9d12ba352b52.js","async":true}]
+5:["$","script","script-1",{"src":"/dreamnova-landing/_next/static/chunks/b6e5a14e8592e257.js","async":true}]
+6:["$","script","script-2",{"src":"/dreamnova-landing/_next/static/chunks/2f5ab92563abeecc.js","async":true}]
+7:["$","script","script-3",{"src":"/dreamnova-landing/_next/static/chunks/b62b001ad660c1b6.js","async":true}]
 8:["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]
 b:null

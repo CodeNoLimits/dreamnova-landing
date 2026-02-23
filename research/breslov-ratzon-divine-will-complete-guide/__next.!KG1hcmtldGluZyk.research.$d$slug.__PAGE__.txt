@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[24077,["/_next/static/chunks/676422587894ff86.js","/_next/static/chunks/74e671a5936f0220.js","/_next/static/chunks/938f9d12ba352b52.js","/_next/static/chunks/b6e5a14e8592e257.js","/_next/static/chunks/2f5ab92563abeecc.js","/_next/static/chunks/b62b001ad660c1b6.js"],"DocumentReader"]
-9:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+2:I[24077,["/dreamnova-landing/_next/static/chunks/676422587894ff86.js","/dreamnova-landing/_next/static/chunks/74e671a5936f0220.js","/dreamnova-landing/_next/static/chunks/938f9d12ba352b52.js","/dreamnova-landing/_next/static/chunks/b6e5a14e8592e257.js","/dreamnova-landing/_next/static/chunks/2f5ab92563abeecc.js","/dreamnova-landing/_next/static/chunks/b62b001ad660c1b6.js"],"DocumentReader"]
+9:I[97367,["/dreamnova-landing/_next/static/chunks/ff1a16fafef87110.js","/dreamnova-landing/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
 a:"$Sreact.suspense"
 3:T2cb2,# What Is Ratzon? The Complete Breslov Guide to Divine Will and Human Desire
 
@@ -106,10 +106,10 @@ The person who genuinely feels this — who perceives that every breath they tak
 This is the culmination of Breslov ratzon practice: not the achievement of particular desires, but the recognition that the capacity to desire — the fact that you are alive and wanting — is itself the greatest gift, the constant proof that divine will is present, and the open door through which genuine return becomes possible at every moment.
 
 *Na Nach Nachma Nachman MeUman.*
-0:{"buildId":"f_j30IFClRFlXffIVvfbs","rsc":["$","$1","c",{"children":[["$","$L2",null,{"doc":{"title":"What Is Ratzon? The Complete Breslov Guide to Divine Will and Human Desire","slug":"breslov-ratzon-divine-will-complete-guide","category":"seo_breslov","categoryLabel":"Breslov Spirituality","categoryIcon":"🕊️","categoryColor":"#FF6B35","language":"en","wordCount":1810,"sections":[{"title":"Ratzon: The Central Concept of Breslov Spirituality","anchor":"ratzon-central-concept","level":2},{"title":"The Metaphysics of Ratzon: Divine Will as Creation","anchor":"metaphysics-ratzon-divine-will","level":2},{"title":"The Psychology of Ratzon: Types of Desire","anchor":"psychology-ratzon-types-desire","level":2},{"title":"Practical Breslov: Working with Ratzon","anchor":"practical-breslov-working-ratzon","level":2}]},"content":"$3","prevDoc":{"title":"Breslov and Divorce: A Complete Healing Guide for the Broken Heart","slug":"breslov-divorce-healing-guide"},"nextDoc":{"title":"Rabbi Nachman on Poverty, Wealth, and Teshuvah: The Complete Spiritual Guide","slug":"rabbi-nachman-poverty-wealth-teshuva-guide"}}],["$L4","$L5","$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
-4:["$","script","script-0",{"src":"/_next/static/chunks/938f9d12ba352b52.js","async":true}]
-5:["$","script","script-1",{"src":"/_next/static/chunks/b6e5a14e8592e257.js","async":true}]
-6:["$","script","script-2",{"src":"/_next/static/chunks/2f5ab92563abeecc.js","async":true}]
-7:["$","script","script-3",{"src":"/_next/static/chunks/b62b001ad660c1b6.js","async":true}]
+0:{"buildId":"sgyHcDKt5ypTckjkVrLuR","rsc":["$","$1","c",{"children":[["$","$L2",null,{"doc":{"title":"What Is Ratzon? The Complete Breslov Guide to Divine Will and Human Desire","slug":"breslov-ratzon-divine-will-complete-guide","category":"seo_breslov","categoryLabel":"Breslov Spirituality","categoryIcon":"🕊️","categoryColor":"#FF6B35","language":"en","wordCount":1810,"sections":[{"title":"Ratzon: The Central Concept of Breslov Spirituality","anchor":"ratzon-central-concept","level":2},{"title":"The Metaphysics of Ratzon: Divine Will as Creation","anchor":"metaphysics-ratzon-divine-will","level":2},{"title":"The Psychology of Ratzon: Types of Desire","anchor":"psychology-ratzon-types-desire","level":2},{"title":"Practical Breslov: Working with Ratzon","anchor":"practical-breslov-working-ratzon","level":2}]},"content":"$3","prevDoc":{"title":"Breslov and Divorce: A Complete Healing Guide for the Broken Heart","slug":"breslov-divorce-healing-guide"},"nextDoc":{"title":"Rabbi Nachman on Poverty, Wealth, and Teshuvah: The Complete Spiritual Guide","slug":"rabbi-nachman-poverty-wealth-teshuva-guide"}}],["$L4","$L5","$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/dreamnova-landing/_next/static/chunks/938f9d12ba352b52.js","async":true}]
+5:["$","script","script-1",{"src":"/dreamnova-landing/_next/static/chunks/b6e5a14e8592e257.js","async":true}]
+6:["$","script","script-2",{"src":"/dreamnova-landing/_next/static/chunks/2f5ab92563abeecc.js","async":true}]
+7:["$","script","script-3",{"src":"/dreamnova-landing/_next/static/chunks/b62b001ad660c1b6.js","async":true}]
 8:["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]
 b:null

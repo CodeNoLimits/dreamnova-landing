@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[24077,["/_next/static/chunks/676422587894ff86.js","/_next/static/chunks/74e671a5936f0220.js","/_next/static/chunks/938f9d12ba352b52.js","/_next/static/chunks/b6e5a14e8592e257.js","/_next/static/chunks/2f5ab92563abeecc.js","/_next/static/chunks/b62b001ad660c1b6.js"],"DocumentReader"]
-9:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+2:I[24077,["/dreamnova-landing/_next/static/chunks/676422587894ff86.js","/dreamnova-landing/_next/static/chunks/74e671a5936f0220.js","/dreamnova-landing/_next/static/chunks/938f9d12ba352b52.js","/dreamnova-landing/_next/static/chunks/b6e5a14e8592e257.js","/dreamnova-landing/_next/static/chunks/2f5ab92563abeecc.js","/dreamnova-landing/_next/static/chunks/b62b001ad660c1b6.js"],"DocumentReader"]
+9:I[97367,["/dreamnova-landing/_next/static/chunks/ff1a16fafef87110.js","/dreamnova-landing/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
 a:"$Sreact.suspense"
 3:T2d35,# Breslov Teachings on Anger and Jealousy: Rabbi Nachman's Complete Guide
 
@@ -99,10 +99,10 @@ The free person is not the one who never feels anger or jealousy. It is the one 
 *Na Nach Nachma Nachman MeUman.*
 
 Your freedom is possible. The practice exists. Begin.
-0:{"buildId":"f_j30IFClRFlXffIVvfbs","rsc":["$","$1","c",{"children":[["$","$L2",null,{"doc":{"title":"Breslov Teachings on Anger and Jealousy: Rabbi Nachman's Complete Guide","slug":"breslov-teachings-anger-jealousy","category":"seo_breslov","categoryLabel":"Breslov Spirituality","categoryIcon":"🕊️","categoryColor":"#FF6B35","language":"en","wordCount":1870,"sections":[{"title":"Understanding Anger in Breslov: The Theology of Rage","anchor":"understanding-anger-in-breslov-the-theology-of-rage","level":2},{"title":"Understanding Jealousy in Breslov: The Theology of Envy","anchor":"understanding-jealousy-in-breslov-the-theology-of-envy","level":2},{"title":"Anger and Jealousy Together: The Compound Poison","anchor":"anger-and-jealousy-together-the-compound-poison","level":2}]},"content":"$3","prevDoc":{"title":"Breslov and Sukkot: The Complete Spiritual Guide to the Festival of Joy and the Four Species","slug":"breslov-sukkot-joy-lulav-spiritual-guide"},"nextDoc":{"title":"Rabbi Nachman and the Power of the Spoken Word: A Breslov Guide to Prayer and Speech","slug":"rabbi-nachman-power-spoken-word-prayer"}}],["$L4","$L5","$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
-4:["$","script","script-0",{"src":"/_next/static/chunks/938f9d12ba352b52.js","async":true}]
-5:["$","script","script-1",{"src":"/_next/static/chunks/b6e5a14e8592e257.js","async":true}]
-6:["$","script","script-2",{"src":"/_next/static/chunks/2f5ab92563abeecc.js","async":true}]
-7:["$","script","script-3",{"src":"/_next/static/chunks/b62b001ad660c1b6.js","async":true}]
+0:{"buildId":"sgyHcDKt5ypTckjkVrLuR","rsc":["$","$1","c",{"children":[["$","$L2",null,{"doc":{"title":"Breslov Teachings on Anger and Jealousy: Rabbi Nachman's Complete Guide","slug":"breslov-teachings-anger-jealousy","category":"seo_breslov","categoryLabel":"Breslov Spirituality","categoryIcon":"🕊️","categoryColor":"#FF6B35","language":"en","wordCount":1870,"sections":[{"title":"Understanding Anger in Breslov: The Theology of Rage","anchor":"understanding-anger-in-breslov-the-theology-of-rage","level":2},{"title":"Understanding Jealousy in Breslov: The Theology of Envy","anchor":"understanding-jealousy-in-breslov-the-theology-of-envy","level":2},{"title":"Anger and Jealousy Together: The Compound Poison","anchor":"anger-and-jealousy-together-the-compound-poison","level":2}]},"content":"$3","prevDoc":{"title":"Breslov and Sukkot: The Complete Spiritual Guide to the Festival of Joy and the Four Species","slug":"breslov-sukkot-joy-lulav-spiritual-guide"},"nextDoc":{"title":"Rabbi Nachman and the Power of the Spoken Word: A Breslov Guide to Prayer and Speech","slug":"rabbi-nachman-power-spoken-word-prayer"}}],["$L4","$L5","$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/dreamnova-landing/_next/static/chunks/938f9d12ba352b52.js","async":true}]
+5:["$","script","script-1",{"src":"/dreamnova-landing/_next/static/chunks/b6e5a14e8592e257.js","async":true}]
+6:["$","script","script-2",{"src":"/dreamnova-landing/_next/static/chunks/2f5ab92563abeecc.js","async":true}]
+7:["$","script","script-3",{"src":"/dreamnova-landing/_next/static/chunks/b62b001ad660c1b6.js","async":true}]
 8:["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]
 b:null

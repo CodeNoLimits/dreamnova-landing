@@ -1,0 +1,10 @@
+[
+  {
+    "regexp": "^\\/dreamnova-landing(?:\\/(_next\\/data\\/[^/]{1,}))?\\/portal\\/unlock(\\\\.json)?[\\/#\\?]?$",
+    "originalSource": "/portal/unlock"
+  },
+  {
+    "regexp": "^\\/dreamnova-landing(?:\\/(_next\\/data\\/[^/]{1,}))?\\/dashboard(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(\\\\.json)?[\\/#\\?]?$",
+    "originalSource": "/dashboard/:path*"
+  }
+]

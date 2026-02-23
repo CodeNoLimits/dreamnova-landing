@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[24077,["/_next/static/chunks/676422587894ff86.js","/_next/static/chunks/74e671a5936f0220.js","/_next/static/chunks/938f9d12ba352b52.js","/_next/static/chunks/b6e5a14e8592e257.js","/_next/static/chunks/2f5ab92563abeecc.js","/_next/static/chunks/b62b001ad660c1b6.js"],"DocumentReader"]
-9:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+2:I[24077,["/dreamnova-landing/_next/static/chunks/676422587894ff86.js","/dreamnova-landing/_next/static/chunks/74e671a5936f0220.js","/dreamnova-landing/_next/static/chunks/938f9d12ba352b52.js","/dreamnova-landing/_next/static/chunks/b6e5a14e8592e257.js","/dreamnova-landing/_next/static/chunks/2f5ab92563abeecc.js","/dreamnova-landing/_next/static/chunks/b62b001ad660c1b6.js"],"DocumentReader"]
+9:I[97367,["/dreamnova-landing/_next/static/chunks/ff1a16fafef87110.js","/dreamnova-landing/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
 a:"$Sreact.suspense"
 3:T2b37,# Rabbi Nachman and Purim: Joy, the Hidden Face, and the Mask of Revelation
 
@@ -95,10 +95,10 @@ The person who has internalized Purim-consciousness — who can find divine joy 
 *V'nahafoch hu* — and it was reversed. This is not just the story of Purim. It is the shape of all divine history, and it is available in every moment of genuine Breslov joy.
 
 *Na Nach Nachma Nachman MeUman.*
-0:{"buildId":"f_j30IFClRFlXffIVvfbs","rsc":["$","$1","c",{"children":[["$","$L2",null,{"doc":{"title":"Rabbi Nachman and Purim: Joy, the Hidden Face, and the Mask of Revelation","slug":"rabbi-nachman-purim-joy-mask-hidden-face","category":"seo_breslov","categoryLabel":"Breslov Spirituality","categoryIcon":"🕊️","categoryColor":"#FF6B35","language":"en","wordCount":1775,"sections":[{"title":"Purim as the Peak of All Festivals","anchor":"purim-peak-all-festivals","level":2},{"title":"Hester Panim: The Hidden Face of God","anchor":"hester-panim-hidden-face","level":2},{"title":"Purim Joy: The Most Demanding of All Mitzvot","anchor":"purim-joy-demanding-mitzvot","level":2},{"title":"The Mask as Teshuvah Technology","anchor":"mask-teshuvah-technology","level":2}]},"content":"$3","prevDoc":{"title":"Rabbi Nachman and Hope: Navigating Despair and the Dark Night of the Soul Through Breslov","slug":"rabbi-nachman-hope-despair-dark-night-soul"},"nextDoc":{"title":"Breslov and Forgiveness: The Complete Guide to Mechila, Kapparah, and Releasing the Wound","slug":"breslov-forgiveness-mechila-complete-guide"}}],["$L4","$L5","$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
-4:["$","script","script-0",{"src":"/_next/static/chunks/938f9d12ba352b52.js","async":true}]
-5:["$","script","script-1",{"src":"/_next/static/chunks/b6e5a14e8592e257.js","async":true}]
-6:["$","script","script-2",{"src":"/_next/static/chunks/2f5ab92563abeecc.js","async":true}]
-7:["$","script","script-3",{"src":"/_next/static/chunks/b62b001ad660c1b6.js","async":true}]
+0:{"buildId":"sgyHcDKt5ypTckjkVrLuR","rsc":["$","$1","c",{"children":[["$","$L2",null,{"doc":{"title":"Rabbi Nachman and Purim: Joy, the Hidden Face, and the Mask of Revelation","slug":"rabbi-nachman-purim-joy-mask-hidden-face","category":"seo_breslov","categoryLabel":"Breslov Spirituality","categoryIcon":"🕊️","categoryColor":"#FF6B35","language":"en","wordCount":1775,"sections":[{"title":"Purim as the Peak of All Festivals","anchor":"purim-peak-all-festivals","level":2},{"title":"Hester Panim: The Hidden Face of God","anchor":"hester-panim-hidden-face","level":2},{"title":"Purim Joy: The Most Demanding of All Mitzvot","anchor":"purim-joy-demanding-mitzvot","level":2},{"title":"The Mask as Teshuvah Technology","anchor":"mask-teshuvah-technology","level":2}]},"content":"$3","prevDoc":{"title":"Rabbi Nachman and Hope: Navigating Despair and the Dark Night of the Soul Through Breslov","slug":"rabbi-nachman-hope-despair-dark-night-soul"},"nextDoc":{"title":"Breslov and Forgiveness: The Complete Guide to Mechila, Kapparah, and Releasing the Wound","slug":"breslov-forgiveness-mechila-complete-guide"}}],["$L4","$L5","$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/dreamnova-landing/_next/static/chunks/938f9d12ba352b52.js","async":true}]
+5:["$","script","script-1",{"src":"/dreamnova-landing/_next/static/chunks/b6e5a14e8592e257.js","async":true}]
+6:["$","script","script-2",{"src":"/dreamnova-landing/_next/static/chunks/2f5ab92563abeecc.js","async":true}]
+7:["$","script","script-3",{"src":"/dreamnova-landing/_next/static/chunks/b62b001ad660c1b6.js","async":true}]
 8:["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]
 b:null
