@@ -2,14 +2,28 @@ import Particles from "@/components/Particles";
 import FloatingKey from "@/components/FloatingKey";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import { Button } from "@/components/ui/button";
+import Pricing from "@/components/Pricing";
 
 export default function Home() {
   return (
     <main className="relative z-10 w-full overflow-hidden">
+      
+      {/* NA NACH BANNER */}
+      <div className="w-full bg-void border-b border-sacred/20 overflow-hidden py-3">
+        <div className="flex animate-[marquee-reverse_30s_linear_infinite] w-max items-center">
+          {[...Array(20)].map((_, i) => (
+            <div key={i} className="flex items-center gap-12 px-6">
+              <span className="text-sacred font-bold text-xl tracking-[0.3em]" style={{ textShadow: '0 0 10px rgba(212,175,55,0.4)' }}>נ נח נחמ נחמן מאומן</span>
+              <span className="tech-text text-cyan/50 text-xs">NA NACH NACHMA NACHMAN MEM</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <Particles />
 
       {/* HERO SECTION */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden pt-20 pb-12">
+      <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden pt-12 pb-12">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-sacred/5 rounded-full blur-[120px] pointer-events-none" />
         
         <div className="z-10 mb-12">
@@ -70,8 +84,17 @@ export default function Home() {
               <li className="flex items-center gap-3"><div className="w-1 h-1 bg-cyan rounded-full"/> Attention spans decimated</li>
             </ul>
           </div>
-          <div className="relative h-64 border border-sacred/20 flex items-center justify-center p-8 bg-gradient-to-b from-transparent to-sacred/5">
-            <div className="text-center font-space text-red-500/80 uppercase tracking-widest text-lg">
+          <div className="relative h-64 border border-sacred/20 flex items-center justify-center p-8 bg-gradient-to-b from-transparent to-sacred/5 overflow-hidden">
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen mix-blend-luminosity grayscale"
+            >
+              <source src="https://videos.pexels.com/video-files/3129576/3129576-hd_1920_1080_30fps.mp4" type="video/mp4" />
+            </video>
+            <div className="relative z-10 text-center font-space text-red-500/80 uppercase tracking-widest text-lg bg-black/50 px-4 py-2 border border-red-500/30 backdrop-blur-sm">
               [ SYSTEM ENTROPY: CRITICAL ]
             </div>
           </div>
@@ -91,71 +114,44 @@ export default function Home() {
               { title: "ASL 200x", desc: "Alternative Splicing Layer scaling consciousness processing efficiency by two orders of magnitude." },
               { title: "Azamra Engine", desc: "Negentropic protocol actively searching for the 'Good Point' to collapse the wave function of despair." }
             ].map((item, i) => (
-              <div key={i} className="p-6 border border-sacred/20 bg-void/80 hover:glowing-sacred transition-all duration-500 group">
-                <h3 className="text-xl text-cyan mb-4">{item.title}</h3>
-                <p className="text-white/60 font-light">{item.desc}</p>
-                <div className="mt-6 w-full h-[1px] bg-sacred/20 group-hover:bg-sacred/50 transition-colors" />
+              <div key={i} className="p-6 border border-sacred/20 bg-void/80 hover:glowing-sacred transition-all duration-500 group relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-cyan/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                <h3 className="relative z-10 text-xl text-cyan mb-4 font-cinzel">{item.title}</h3>
+                <p className="relative z-10 text-white/60 font-light">{item.desc}</p>
+                <div className="relative z-10 mt-6 w-full h-[1px] bg-sacred/20 group-hover:bg-sacred/50 transition-colors" />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 3. THE PRODUCT */}
-      <section id="pricing" className="py-24 px-6 relative bg-gradient-to-b from-void via-sacred/5 to-void border-y border-sacred/20 overflow-hidden">
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
-          <div className="w-full lg:w-1/2 order-2 lg:order-1 relative">
-             <div className="aspect-square rounded-full border border-dashed border-cyan/30 flex items-center justify-center relative">
-               <div className="absolute inset-4 rounded-full border border-sacred/20 animate-[spin_60s_linear_infinite]" />
-               <div className="absolute inset-12 rounded-full border border-cyan/10 animate-[spin_40s_linear_infinite_reverse]" />
-               <div className="text-center z-10 p-8">
-                 <h3 className="text-2xl text-sacred mb-2 pt-4">DCS 6-Pillar Radar</h3>
-                 <p className="tech-text pt-2">LIVE TAP FLOW ACTIVATED</p>
-                 <div className="mt-4 tech-text text-xs text-white/40">
-                   {`{ STATUS: SYNCED, LATENCY: 12ms }`}
-                 </div>
-               </div>
-             </div>
-          </div>
-          <div className="w-full lg:w-1/2 order-1 lg:order-2">
-            <span className="tech-text">03 // HARDWARE</span>
-            <h2 className="text-4xl md:text-5xl text-sacred mt-4 mb-8">The Product</h2>
-            <p className="text-xl text-white/70 mb-8 font-light">
-              A physical anchor for digital therapeutics. Touch the Nova Key NFC to bypass the conscious resistance layer and inject the Source Code directly into the OS.
-            </p>
-            <div className="p-8 border border-sacred glowing-sacred bg-black">
-              <div className="flex justify-between items-center border-b border-sacred/30 pb-4 mb-4">
-                <h3 className="text-2xl text-white">NOVA KEY TIER 1</h3>
-                <span className="text-3xl text-sacred font-cinzel">$63</span>
-              </div>
-              <ul className="space-y-3 font-light text-white/80 mb-8">
-                <li>• Matte Black Metal NFC Card</li>
-                <li>• 148 Sacred Geometry Engraving</li>
-                <li>• Instant Azamra Protocol Access</li>
-                <li>• Hafatsa Ambassador Status</li>
-              </ul>
-              <Button className="w-full">INITIATE PURCHASE</Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Pricing />
 
       {/* 4. BLUE OCEAN */}
-      <section className="py-24 px-6 relative">
-        <div className="max-w-5xl mx-auto text-center">
+      <section className="py-24 px-6 relative overflow-hidden border-b border-white/5">
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-10 mix-blend-screen"
+        >
+          <source src="https://videos.pexels.com/video-files/853889/853889-hd_1920_1080_25fps.mp4" type="video/mp4" />
+        </video>
+        <div className="max-w-5xl mx-auto text-center relative z-10">
           <span className="tech-text">04 // MARKET TOPOLOGY</span>
           <h2 className="text-3xl md:text-5xl text-sacred mt-4 mb-16">Blue Ocean Convergence</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="flex flex-col items-center">
-              <div className="text-5xl font-cinzel text-cyan mb-4">1-3T$</div>
+              <div className="text-5xl md:text-7xl font-cinzel text-cyan mb-4 drop-shadow-[0_0_15px_rgba(0,212,255,0.4)]">1-3T$</div>
               <div className="tech-text text-white/50">METAVERSE EXPANSION</div>
             </div>
             <div className="flex flex-col items-center">
-              <div className="text-5xl font-cinzel text-sacred mb-4">56B$</div>
+              <div className="text-5xl md:text-7xl font-cinzel text-sacred mb-4 drop-shadow-[0_0_15px_rgba(212,175,55,0.4)]">56B$</div>
               <div className="tech-text text-white/50">MENTAL HEALTH AI</div>
             </div>
             <div className="flex flex-col items-center">
-              <div className="text-5xl font-cinzel text-cyan mb-4">79%</div>
+              <div className="text-5xl md:text-7xl font-cinzel text-cyan mb-4 drop-shadow-[0_0_15px_rgba(0,212,255,0.4)]">79%</div>
               <div className="tech-text text-white/50">GEN-Z SPIRITUAL SEEKERS</div>
             </div>
           </div>
