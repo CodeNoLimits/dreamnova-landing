@@ -4,12 +4,13 @@ import { DCSCounter } from "@/components/dcs-counter";
 import { Button } from "@/components/ui/button";
 import { MoveRight, Shield, Zap, Lock, Terminal, Activity, Fingerprint, Code, Check } from "lucide-react";
 import Image from "next/image";
+import Pricing from "@/components/Pricing";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#0A0A0A] text-foreground font-rajdhani overflow-x-hidden">
       {/* HERO SECTION */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20 pb-32 px-4">
+      <section className="relative min-h-screen flex items-center justify-center pt-20 pb-12 px-4">
         <Particles className="opacity-40" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.05)_0%,transparent_60%)]" />
         
@@ -68,6 +69,18 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* NA NACH BANNER */}
+      <div className="w-full bg-[#0A0A0A] border-b border-gold/20 overflow-hidden py-3">
+        <div className="flex animate-[marquee-reverse_30s_linear_infinite] w-max items-center">
+          {[...Array(20)].map((_, i) => (
+            <div key={i} className="flex items-center gap-12 px-6">
+              <span className="text-gold font-bold text-xl tracking-[0.3em]" style={{ textShadow: '0 0 10px rgba(212,175,55,0.4)' }}>נ נח נחמ נחמן מאומן</span>
+              <span className="font-space-mono text-cyan-400/50 text-xs uppercase tracking-widest">NA NACH NACHMA NACHMAN MEM</span>
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* 1. THE PROBLEM */}
       <section className="py-24 px-4 bg-zinc-950 border-t border-zinc-900" id="problem">
@@ -139,44 +152,7 @@ export default function Home() {
       </section>
 
       {/* 4. NOVA KEY PRODUCT */}
-      <section className="py-24 px-4 bg-zinc-950" id="pricing">
-        <div className="max-w-6xl mx-auto">
-          <FadeIn>
-            <div className="text-center mb-16">
-              <h2 className="font-cinzel text-4xl md:text-5xl text-white mb-6">Master Keys</h2>
-              <p className="text-zinc-400 text-xl font-space-mono">Hardware NTAG 215 Stainless Steel.</p>
-            </div>
-          </FadeIn>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { name: "Covenant", price: "$63", icon: Terminal, features: ["NFC NTAG 215", "DCS Basic Tracking", "Genie 3 Access"], color: "zinc" },
-              { name: "Pair", price: "$99", icon: Lock, features: ["2x Nova Keys", "Multi-world Sync", "Premium AI Concierge", "DCS Pro Insights"], color: "gold", popular: true },
-              { name: "Platinum", price: "$149", icon: Shield, features: ["148 Engraved Metal", "Direct API Access", "Esther Beta Priority", "Lifetime Updates"], color: "cyan" }
-            ].map((tier, i) => (
-              <FadeIn key={i} delay={i * 0.2}>
-                <div className={`relative p-8 rounded-xl border ${tier.popular ? 'border-gold bg-gold/5 transform md:-translate-y-4' : 'border-zinc-800 bg-black'} flex flex-col h-full`}>
-                  {tier.popular && <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gold text-black font-bold uppercase tracking-wider text-xs px-4 py-1 rounded-full">Most Selected</div>}
-                  <tier.icon className={`h-12 w-12 mb-6 ${tier.popular ? 'text-gold' : 'text-zinc-400'}`} />
-                  <h3 className="font-cinzel text-2xl text-white mb-2">{tier.name}</h3>
-                  <div className="font-space-mono text-4xl text-white mb-8">{tier.price}</div>
-                  <ul className="space-y-4 mb-8 flex-1">
-                    {tier.features.map((f, j) => (
-                      <li key={j} className="flex items-center gap-3 text-zinc-300">
-                        <Check className={`h-5 w-5 ${tier.popular ? 'text-gold' : 'text-cyan-400'}`} />
-                        <span>{f}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button className={`w-full ${tier.popular ? 'bg-gold text-black hover:bg-yellow-500' : 'bg-white text-black hover:bg-zinc-200'}`}>
-                    SELECT {tier.name.toUpperCase()}
-                  </Button>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Pricing />
 
       {/* 5. HAFATSA 25% */}
       <section className="py-32 px-4 relative border-y border-gold/20 overflow-hidden">
