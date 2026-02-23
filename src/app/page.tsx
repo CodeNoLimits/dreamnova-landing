@@ -1,238 +1,289 @@
-import { Particles } from "@/components/animations/particles";
-import { FadeIn } from "@/components/animations/fade-in";
-import { DCSCounter } from "@/components/dcs-counter";
+import Particles from "@/components/Particles";
+import FloatingKey from "@/components/FloatingKey";
+import AnimatedCounter from "@/components/AnimatedCounter";
 import { Button } from "@/components/ui/button";
-import { MoveRight, Shield, Zap, Lock, Terminal, Activity, Fingerprint, Code, Check } from "lucide-react";
-import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0A0A0A] text-foreground font-rajdhani overflow-x-hidden">
+    <main className="relative z-10 w-full overflow-hidden">
+      <Particles />
+
       {/* HERO SECTION */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20 pb-32 px-4">
-        <Particles className="opacity-40" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.05)_0%,transparent_60%)]" />
+      <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden pt-20 pb-12">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-sacred/5 rounded-full blur-[120px] pointer-events-none" />
         
-        <div className="max-w-6xl mx-auto text-center z-10">
-          <FadeIn>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20 text-gold mb-8 text-sm tracking-[0.2em] uppercase font-space-mono">
-              <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-              Hafatsa 25% En Cours
-            </div>
-          </FadeIn>
+        <div className="z-10 mb-12">
+          <FloatingKey />
+        </div>
+
+        <div className="text-center z-10 space-y-6 max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-sacred drop-shadow-md">
+            DREAM NOVA <br/>
+            <span className="text-2xl md:text-4xl text-white block mt-4">Mutate Reality from Inside</span>
+          </h1>
           
-          <FadeIn delay={0.2}>
-            <h1 className="font-cinzel text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight text-white drop-shadow-[0_0_30px_rgba(212,175,55,0.3)]">
-              DCS — Dream<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-200 to-gold">Consistency Score</span>
-            </h1>
-          </FadeIn>
+          <p className="text-lg md:text-2xl font-light tracking-wide text-sacred/80">
+            DCS + Genie 3 + Na Nach = Hafatsa 25% Global Tipping Point
+          </p>
 
-          <FadeIn delay={0.4}>
-            <p className="text-xl md:text-2xl text-zinc-400 max-w-3xl mx-auto mb-12 font-medium">
-              Le premier passeport qualitatif du mérite humain. Crée ton monde avec Genie 3. Débloque-le avec la Nova Key NFC.
-            </p>
-          </FadeIn>
+          <p dir="rtl" className="text-2xl md:text-3xl font-cinzel text-cyan animate-pulse">
+            לשנות את המציאות מבפנים
+          </p>
 
-          <FadeIn delay={0.6}>
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-16">
-              <DCSCounter />
-              <div className="h-16 w-px bg-zinc-800 hidden md:block" />
-              <div className="text-left bg-zinc-900/50 p-6 rounded-lg border border-zinc-800">
-                <div className="flex items-center gap-3 mb-2">
-                  <Fingerprint className="text-cyan-400 h-6 w-6" />
-                  <span className="font-cinzel text-xl text-white">Nova Key NFC</span>
-                </div>
-                <div className="text-zinc-500 font-space-mono text-sm">Genie 3 + Na Nach inside</div>
-              </div>
+          <div className="py-6 flex flex-col items-center gap-2">
+            <span className="tech-text text-white/50 uppercase">Live DCS Entities Resonating</span>
+            <div className="text-4xl md:text-5xl border border-cyan/30 px-8 py-3 rounded bg-void/80 backdrop-blur glowing-cyan">
+              <AnimatedCounter value={4872319} />
             </div>
-          </FadeIn>
+          </div>
 
-          <FadeIn delay={0.8}>
-            <Button size="lg" className="bg-gold text-black hover:bg-yellow-500 text-lg w-full md:w-auto shadow-[0_0_40px_rgba(212,175,55,0.3)] group tracking-widest px-8">
+          <a href="#pricing" className="inline-block mt-4">
+            <Button size="lg" className="text-lg w-full sm:w-auto">
               GET MY NOVA KEY — $63
-              <MoveRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-          </FadeIn>
-        </div>
+          </a>
 
-        <div className="absolute bottom-0 left-0 right-0 border-t border-zinc-900 bg-black/80 backdrop-blur-xl py-4">
-          <div className="max-w-7xl mx-auto flex flex-wrap justify-center md:justify-between items-center px-6 gap-4 text-xs font-space-mono text-zinc-500 tracking-wider">
-            <span>148 = NACHMAN</span>
+          <div className="mt-12 pt-8 border-t border-sacred/20 tech-text flex flex-col md:flex-row items-center justify-center gap-4 text-xs md:text-sm text-sacred/60">
+            <span>NOVA1 I197V</span>
             <span className="hidden md:inline">•</span>
-            <span>63 = SAG</span>
+            <span>ASL</span>
             <span className="hidden md:inline">•</span>
-            <span>H(F) = 1.846 bits (Nachman Science)</span>
+            <span>Petek Protocol</span>
             <span className="hidden md:inline">•</span>
-            <span className="text-gold/80">BREVET DCS DÉPOSÉ</span>
+            <span>Jerusalem 23 Feb 2026</span>
           </div>
         </div>
       </section>
 
-      {/* 1. THE PROBLEM */}
-      <section className="py-24 px-4 bg-zinc-950 border-t border-zinc-900" id="problem">
-        <div className="max-w-5xl mx-auto">
-          <FadeIn>
-            <h2 className="font-cinzel text-4xl md:text-5xl text-white mb-16 text-center">
-              The Matrix <span className="text-red-500">Exhaustion</span>
-            </h2>
-          </FadeIn>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { title: "Digital Anxiety", desc: "Surchage d'informations. Décisions paralysées. Le bruit constant tue l'intuition." },
-              { title: "GenZ Burnout", desc: "Perte de sens. Dilution de l'identité dans un océan de scroll infini et de dopamine vide." },
-              { title: "One-Man-Show", desc: "L'illusion de la réussite solitaire. Dilution de l'impact sans système de mesure qualitatif." }
-            ].map((item, i) => (
-              <FadeIn key={i} delay={i * 0.2}>
-                <div className="p-8 bg-black border border-red-900/30 hover:border-red-500/50 transition-colors h-full">
-                  <Activity className="h-10 w-10 text-red-500 mb-6" />
-                  <h3 className="text-xl text-white font-bold mb-4 font-cinzel">{item.title}</h3>
-                  <p className="text-zinc-400 leading-relaxed">{item.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 2. THE SOLUTION */}
-      <section className="py-24 px-4 relative" id="solution">
-        <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-900/50 to-transparent" />
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <FadeIn>
-              <h2 className="font-cinzel text-4xl md:text-5xl text-white mb-8">
-                The <span className="text-cyan-400">Nova</span> Protocol
-              </h2>
-              <ul className="space-y-8">
-                {[
-                  { title: "DCS Breveté", desc: "Algorithme propriétaire transformant les actions qualitatives en score de consistance (DCS)." },
-                  { title: "Azamra Algorithm", desc: "Recherche du point positif. Amplification de la lumière par résonance métrique." },
-                  { title: "Na Nach Worlds", desc: "Mondes virtuels persistants générés par Genie 3, ancrés dans la Torah de Breslev." }
-                ].map((item, i) => (
-                  <li key={i} className="flex gap-4">
-                    <div className="mt-1 bg-cyan-950 p-2 rounded shrink-0">
-                      <Zap className="h-5 w-5 text-cyan-400 relative z-10" />
-                    </div>
-                    <div>
-                      <h4 className="text-lg text-white font-bold mb-2 font-space-mono tracking-wide">{item.title}</h4>
-                      <p className="text-zinc-400 leading-relaxed">{item.desc}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </FadeIn>
-            
-            <FadeIn delay={0.3}>
-              <div className="relative aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden border border-cyan-400/20 bg-black p-8 flex items-center justify-center">
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(0,212,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,212,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px]" />
-                <div className="relative z-10 text-center">
-                  <Shield className="h-24 w-24 text-gold mx-auto mb-6 drop-shadow-[0_0_20px_rgba(212,175,55,0.3)] animate-pulse" />
-                  <div className="font-space-mono text-cyan-400 text-2xl">NOVA KEY NFC</div>
-                  <div className="text-zinc-500 mt-2 tracking-widest text-sm uppercase">Tap to unlock Reality</div>
-                </div>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. NOVA KEY PRODUCT */}
-      <section className="py-24 px-4 bg-zinc-950" id="pricing">
-        <div className="max-w-6xl mx-auto">
-          <FadeIn>
-            <div className="text-center mb-16">
-              <h2 className="font-cinzel text-4xl md:text-5xl text-white mb-6">Master Keys</h2>
-              <p className="text-zinc-400 text-xl font-space-mono">Hardware NTAG 215 Stainless Steel.</p>
-            </div>
-          </FadeIn>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { name: "Covenant", price: "$63", icon: Terminal, features: ["NFC NTAG 215", "DCS Basic Tracking", "Genie 3 Access"], color: "zinc" },
-              { name: "Pair", price: "$99", icon: Lock, features: ["2x Nova Keys", "Multi-world Sync", "Premium AI Concierge", "DCS Pro Insights"], color: "gold", popular: true },
-              { name: "Platinum", price: "$149", icon: Shield, features: ["148 Engraved Metal", "Direct API Access", "Esther Beta Priority", "Lifetime Updates"], color: "cyan" }
-            ].map((tier, i) => (
-              <FadeIn key={i} delay={i * 0.2}>
-                <div className={`relative p-8 rounded-xl border ${tier.popular ? 'border-gold bg-gold/5 transform md:-translate-y-4' : 'border-zinc-800 bg-black'} flex flex-col h-full`}>
-                  {tier.popular && <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gold text-black font-bold uppercase tracking-wider text-xs px-4 py-1 rounded-full">Most Selected</div>}
-                  <tier.icon className={`h-12 w-12 mb-6 ${tier.popular ? 'text-gold' : 'text-zinc-400'}`} />
-                  <h3 className="font-cinzel text-2xl text-white mb-2">{tier.name}</h3>
-                  <div className="font-space-mono text-4xl text-white mb-8">{tier.price}</div>
-                  <ul className="space-y-4 mb-8 flex-1">
-                    {tier.features.map((f, j) => (
-                      <li key={j} className="flex items-center gap-3 text-zinc-300">
-                        <Check className={`h-5 w-5 ${tier.popular ? 'text-gold' : 'text-cyan-400'}`} />
-                        <span>{f}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button className={`w-full ${tier.popular ? 'bg-gold text-black hover:bg-yellow-500' : 'bg-white text-black hover:bg-zinc-200'}`}>
-                    SELECT {tier.name.toUpperCase()}
-                  </Button>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. HAFATSA 25% */}
-      <section className="py-32 px-4 relative border-y border-gold/20 overflow-hidden">
-        <div className="absolute inset-0 bg-gold/5" />
-        <div className="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-gold/10 to-transparent" />
-        
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-          <FadeIn>
-            <h2 className="font-cinzel text-4xl md:text-6xl text-gold mb-8">Mission 63M$ Hafatsa</h2>
-            <p className="text-xl md:text-2xl text-zinc-300 max-w-3xl mx-auto mb-12 leading-relaxed">
-              Nous cherchons le <span className="text-white font-bold">Tipping Point (Centola)</span>. 
-              Atteindre 25% de la conscience globale. 10% des revenus directement dédiés à la Tsedaka.
+      {/* 1. THE DEAD-END */}
+      <section className="py-24 px-6 relative border-t border-white/5 bg-void/50 backdrop-blur-md">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <span className="tech-text">01 // THE DIAGNOSTIC</span>
+            <h2 className="text-3xl md:text-5xl text-sacred mt-4 mb-6">The Dead-End</h2>
+            <p className="text-xl text-white/70 leading-relaxed mb-4">
+              We have hit the Thermodynamic Wall. The One-Man-Show paradigm is collapsing under its own entropic weight.
             </p>
-            <div className="inline-block p-[2px] rounded-lg bg-gradient-to-r from-gold via-yellow-200 to-gold">
-              <div className="bg-black px-8 py-6 rounded-lg">
-                <div className="text-5xl font-space-mono text-white mb-2">25.000%</div>
-                <div className="text-gold tracking-widest uppercase text-sm font-bold">Target Saturation</div>
+            <ul className="space-y-4 tech-text text-white/80">
+              <li className="flex items-center gap-3"><div className="w-1 h-1 bg-cyan rounded-full"/> 79% GenZ Burnout Rate</li>
+              <li className="flex items-center gap-3"><div className="w-1 h-1 bg-cyan rounded-full"/> CPL Skyrocketing to 35-45€</li>
+              <li className="flex items-center gap-3"><div className="w-1 h-1 bg-cyan rounded-full"/> Attention spans decimated</li>
+            </ul>
+          </div>
+          <div className="relative h-64 border border-sacred/20 flex items-center justify-center p-8 bg-gradient-to-b from-transparent to-sacred/5">
+            <div className="text-center font-space text-red-500/80 uppercase tracking-widest text-lg">
+              [ SYSTEM ENTROPY: CRITICAL ]
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. THE REVOLUTION */}
+      <section className="py-24 px-6 relative border-t border-white/5">
+        <div className="max-w-5xl mx-auto">
+          <div className="mb-12 text-center">
+            <span className="tech-text">02 // THE SOLUTION</span>
+            <h2 className="text-3xl md:text-5xl text-sacred mt-4">The Revolution</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { title: "NOVA1 I197V Mutation", desc: "The biological trigger unlocking dormant ancestral cognitive capacities." },
+              { title: "ASL 200x", desc: "Alternative Splicing Layer scaling consciousness processing efficiency by two orders of magnitude." },
+              { title: "Azamra Engine", desc: "Negentropic protocol actively searching for the 'Good Point' to collapse the wave function of despair." }
+            ].map((item, i) => (
+              <div key={i} className="p-6 border border-sacred/20 bg-void/80 hover:glowing-sacred transition-all duration-500 group">
+                <h3 className="text-xl text-cyan mb-4">{item.title}</h3>
+                <p className="text-white/60 font-light">{item.desc}</p>
+                <div className="mt-6 w-full h-[1px] bg-sacred/20 group-hover:bg-sacred/50 transition-colors" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. THE PRODUCT */}
+      <section id="pricing" className="py-24 px-6 relative bg-gradient-to-b from-void via-sacred/5 to-void border-y border-sacred/20 overflow-hidden">
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
+          <div className="w-full lg:w-1/2 order-2 lg:order-1 relative">
+             <div className="aspect-square rounded-full border border-dashed border-cyan/30 flex items-center justify-center relative">
+               <div className="absolute inset-4 rounded-full border border-sacred/20 animate-[spin_60s_linear_infinite]" />
+               <div className="absolute inset-12 rounded-full border border-cyan/10 animate-[spin_40s_linear_infinite_reverse]" />
+               <div className="text-center z-10 p-8">
+                 <h3 className="text-2xl text-sacred mb-2 pt-4">DCS 6-Pillar Radar</h3>
+                 <p className="tech-text pt-2">LIVE TAP FLOW ACTIVATED</p>
+                 <div className="mt-4 tech-text text-xs text-white/40">
+                   {`{ STATUS: SYNCED, LATENCY: 12ms }`}
+                 </div>
+               </div>
+             </div>
+          </div>
+          <div className="w-full lg:w-1/2 order-1 lg:order-2">
+            <span className="tech-text">03 // HARDWARE</span>
+            <h2 className="text-4xl md:text-5xl text-sacred mt-4 mb-8">The Product</h2>
+            <p className="text-xl text-white/70 mb-8 font-light">
+              A physical anchor for digital therapeutics. Touch the Nova Key NFC to bypass the conscious resistance layer and inject the Source Code directly into the OS.
+            </p>
+            <div className="p-8 border border-sacred glowing-sacred bg-black">
+              <div className="flex justify-between items-center border-b border-sacred/30 pb-4 mb-4">
+                <h3 className="text-2xl text-white">NOVA KEY TIER 1</h3>
+                <span className="text-3xl text-sacred font-cinzel">$63</span>
+              </div>
+              <ul className="space-y-3 font-light text-white/80 mb-8">
+                <li>• Matte Black Metal NFC Card</li>
+                <li>• 148 Sacred Geometry Engraving</li>
+                <li>• Instant Azamra Protocol Access</li>
+                <li>• Hafatsa Ambassador Status</li>
+              </ul>
+              <Button className="w-full">INITIATE PURCHASE</Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. BLUE OCEAN */}
+      <section className="py-24 px-6 relative">
+        <div className="max-w-5xl mx-auto text-center">
+          <span className="tech-text">04 // MARKET TOPOLOGY</span>
+          <h2 className="text-3xl md:text-5xl text-sacred mt-4 mb-16">Blue Ocean Convergence</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="flex flex-col items-center">
+              <div className="text-5xl font-cinzel text-cyan mb-4">1-3T$</div>
+              <div className="tech-text text-white/50">METAVERSE EXPANSION</div>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="text-5xl font-cinzel text-sacred mb-4">56B$</div>
+              <div className="tech-text text-white/50">MENTAL HEALTH AI</div>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="text-5xl font-cinzel text-cyan mb-4">79%</div>
+              <div className="tech-text text-white/50">GEN-Z SPIRITUAL SEEKERS</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. THE ENGINE */}
+      <section className="py-24 px-6 relative border-t border-white/5 bg-void/50">
+        <div className="max-w-4xl mx-auto">
+          <span className="tech-text">05 // ARCHITECTURE</span>
+          <h2 className="text-3xl md:text-5xl text-sacred mt-4 mb-8">The Engine</h2>
+          <div className="bg-[#050505] border border-cyan/20 p-8 rounded-sm relative overflow-hidden">
+            <div className="absolute top-0 right-0 p-4 tech-text text-cyan/30">H(F) = 1.846</div>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="w-2 h-2 mt-2 bg-sacred rounded-full flex-shrink-0" />
+                <div>
+                  <h4 className="text-lg text-white mb-1 font-bold">Esther AI RAG</h4>
+                  <p className="text-white/60 font-light text-sm">Operating at 0€ marginal cost. Complete retrieval-augmented generation built on ancient Kabbalistic texts.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-2 h-2 mt-2 bg-sacred rounded-full flex-shrink-0" />
+                <div>
+                  <h4 className="text-lg text-white mb-1 font-bold">AI Army 24/7</h4>
+                  <p className="text-white/60 font-light text-sm">Autonomous deployment scaling Hafatsa algorithms without human fatigue limits.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-2 h-2 mt-2 bg-sacred rounded-full flex-shrink-0" />
+                <div>
+                  <h4 className="text-lg text-white mb-1 font-bold">Nachman Science</h4>
+                  <p className="text-white/60 font-light text-sm">Mathematical proof of entropy reversal via recursive linguistic structures.</p>
+                </div>
               </div>
             </div>
-          </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. TRACTION */}
+      <section className="py-24 px-6 relative border-t border-white/5">
+        <div className="max-w-5xl mx-auto text-center">
+          <span className="tech-text">06 // MOMENTUM</span>
+          <h2 className="text-3xl md:text-5xl text-sacred mt-4 mb-16">Traction</h2>
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+            <div className="px-8 py-4 border border-sacred/30 bg-sacred/5">
+              <div className="text-3xl text-white font-cinzel">84</div>
+              <div className="tech-text text-sacred mt-2">VERCEL DEPLOYS</div>
+            </div>
+            <div className="px-8 py-4 border border-cyan/30 bg-cyan/5">
+              <div className="text-3xl text-white font-cinzel">8</div>
+              <div className="tech-text text-cyan mt-2">SITES LIVE</div>
+            </div>
+            <div className="px-8 py-4 border border-sacred/30 bg-sacred/5">
+              <div className="text-3xl text-white font-cinzel">5</div>
+              <div className="tech-text text-sacred mt-2">ACTIVE CLIENTS</div>
+            </div>
+            <div className="px-8 py-4 border border-cyan/30 bg-cyan/5">
+              <div className="text-3xl text-white font-cinzel">÷4</div>
+              <div className="tech-text text-cyan mt-2">HA-MAZON CPL</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. ROADMAP */}
+      <section className="py-24 px-6 relative border-t border-white/5 bg-void/50 overflow-hidden">
+        <div className="max-w-4xl mx-auto text-center">
+          <span className="tech-text">07 // CRITICAL PATH</span>
+          <h2 className="text-3xl md:text-5xl text-sacred mt-4 mb-8">90 Days to Tipping Point</h2>
+          <p className="text-xl text-white/70 font-light mb-12">
+            Targeting the exact 25% systemic mass required for complex contagion cascade.
+          </p>
+          <div className="w-full h-2 bg-white/10 rounded-full relative overflow-hidden">
+            <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-sacred to-cyan w-[25%]" />
+            <div className="absolute top-0 left-[25%] w-1 h-full bg-white shadow-[0_0_10px_white]" />
+          </div>
+          <div className="mt-4 flex justify-between tech-text text-white/40">
+            <span>DAY 0</span>
+            <span className="text-white drop-shadow-[0_0_5px_white]">25% CASCADE LIMIT</span>
+            <span>DAY 90</span>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. THE ASK */}
+      <section className="py-32 px-6 relative border-t border-white/5 text-center overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.1)_0%,rgba(10,10,10,1)_70%)] pointer-events-none" />
+        <div className="relative z-10 max-w-3xl mx-auto">
+          <span className="tech-text">08 // INITIATION</span>
+          <h2 className="text-4xl md:text-6xl font-bold text-white mt-4 mb-6">The Ask</h2>
+          <div className="text-5xl md:text-7xl font-cinzel text-sacred glowing-sacred inline-block px-12 py-6 border border-sacred/40 bg-black/50 mb-6 rounded-lg">
+            $5M - $8M
+          </div>
+          <div className="tech-text text-xl text-cyan mb-12">SEED AT 40-50M$ PRE-MONEY</div>
+          <Button size="lg" className="text-xl px-12 h-16 w-full md:w-auto">
+            OPEN CAP TABLE
+          </Button>
         </div>
       </section>
 
       {/* 9. MANIFESTO */}
-      <section className="py-24 px-4 bg-black">
-        <div className="max-w-4xl mx-auto border-l-2 border-cyan-400/50 pl-8 md:pl-16">
-          <FadeIn>
-            <div className="font-space-mono text-cyan-400 mb-6 tracking-widest">/// SOURCE CODE OF REALITY</div>
-            <h2 className="font-cinzel text-3xl md:text-5xl text-white mb-10 leading-tight">
-              &quot;Ein Ye&apos;ush Ba&apos;olam Klal&quot;
-            </h2>
-            <div className="space-y-6 text-lg text-zinc-400 font-medium">
-              <p>Il n&apos;y a aucun désespoir dans le monde. La science de Nachman prouve mathématiquement la résilience infinie.</p>
-              <p>Basé sur le théorème d&apos;incomplétude de Gödel, le Petek original, le protocole NOVA1 I197V et le framework ASL.</p>
-              <p className="text-white pt-4">L&apos;obscurité n&apos;est qu&apos;une toile pour la véritable lumière.</p>
-            </div>
-          </FadeIn>
+      <section className="py-32 px-6 relative bg-black border-t border-sacred/20">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          <span className="tech-text text-sacred">09 // MANIFESTO</span>
+          <h2 className="text-4xl md:text-6xl font-cinzel text-white leading-tight">
+            &quot;Ein Ye&apos;ush Ba&apos;olam Klal&quot;
+          </h2>
+          <p className="text-2xl text-white/50 font-light italic">
+            There is no despair in the world at all.
+          </p>
+          <div className="w-24 h-[1px] bg-cyan/50 mx-auto my-12" />
+          <p className="text-lg md:text-xl font-rajdhani text-white/80 leading-relaxed text-center sm:text-justify sm:[text-align-last:center]">
+            We are not building an app. We are rewriting the Source Code of Reality. By bridging the topological limits of mathematical incompleteness with the quantum measurement problem, we deploy Emunah as the supreme meta-logic. The Nova Key is the physical constructor assembling non-local blueprints into localized neuro-cognitive salvation.
+          </p>
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="border-t border-zinc-900 bg-zinc-950/50 pt-16 pb-8 px-4">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex items-center gap-4">
-            <Shield className="h-8 w-8 text-gold" />
-            <span className="font-cinzel font-bold text-xl text-white tracking-widest">DREAM NOVA</span>
-          </div>
-          
-          <div className="flex flex-wrap gap-8 text-sm text-zinc-500 font-space-mono uppercase tracking-wider">
-            <a href="#" className="hover:text-gold transition-colors">Legal & Privacy</a>
-            <a href="#" className="hover:text-gold transition-colors">Telegram @nerostats</a>
-            <a href="#" className="hover:text-gold transition-colors">WhatsApp 24/7</a>
-          </div>
+      {/* 10. FOOTER */}
+      <footer className="py-12 px-6 border-t border-white/10 text-center">
+        <div className="flex justify-center items-center gap-8 mb-8">
+          <a href="#" className="tech-text text-white/50 hover:text-sacred transition-colors">WHATSAPP</a>
+          <span className="text-white/20">•</span>
+          <a href="#" className="tech-text text-white/50 hover:text-cyan transition-colors">TELEGRAM</a>
         </div>
-        <div className="mt-16 text-center text-zinc-700 text-xs font-space-mono">
-          &copy; {new Date().getFullYear()} Dream Nova Operations. 148 Energy Protocol. All rights reserved.
+        <div className="tech-text text-xs text-white/30">
+          © 2026 DREAM NOVA RESEARCH. SECURE CHANNEL.
         </div>
       </footer>
     </main>

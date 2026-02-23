@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-gold: #d4af37;
-  --color-cyan: #00d4ff;
-  --color-black-matte: #0a0a0a;
+  --color-border: hsl(43 65% 53%);
+  --color-background: #0A0A0A;
+  --color-foreground: #FFFFFF;
+  --color-void: #0A0A0A;
+  --color-sacred: #D4AF37;
+  --color-cyan: #00D4FF;
 
   --font-cinzel: var(--font-cinzel);
   --font-rajdhani: var(--font-rajdhani);
@@ -15,36 +16,58 @@
   --animate-accordion-up: accordion-up 0.2s ease-out;
 
   @keyframes accordion-down {
-    from {
-      height: 0;
-    }
-    to {
-      height: var(--radix-accordion-content-height);
-    }
+    from { height: 0 }
+    to { height: var(--radix-accordion-content-height) }
   }
   @keyframes accordion-up {
-    from {
-      height: var(--radix-accordion-content-height);
-    }
-    to {
-      height: 0;
-    }
+    from { height: var(--radix-accordion-content-height) }
+    to { height: 0 }
   }
 }
 
-:root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+@layer base {
+  body {
+    background-color: var(--color-void);
+    color: var(--color-foreground);
+    font-family: var(--font-rajdhani), sans-serif;
+    overflow-x: hidden;
+  }
+  
+  ::selection {
+    background-color: var(--color-sacred);
+    color: var(--color-void);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-cinzel), serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-rajdhani), sans-serif;
-  overflow-x: hidden;
+@utility tech-text {
+  font-family: var(--font-space-mono), monospace;
+  color: var(--color-cyan);
+  font-size: 0.875rem;
+  letter-spacing: -0.025em;
 }
 
-::selection {
-  background: rgba(212, 175, 55, 0.3);
-  color: #fff;
+@utility glowing-sacred {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.15), inset 0 0 20px rgba(212, 175, 55, 0.1);
+}
+
+@utility glowing-cyan {
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+}
+
+@utility text-shadow-sm {
+  text-shadow: 0 2px 4px rgba(255,255,255,0.5);
+}
+
+@utility preserve-3d {
+  transform-style: preserve-3d;
+}
+
+@utility perspective-1000 {
+  perspective: 1000px;
 }
