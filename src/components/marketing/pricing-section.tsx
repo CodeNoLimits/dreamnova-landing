@@ -2,43 +2,66 @@
 
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
-import { useTranslation } from "@/lib/LanguageContext";
-import { formatPrice } from "@/lib/i18n";
-import { AmbassadorShowcase } from "@/components/shared/ambassador-showcase";
-import { HolographicShimmer, HoloBorder } from "@/components/shared/holographic-effects";
-import { playHover } from "@/lib/sound-manager";
+import { HolographicShimmer } from "@/components/shared/holographic-effects";
 
-const includes = [
-  "Nova Key NFC (Acier Inoxydable, Gravure Or)",
-  "Caméa Breslov Authentique",
-  "The Source Code of Reality (PDF)",
-  "Tikkun HaKlali Digital",
-  "Guide Méditation Azamra",
-  "Kit Ambassadeur Hafatsa",
-];
-
-const breakdown = [
-  { label: "Production (NFC + Caméa)", amount: "$18" },
-  { labelKey: 'pricing.shipping', amount: "$8" },
-  { labelKey: 'pricing.digital', amount: "$10" },
-  { label: "Hafatsa Mission (63M$)", amount: "$27" },
+const tiers = [
+  {
+    name: "Covenant",
+    price: "$63",
+    gematria: "63 = SaG (סג) — Binah",
+    includes: [
+      "1x Nova Key NFC (NTAG 215)",
+      "Acier Inoxydable Matte Black",
+      "Gravure Laser Or 148",
+      "DCS Profile activé",
+      "Algorithme Azamra Personnel",
+    ],
+    highlight: false,
+  },
+  {
+    name: "Pair",
+    price: "$99",
+    gematria: "Bénédiction mutuelle ×2",
+    includes: [
+      "2x Nova Keys NFC appariées",
+      "Synchronisation des mondes",
+      "Partage de Tikkun",
+      "Caméa Breslov inclus",
+      "Tout du tier Covenant",
+    ],
+    highlight: true,
+  },
+  {
+    name: "Platinum",
+    price: "$149",
+    gematria: "≈148 = נחמן (Nachman)",
+    includes: [
+      "1x Nova Key Édition Limitée Or",
+      "Contenu exclusif Source Code",
+      "Beta prioritaire DreamOS",
+      "Statut Ambassadeur VIP",
+      "Tout du tier Pair",
+    ],
+    highlight: false,
+  },
 ];
 
 export function PricingSection() {
-  const { t, config } = useTranslation();
-  const price = formatPrice(config.code);
   return (
-    <section
-      id="pricing"
-      className="relative py-20 md:py-32 bg-black overflow-hidden"
-    >
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gold-950/5 to-transparent pointer-events-none" />
+    <section id="pricing" className="relative py-20 md:py-32 bg-[#0A0A0A] overflow-hidden">
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover mix-blend-screen opacity-20 pointer-events-none"
+      >
+        <source src="/videos/Cinematic_3d_floating_1080p_202602231244.mp4" type="video/mp4" />
+      </video>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -46,168 +69,95 @@ export function PricingSection() {
           viewport={{ once: true }}
           className="text-center mb-16 md:mb-24"
         >
-          <h2 className="font-display text-5xl md:text-6xl font-bold text-gold mb-4 tracking-wide">
-            {t('pricing.title')}
+          <p className="font-mono text-[10px] tracking-[0.3em] text-gold/60 uppercase mb-4">
+            03 // HARDWARE
+          </p>
+          <h2 className="font-display text-5xl md:text-6xl font-bold text-[#D4AF37] mb-4 tracking-wide uppercase">
+            Touche la clé. Mute ta réalité.
           </h2>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto">
-            {t('pricing.subtitle')}
+          <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto font-body">
+            NTAG 215. Stainless steel. Matte black. L&apos;interface physique vers votre monde.
           </p>
         </motion.div>
 
-        {/* Main Pricing Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 20, scale: 0.95 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="max-w-lg mx-auto mb-16"
-        >
-          {/* Nova Key Card Image */}
-          <div className="relative mb-8">
-            <div className="absolute inset-0 bg-gradient-to-br from-gold/20 to-cyan-sacred/10 rounded-2xl blur-2xl scale-105" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {tiers.map((tier, index) => (
             <motion.div
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" as const }}
-              className="relative"
+              key={tier.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className={`relative bg-[#050508] border ${
+                tier.highlight
+                  ? "border-[#D4AF37] shadow-[0_0_30px_rgba(212,175,55,0.2)]"
+                  : "border-[#1A1A2E] hover:border-[#D4AF37]/50"
+              } p-8 rounded-xl flex flex-col transition-all duration-300`}
             >
-              <Image
-                src="/images/nova-key.jpg"
-                alt="Nova Key NFC — Acier Inoxydable, Gravure Or"
-                width={500}
-                height={313}
-                className="rounded-xl mx-auto shadow-xl shadow-gold/15"
-              />
-            </motion.div>
-          </div>
-          <div className="dark-card border-2 border-gold p-8 md:p-12 hover:shadow-lg hover:shadow-gold/30 transition-all duration-300 relative group" onMouseEnter={() => playHover()}>
-            <HolographicShimmer />
-            {/* Card Title */}
-            <h3 className="font-display text-2xl md:text-3xl text-center font-bold text-gold mb-4 tracking-wide">
-              {t('pricing.product')}
-            </h3>
+              {tier.highlight && <HolographicShimmer />}
 
-            {/* Price */}
-            <div className="text-center mb-2">
-              <p className="font-display text-5xl md:text-6xl font-bold sacred-gradient">
-                {price}
-              </p>
-            </div>
+              {tier.highlight && (
+                <div className="absolute -top-3 right-6 bg-[#D4AF37] text-black text-xs px-4 py-1 rounded-full font-display font-bold tracking-wider">
+                  POPULAR • 148
+                </div>
+              )}
 
-            {/* Subtitle */}
-            <p className="text-center text-gray-400 text-sm mb-8">
-              {t('pricing.gematria')}
-            </p>
+              <h3 className="font-display text-2xl font-bold text-white mb-2 uppercase tracking-wide">
+                {tier.name}
+              </h3>
 
-            {/* Divider */}
-            <div className="border-t border-gold/20 mb-8" />
-
-            {/* Includes List */}
-            <ul className="space-y-4 mb-8">
-              {includes.map((item, index) => (
-                <motion.li
-                  key={index}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: 0.1 + index * 0.05 }}
-                  viewport={{ once: true }}
-                  className="flex items-start gap-3"
+              <div className="mb-4">
+                <span
+                  className={`font-mono text-5xl font-bold ${
+                    tier.highlight ? "text-[#D4AF37]" : "text-[#00D4FF]"
+                  }`}
                 >
-                  <Check className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-300 text-sm md:text-base">{item}</span>
-                </motion.li>
-              ))}
-            </ul>
-
-            {/* CTA Button */}
-            <Link
-              href="/checkout"
-              className="block w-full py-3 md:py-4 bg-gold text-black font-bold text-center hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg hover:shadow-gold/50 tracking-wide mb-6"
-            >
-              {t('nav.cta')}
-            </Link>
-
-            {/* Alternative Options */}
-            <div className="text-center space-y-2 text-xs md:text-sm">
-              <p className="text-gray-500">Alternatives:</p>
-              <p>
-                <Link
-                  href="/checkout?variant=platinum"
-                  className="text-cyan hover:text-gold transition-colors"
-                >
-                  Édition Platinum $149
-                </Link>
-                {" — "}
-                <Link
-                  href="/checkout?variant=duo"
-                  className="text-cyan hover:text-gold transition-colors"
-                >
-                  Pack Duo $99
-                </Link>
-              </p>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Camea Showcase */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          viewport={{ once: true }}
-          className="max-w-sm mx-auto mb-12"
-        >
-          <p className="font-mono text-[10px] tracking-[0.3em] text-gold/60 text-center mb-4 uppercase">
-            Authentic Breslov Caméa Included
-          </p>
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-gold/20 via-cyan-sacred/10 to-gold/20 rounded-2xl blur-2xl scale-110 opacity-40" />
-            <Image
-              src="/images/cyberpunk-camea.png"
-              alt="Breslov Caméa — Amulette sacrée authentique incluse"
-              width={350}
-              height={350}
-              className="relative rounded-2xl shadow-xl shadow-gold/15 mx-auto"
-            />
-          </div>
-        </motion.div>
-
-        {/* Ambassador Showcase */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.15 }}
-          viewport={{ once: true }}
-          className="max-w-sm mx-auto mb-16"
-        >
-          <p className="font-mono text-[10px] tracking-[0.3em] text-gold/60 text-center mb-4 uppercase">
-            {config.myFire}
-          </p>
-          <AmbassadorShowcase />
-        </motion.div>
-
-        {/* Breakdown */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="max-w-md mx-auto p-6 md:p-8 dark-card border border-gold/20 bg-black/50"
-        >
-          <h4 className="font-bold text-gold text-center mb-6 tracking-wide">
-            {t('pricing.breakdown.title')}
-          </h4>
-          <div className="space-y-3">
-            {breakdown.map((item, index) => (
-              <div key={index} className="flex justify-between text-sm md:text-base">
-                <span className="text-gray-400">{item.label}</span>
-                <span className="text-gold font-semibold">{item.amount}</span>
+                  {tier.price}
+                </span>
               </div>
-            ))}
-            <div className="border-t border-gold/20 pt-3 mt-3 flex justify-between font-bold">
-              <span className="text-gold">{t("pricing.total")}</span>
-              <span className="text-gold">$63</span>
-            </div>
-          </div>
+
+              <p className="text-gray-400 text-sm font-mono mb-8 uppercase tracking-widest h-8">
+                {tier.gematria}
+              </p>
+
+              <ul className="space-y-4 mb-8 flex-grow">
+                {tier.includes.map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <Check
+                      className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
+                        tier.highlight ? "text-[#D4AF37]" : "text-[#00FF88]"
+                      }`}
+                    />
+                    <span className="text-gray-300 text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <Link
+                href={`/checkout${tier.name === "Platinum" ? "?variant=platinum" : tier.name === "Pair" ? "?variant=duo" : ""}`}
+                className={`block w-full py-4 font-display font-bold text-center uppercase tracking-wide transition-all duration-300 rounded-lg ${
+                  tier.highlight
+                    ? "bg-[#D4AF37] text-black hover:bg-white"
+                    : "bg-transparent border border-[#00D4FF] text-[#00D4FF] hover:bg-[#00D4FF] hover:text-black"
+                }`}
+              >
+                SELECT {tier.name.toUpperCase()} — {tier.price}
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Bottom trust line */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="mt-12 text-center"
+        >
+          <p className="font-mono text-[10px] tracking-[0.3em] text-[#D4AF37]/50 uppercase">
+            NTAG 215 • Acier inoxydable • Gravé 148 au laser • 10% Tsedaka • Stripe sécurisé
+          </p>
         </motion.div>
       </div>
     </section>

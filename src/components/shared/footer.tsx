@@ -1,143 +1,55 @@
 'use client';
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { Mail, Heart, ArrowRight } from 'lucide-react';
-import { useTranslation } from '@/lib/LanguageContext';
-import { EcosystemFooter } from './ecosystem-footer';
+"use client";
+
+import Link from "next/link";
+import { MessageCircle } from "lucide-react";
+import { EcosystemFooter } from "./ecosystem-footer";
 
 export function Footer() {
-  const { t } = useTranslation();
-  const [email, setEmail] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-
-  const handleSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      setSubmitStatus('success');
-      setEmail('');
-      setTimeout(() => setSubmitStatus('idle'), 3000);
-    } catch (error) {
-      setSubmitStatus('error');
-      setTimeout(() => setSubmitStatus('idle'), 3000);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <>
-    <EcosystemFooter />
-    <footer className="bg-sacred-surface border-t border-gold/30">
-      {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Brand Column */}
-          <div className="flex flex-col gap-4">
-            <Link href="/" className="inline-block w-fit">
-              <span className="font-display text-2xl font-bold tracking-wider">
-                <span className="text-gold">DREAM</span>
-                <span className="text-cyan">NOVA</span>
-              </span>
-            </Link>
-            <p className="text-light-gray text-sm leading-relaxed max-w-xs">
-              {t('footer.description')}
-            </p>
-          </div>
-
-          {/* Links Column */}
-          <div className="flex flex-col gap-6">
-            <h3 className="font-display text-gold uppercase tracking-wider text-sm font-semibold">
-              {t('footer.links.title')}
-            </h3>
-            <nav className="flex flex-col gap-3">
-              <Link
-                href="/source-code"
-                className="text-light-gray hover:text-gold transition-colors duration-300 text-sm"
-              >
-                {t('nav.problem')}
+      <EcosystemFooter />
+      <footer className="bg-[#050508] border-t border-[#1A1A2E]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            
+            <div className="flex flex-col gap-2 items-center md:items-start text-center md:text-left">
+              <Link href="/" className="inline-block w-fit">
+                <span className="font-display text-2xl font-bold tracking-wider">
+                  <span className="text-[#D4AF37]">DREAM</span>
+                  <span className="text-[#00D4FF]">NOVA</span>
+                </span>
               </Link>
-              <Link
-                href="/codex"
-                className="text-light-gray hover:text-gold transition-colors duration-300 text-sm"
-              >
-                {t('nav.solution')}
-              </Link>
-              <Link
-                href="/nova-key"
-                className="text-light-gray hover:text-gold transition-colors duration-300 text-sm"
-              >
-                {t('nav.pricing')}
-              </Link>
-              <Link
-                href="/tikkun"
-                className="text-light-gray hover:text-gold transition-colors duration-300 text-sm"
-              >
-                {t('nav.tikkun')}
-              </Link>
-              <Link
-                href="/accessories"
-                className="text-light-gray hover:text-gold transition-colors duration-300 text-sm"
-              >
-                {t('acc.title')}
-              </Link>
-            </nav>
-          </div>
-
-          {/* Newsletter Column */}
-          <div className="flex flex-col gap-4">
-            <h3 className="font-display text-gold uppercase tracking-wider text-sm font-semibold">
-              {t('footer.newsletter.title')}
-            </h3>
-            <form onSubmit={handleSubscribe} className="flex flex-col gap-3">
-              <div className="relative">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gold/50" />
-                <input
-                  type="email"
-                  placeholder={t('footer.newsletter.placeholder')}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="w-full bg-sacred-black/50 border border-gold/30 rounded-lg pl-10 pr-4 py-2.5 text-light-gray placeholder-dark-gray focus:outline-none focus:border-gold transition-colors text-sm"
-                />
-              </div>
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="flex items-center justify-center gap-2 bg-gradient-to-r from-gold to-gold/80 text-sacred-black font-display font-semibold uppercase tracking-wider px-4 py-2.5 rounded-lg hover:shadow-lg hover:shadow-gold/50 transition-all duration-300 disabled:opacity-50 text-sm"
-              >
-                {t('footer.newsletter.button')}
-                <ArrowRight className="w-4 h-4" />
-              </button>
-              {submitStatus === 'success' && (
-                <p className="text-gold text-xs">{t('footer.newsletter.success')}</p>
-              )}
-              {submitStatus === 'error' && (
-                <p className="text-red-500 text-xs">{t('footer.newsletter.error')}</p>
-              )}
-            </form>
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom Border and Copyright */}
-      <div className="border-t border-gold/20 px-4 sm:px-6 lg:px-8 py-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-dark-gray text-xs text-center md:text-left">
-              {t('footer.copyright')}
-            </p>
-            <div className="flex items-center gap-2 text-dark-gray text-xs">
-              {t('footer.attribution')}
+              <p className="text-gray-500 text-sm font-mono mt-2">
+                © {new Date().getFullYear()} Dream Nova Ltd. Legal & Privacy.
+              </p>
             </div>
+
+            <div className="flex items-center gap-6">
+              <a 
+                href="https://wa.me/something" 
+                target="_blank" 
+                rel="noreferrer"
+                className="flex items-center gap-2 text-gray-400 hover:text-[#00FF88] transition-colors font-mono text-sm uppercase"
+              >
+                <MessageCircle className="w-5 h-5" />
+                WhatsApp
+              </a>
+              <a 
+                href="https://t.me/nerostats" 
+                target="_blank" 
+                rel="noreferrer"
+                className="flex items-center gap-2 text-gray-400 hover:text-[#00D4FF] transition-colors font-mono text-sm uppercase"
+              >
+                <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .24z"/></svg>
+                @nerostats
+              </a>
+            </div>
+
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
     </>
   );
 }

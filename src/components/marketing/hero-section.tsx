@@ -3,83 +3,58 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ShieldCheck } from "lucide-react";
 import { SacredParticles } from "@/components/shared/sacred-particles";
-import { ScanLine, HoloParticles } from "@/components/shared/holographic-effects";
-import { useTranslation } from "@/lib/LanguageContext";
-import { formatPrice } from "@/lib/i18n";
+import {
+  ScanLine,
+  HoloParticles,
+} from "@/components/shared/holographic-effects";
+import { useEffect, useState } from "react";
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.2,
-    },
+    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
   },
 };
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut" as const,
-    },
-  },
-};
-
-const chevronVariants = {
-  animate: {
-    y: [0, 8, 0],
-    transition: {
-      duration: 2,
-      repeat: Infinity,
-      ease: "easeInOut" as const,
-    },
+    opacity: 1, y: 0,
+    transition: { duration: 0.8, ease: "easeOut" as const },
   },
 };
 
 export function HeroSection() {
-  const { t, config } = useTranslation();
-  const priceLabel = formatPrice(config.code);
+  const [dcsScore, setDcsScore] = useState(148000);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDcsScore((prev) => prev + Math.floor(Math.random() * 5));
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="relative min-h-screen bg-black overflow-hidden flex items-center justify-center">
-      {/* Background */}
+    <section className="relative min-h-screen bg-[#0A0A0A] overflow-hidden flex items-center justify-center">
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover mix-blend-screen opacity-20 pointer-events-none"
+      >
+        <source
+          src="/videos/Cinematic_3d_floating_1080p_202602231243 (1).mp4"
+          type="video/mp4"
+        />
+      </video>
+
+      {/* Background Particles */}
       <SacredParticles />
-
-      {/* Cyberpunk Eshsheli Fire Background */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.15, scale: 1 }}
-          transition={{ duration: 2, ease: 'easeOut' }}
-          className="relative w-[800px] h-[800px]"
-        >
-          <Image
-            src="/images/cyberpunk-fire-bg.png"
-            alt=""
-            fill
-            className="object-contain"
-            priority
-          />
-          {/* My Fire label */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5, duration: 1 }}
-            className="absolute bottom-[15%] left-1/2 -translate-x-1/2 text-center"
-          >
-            <p className="font-display text-lg text-gold/80 tracking-widest">{config.myFire}</p>
-            <p className="font-mono text-[10px] text-cyan/60 tracking-[0.2em] mt-1">{config.myFireSub}</p>
-          </motion.div>
-        </motion.div>
-      </div>
-
-      {/* Holographic Effects */}
       <ScanLine />
       <HoloParticles count={8} />
 
@@ -88,139 +63,92 @@ export function HeroSection() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+        className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20"
       >
-        {/* Sacred Geometry Ornament */}
-        <motion.div variants={itemVariants} className="mb-8">
-          <svg
-            width="64"
-            height="64"
-            viewBox="0 0 64 64"
-            className="mx-auto"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            {/* Diamond/ornament shape */}
-            <line x1="32" y1="4" x2="32" y2="12" stroke="#D4AF37" strokeWidth="2" />
-            <line x1="32" y1="52" x2="32" y2="60" stroke="#D4AF37" strokeWidth="2" />
-            <line x1="4" y1="32" x2="12" y2="32" stroke="#D4AF37" strokeWidth="2" />
-            <line x1="52" y1="32" x2="60" y2="32" stroke="#D4AF37" strokeWidth="2" />
-            {/* Diagonal lines */}
-            <line x1="14" y1="14" x2="20" y2="20" stroke="#00D9FF" strokeWidth="2" />
-            <line x1="44" y1="44" x2="50" y2="50" stroke="#00D9FF" strokeWidth="2" />
-            <line x1="50" y1="14" x2="44" y2="20" stroke="#00D9FF" strokeWidth="2" />
-            <line x1="20" y1="44" x2="14" y2="50" stroke="#00D9FF" strokeWidth="2" />
-            {/* Center circle */}
-            <circle cx="32" cy="32" r="8" fill="none" stroke="#D4AF37" strokeWidth="1.5" />
-          </svg>
+        {/* Main Heading */}
+        <motion.div variants={itemVariants} className="mb-6">
+          <h1 className="font-display text-5xl md:text-7xl font-bold text-white leading-tight">
+            DCS —{" "}
+            <span className="text-[#D4AF37]">Dream Consistency Score</span>
+          </h1>
         </motion.div>
 
         {/* Subtitle */}
         <motion.p
           variants={itemVariants}
-          className="font-mono text-xs md:text-sm tracking-widest text-gold mb-6 uppercase"
+          className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed font-body"
         >
-          {t('hero.subtitle')}
+          Le premier passeport qualitatif du mérite humain. Crée ton monde avec
+          Genie 3. Débloque-le avec la Nova Key NFC.{" "}
+          <span className="text-[#00D4FF] font-semibold">
+            Hafatsa 25 % en cours.
+          </span>
         </motion.p>
 
-        {/* Main Heading */}
-        <motion.div variants={itemVariants} className="mb-8">
-          <h1 className="font-display text-5xl md:text-7xl font-bold text-white leading-tight mb-2">
-            {t('hero.h1')}
-          </h1>
-          <h2 className="font-display text-5xl md:text-7xl font-bold leading-tight">
-            <span className="sacred-gradient">{t('hero.h2')}</span>
-          </h2>
-        </motion.div>
-
-        {/* Description */}
-        <motion.p
-          variants={itemVariants}
-          className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed"
-        >
-          {t('hero.desc')}
-        </motion.p>
-
-        {/* CTA Button */}
-        <motion.div variants={itemVariants} className="mb-4">
-          <Link
-            href="/checkout"
-            className="inline-block px-8 py-4 bg-gold text-black font-bold text-lg hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg hover:shadow-gold/50 tracking-wide"
-          >
-            {t('hero.cta')} — {priceLabel}
-          </Link>
-        </motion.div>
-
-        {/* CTA Subtitle */}
-        <motion.p
-          variants={itemVariants}
-          className="text-sm text-gray-400 mb-12"
-        >
-          {t('hero.includes')}
-        </motion.p>
-
-        {/* Nova Key Card Image */}
+        {/* Visual: Nova Key + DCS Counter */}
         <motion.div
           variants={itemVariants}
-          className="relative mx-auto mb-8 max-w-md"
+          className="relative mx-auto mb-10 max-w-lg"
         >
-          {/* Glow behind card */}
-          <div className="absolute inset-0 bg-gradient-to-br from-gold/30 via-cyan-sacred/20 to-gold/30 rounded-2xl blur-3xl scale-110 opacity-60" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/20 via-[#00D4FF]/10 to-[#D4AF37]/20 rounded-2xl blur-3xl scale-110 opacity-60" />
           <motion.div
-            animate={{
-              y: [0, -12, 0],
-              rotateX: [0, 2, 0],
-              rotateY: [-3, 3, -3],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: "easeInOut" as const,
-            }}
-            className="relative"
-            style={{ perspective: '1000px' }}
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" as const }}
+            className="relative bg-[#050508] border border-[#1A1A2E] p-6 rounded-2xl flex flex-col items-center justify-center shadow-2xl shadow-[#D4AF37]/10"
           >
             <Image
               src="/images/nova-key.jpg"
-              alt="Nova Key — Carte NFC sacrée Na Nach Nachma Nachman MeUman"
-              width={800}
-              height={500}
-              className="rounded-2xl shadow-2xl shadow-gold/20"
+              alt="Nova Key NFC Matte Black"
+              width={400}
+              height={250}
+              className="rounded-xl shadow-lg border border-[#D4AF37]/30 mb-6 object-cover"
               priority
             />
+            <div className="flex flex-col items-center space-y-2">
+              <span className="font-mono text-xs text-gray-400 uppercase tracking-widest">
+                Live DCS Counter
+              </span>
+              <span className="font-mono text-4xl md:text-5xl text-[#00D4FF] font-bold tracking-tight">
+                {dcsScore.toLocaleString()}
+              </span>
+              <span className="font-display text-sm text-[#D4AF37] tracking-widest mt-2 uppercase">
+                Genie 3 + Na Nach Inside
+              </span>
+            </div>
           </motion.div>
         </motion.div>
 
-        {/* Breslov Caméa — Included with every Nova Key */}
+        {/* CTA Button */}
+        <motion.div variants={itemVariants} className="mb-12">
+          <Link
+            href="#pricing"
+            className="inline-block px-10 py-5 bg-[#D4AF37] text-black font-display font-bold text-lg md:text-xl uppercase hover:bg-opacity-90 transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] tracking-wide"
+          >
+            GET MY NOVA KEY — $63
+          </Link>
+        </motion.div>
+
+        {/* Trust Bar */}
         <motion.div
           variants={itemVariants}
-          className="relative mx-auto mb-16 max-w-xs"
+          className="flex flex-wrap justify-center items-center gap-4 md:gap-8 text-xs md:text-sm font-mono text-gray-400"
         >
-          <p className="font-mono text-[10px] tracking-[0.3em] text-gold/60 text-center mb-4 uppercase">
-            {t('hero.camea')}
-          </p>
-          <motion.div
-            animate={{ y: [0, -8, 0], rotate: [0, 1, -1, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" as const }}
-            className="relative"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-cyan-sacred/30 via-gold/20 to-cyan-sacred/30 rounded-2xl blur-2xl scale-110 opacity-50" />
-            <Image
-              src="/images/cyberpunk-camea.png"
-              alt="Breslov Caméa — Authentique amulette sacrée incluse avec chaque Nova Key"
-              width={300}
-              height={300}
-              className="relative rounded-2xl shadow-2xl shadow-cyan-sacred/30 mx-auto"
-            />
-          </motion.div>
-        </motion.div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          animate="animate"
-          variants={chevronVariants}
-          className="flex justify-center"
-        >
-          <ChevronDown className="w-6 h-6 text-cyan" />
+          <div className="flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-[#D4AF37]" /> 148 = Nachman
+          </div>
+          <div className="hidden md:block text-[#1A1A2E]">|</div>
+          <div className="flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-[#D4AF37]" /> 63 = SaG
+          </div>
+          <div className="hidden md:block text-[#1A1A2E]">|</div>
+          <div className="flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-[#00D4FF]" /> H(F)=1.846 bits
+            (Nachman Science)
+          </div>
+          <div className="hidden md:block text-[#1A1A2E]">|</div>
+          <div className="flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-[#D4AF37]" /> Brevet DCS déposé
+          </div>
         </motion.div>
       </motion.div>
     </section>
