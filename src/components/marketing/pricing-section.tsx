@@ -7,59 +7,64 @@ import { HolographicShimmer } from "@/components/shared/holographic-effects";
 
 const tiers = [
   {
-    name: "Covenant",
-    price: "$63",
-    gematria: "63 = SaG (סג) — Binah",
-    includes: [
-      "1x Nova Key NFC (NTAG 215)",
-      "Acier Inoxydable Matte Black",
-      "Gravure Laser Or 148",
-      "DCS Profile activé",
-      "Algorithme Azamra Personnel",
+    name: "COVENANT",
+    price: 63,
+    sacred: "63 = SaG (Binah)",
+    features: [
+      "1 Nova Key NFC matte black",
+      "DCS Profile complet",
+      "Genie 3 World persistant",
+      "Azamra OS",
+      "Accès Communauté",
     ],
-    highlight: false,
+    cta: "JOIN THE COVENANT",
+    href: "/checkout",
+    popular: false,
   },
   {
-    name: "Pair",
-    price: "$99",
-    gematria: "Bénédiction mutuelle ×2",
-    includes: [
-      "2x Nova Keys NFC appariées",
-      "Synchronisation des mondes",
-      "Partage de Tikkun",
-      "Caméa Breslov inclus",
-      "Tout du tier Covenant",
+    name: "PAIR",
+    price: 99,
+    sacred: "Bénédiction ×2",
+    features: [
+      "2 Nova Keys appariées",
+      "Bénédiction mutuelle",
+      "Monde partagé",
+      "Tout Covenant inclus",
     ],
-    highlight: true,
+    cta: "PAIR UP",
+    href: "/checkout?variant=duo",
+    popular: true,
   },
   {
-    name: "Platinum",
-    price: "$149",
-    gematria: "≈148 = נחמן (Nachman)",
-    includes: [
-      "1x Nova Key Édition Limitée Or",
-      "Contenu exclusif Source Code",
-      "Beta prioritaire DreamOS",
-      "Statut Ambassadeur VIP",
-      "Tout du tier Pair",
+    name: "PLATINUM",
+    price: 149,
+    sacred: "148 = Nachman",
+    features: [
+      "Nova Key Premium (finition or)",
+      "Contenu exclusif + early beta",
+      "Kamea Tiberiade",
+      "Tout Pair inclus",
     ],
-    highlight: false,
+    cta: "GO PLATINUM",
+    href: "/checkout?variant=platinum",
+    popular: false,
   },
 ];
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="relative py-20 md:py-32 bg-[#0A0A0A] overflow-hidden">
+    <section id="pricing" className="relative py-20 md:py-32 bg-[#050508] overflow-hidden">
       {/* Video Background */}
       <video
-        autoPlay
-        loop
-        muted
-        playsInline
+        autoPlay loop muted playsInline
         className="absolute inset-0 w-full h-full object-cover mix-blend-screen opacity-20 pointer-events-none"
       >
         <source src="/videos/Cinematic_3d_floating_1080p_202602231244.mp4" type="video/mp4" />
       </video>
+      <div 
+        className="absolute inset-0 w-full h-full bg-cover bg-center opacity-25 mix-blend-screen pointer-events-none"
+        style={{ backgroundImage: "url('/img/grok/nova_key_close.png')" }}
+      />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -69,7 +74,7 @@ export function PricingSection() {
           viewport={{ once: true }}
           className="text-center mb-16 md:mb-24"
         >
-          <p className="font-mono text-[10px] tracking-[0.3em] text-gold/60 uppercase mb-4">
+          <p className="font-mono text-[10px] tracking-[0.3em] text-[#D4AF37]/60 uppercase mb-4">
             03 // HARDWARE
           </p>
           <h2 className="font-display text-5xl md:text-6xl font-bold text-[#D4AF37] mb-4 tracking-wide uppercase">
@@ -88,66 +93,57 @@ export function PricingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`relative bg-[#050508] border ${
-                tier.highlight
-                  ? "border-[#D4AF37] shadow-[0_0_30px_rgba(212,175,55,0.2)]"
+              className={`relative bg-[#050508]/90 backdrop-blur-xl border rounded-2xl p-8 flex flex-col transition-all duration-300 ${
+                tier.popular
+                  ? "border-[#D4AF37] shadow-[0_0_40px_rgba(212,175,55,0.4)] scale-[1.03]"
                   : "border-[#1A1A2E] hover:border-[#D4AF37]/50"
-              } p-8 rounded-xl flex flex-col transition-all duration-300`}
+              }`}
             >
-              {tier.highlight && <HolographicShimmer />}
+              {tier.popular && <HolographicShimmer />}
 
-              {tier.highlight && (
-                <div className="absolute -top-3 right-6 bg-[#D4AF37] text-black text-xs px-4 py-1 rounded-full font-display font-bold tracking-wider">
-                  POPULAR • 148
+              {tier.popular && (
+                <div className="absolute -top-3 right-6 bg-[#D4AF37] text-black text-xs px-5 py-1 rounded-full font-display font-bold tracking-widest">
+                  POPULAR • 148 ENERGY
                 </div>
               )}
 
-              <h3 className="font-display text-2xl font-bold text-white mb-2 uppercase tracking-wide">
+              <h3 className="font-display text-2xl font-bold text-[#D4AF37] mb-2 uppercase tracking-wide">
                 {tier.name}
               </h3>
 
               <div className="mb-4">
-                <span
-                  className={`font-mono text-5xl font-bold ${
-                    tier.highlight ? "text-[#D4AF37]" : "text-[#00D4FF]"
-                  }`}
-                >
-                  {tier.price}
+                <span className={`font-mono text-5xl font-bold ${tier.popular ? "text-[#D4AF37]" : "text-[#00D4FF]"}`}>
+                  ${tier.price}
                 </span>
               </div>
 
               <p className="text-gray-400 text-sm font-mono mb-8 uppercase tracking-widest h-8">
-                {tier.gematria}
+                {tier.sacred}
               </p>
 
               <ul className="space-y-4 mb-8 flex-grow">
-                {tier.includes.map((item, i) => (
+                {tier.features.map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <Check
-                      className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
-                        tier.highlight ? "text-[#D4AF37]" : "text-[#00FF88]"
-                      }`}
-                    />
-                    <span className="text-gray-300 text-sm">{item}</span>
+                    <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${tier.popular ? "text-[#D4AF37]" : "text-[#00FF88]"}`} />
+                    <span className="text-gray-300 text-sm font-body">{item}</span>
                   </li>
                 ))}
               </ul>
 
               <Link
-                href={`/checkout${tier.name === "Platinum" ? "?variant=platinum" : tier.name === "Pair" ? "?variant=duo" : ""}`}
-                className={`block w-full py-4 font-display font-bold text-center uppercase tracking-wide transition-all duration-300 rounded-lg ${
-                  tier.highlight
+                href={tier.href}
+                className={`block w-full py-4 font-display font-bold text-center uppercase tracking-widest transition-all duration-300 rounded-xl ${
+                  tier.popular
                     ? "bg-[#D4AF37] text-black hover:bg-white"
                     : "bg-transparent border border-[#00D4FF] text-[#00D4FF] hover:bg-[#00D4FF] hover:text-black"
                 }`}
               >
-                SELECT {tier.name.toUpperCase()} — {tier.price}
+                {tier.cta} — ${tier.price}
               </Link>
             </motion.div>
           ))}
         </div>
 
-        {/* Bottom trust line */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

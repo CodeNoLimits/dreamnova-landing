@@ -52,6 +52,10 @@ export function HeroSection() {
           type="video/mp4"
         />
       </video>
+      <div 
+        className="absolute inset-0 w-full h-full bg-cover bg-center opacity-15 mix-blend-screen pointer-events-none"
+        style={{ backgroundImage: "url('/img/grok/nova_key_hero_wide.png')" }}
+      />
 
       {/* Background Particles */}
       <SacredParticles />

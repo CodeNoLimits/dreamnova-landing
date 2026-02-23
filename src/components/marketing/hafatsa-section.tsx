@@ -7,6 +7,10 @@ import { ScrollReveal } from "@/components/shared/scroll-reveal";
 export function HafatsaSection() {
   return (
     <section id="hafatsa" className="relative py-20 md:py-32 bg-[#050508] border-b border-[#1A1A2E] overflow-hidden">
+      <div 
+        className="absolute inset-0 w-full h-full bg-cover bg-center opacity-15 pointer-events-none"
+        style={{ backgroundImage: "url('/img/grok/hafatsa_25_visual.png')" }}
+      />
       <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] to-transparent pointer-events-none" />
 
       <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -49,6 +49,10 @@ export function SolutionSection() {
       >
         <source src="/videos/Cinematic_3d_floating_1080p_202602231243 (3).mp4" type="video/mp4" />
       </video>
+      <div 
+        className="absolute inset-0 w-full h-full bg-cover bg-center opacity-15 mix-blend-screen pointer-events-none"
+        style={{ backgroundImage: "url('/img/grok/mutation_concept.png')" }}
+      />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
