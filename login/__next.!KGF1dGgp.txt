@@ -1,6 +1,0 @@
-1:"$Sreact.fragment"
-2:I[77265,["/dreamnova-landing/_next/static/chunks/676422587894ff86.js","/dreamnova-landing/_next/static/chunks/74e671a5936f0220.js","/dreamnova-landing/_next/static/chunks/03e95cbce3350fdf.js"],"SacredParticles"]
-3:I[39756,["/dreamnova-landing/_next/static/chunks/ff1a16fafef87110.js","/dreamnova-landing/_next/static/chunks/d2be314c3ece3fbe.js"],"default"]
-4:I[37457,["/dreamnova-landing/_next/static/chunks/ff1a16fafef87110.js","/dreamnova-landing/_next/static/chunks/d2be314c3ece3fbe.js"],"default"]
-5:I[29306,["/dreamnova-landing/_next/static/chunks/676422587894ff86.js","/dreamnova-landing/_next/static/chunks/74e671a5936f0220.js","/dreamnova-landing/_next/static/chunks/81158edd2cff9051.js"],"default"]
-0:{"buildId":"sgyHcDKt5ypTckjkVrLuR","rsc":["$","$1","c",{"children":[[["$","script","script-0",{"src":"/dreamnova-landing/_next/static/chunks/03e95cbce3350fdf.js","async":true}]],["$","div",null,{"className":"relative min-h-screen bg-sacred-black overflow-hidden","children":[["$","$L2",null,{}],["$","div",null,{"className":"relative z-10","children":["$","$L3",null,{"parallelRouterKey":"children","template":["$","$L4",null,{}],"notFound":[["$","$L5",null,{}],[]]}]}]]}]]}],"loading":null,"isPartial":false}
